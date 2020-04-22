@@ -1,0 +1,15 @@
+.header {
+    grid-area: header;
+}
+
+.header img {
+    width: 50px;
+    margin-top: -55px;
+    padding-left: 5%;
+    display: flex;
+}
+
+.prizma {
+    width: 100%;
+    height: 100%
+}

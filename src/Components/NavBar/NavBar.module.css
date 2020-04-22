@@ -1,0 +1,23 @@
+.nav {
+    grid-area: nav;
+    background: linear-gradient(to top, #7a77ff, #f4ff36);
+    opacity: 0.9;
+}
+
+.item {
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+a {
+    text-decoration: none;
+    color: rebeccapurple;
+}
+
+.item a.active {
+    color: royalblue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: purple;
+}
