@@ -6,7 +6,7 @@ import s from './MyPosts.module.css';
 const MyPosts = () => {
     return (
         <div>
-            My posts
+            <p>My posts</p>
             <div>
                 <textarea></textarea>
                 <button>Add post</button>

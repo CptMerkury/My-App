@@ -1,7 +1,7 @@
 .nav {
     grid-area: nav;
-    background: linear-gradient(to top, #7a77ff, #f4ff36);
-    opacity: 0.9;
+    background-color: ghostwhite;
+    /*opacity: 0.9;*/
 }
 
 .item {
@@ -10,14 +10,14 @@
 }
 a {
     text-decoration: none;
-    color: rebeccapurple;
+    color: deepskyblue;
 }
 
 .item a.active {
-    color: royalblue;
+    color: #ff80ab;
     text-decoration: none;
 }
 
 a:hover {
-    color: purple;
+    color: lightslategrey;
 }
