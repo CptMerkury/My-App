@@ -6,7 +6,7 @@ import ProfileInfo from "./ProfileInfo/PtofileInfo";
 
 const ProfileComp = () => {
     return (
-        <div>
+        <div className='profile'>
             <ProfileInfo/>
             <MyPosts/>
         </div>

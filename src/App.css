@@ -6,7 +6,6 @@
     grid-template-rows: 80px 1fr;
     grid-template-columns: 2fr 10fr;
     grid-gap: 5px;
-
 }
 
 .app-wrapper-content {
@@ -17,6 +16,7 @@
 a {
     text-decoration: none;
     color: deepskyblue;
+    opacity: 1.0;
 }
 
 a:hover {
