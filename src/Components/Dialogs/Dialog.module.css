@@ -1,16 +1,16 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
+    padding-left: 5%;
 }
 
 .dialogsItem {
-    padding: 10px;
+    font-size: 20px;
+    padding: 20px 0 10px 0;
 }
 
 .messages {
-    padding: 10px;
-}
-
-.messages .message {
-
+    font-size: 20px;
+    padding: 20px 0 10px 10%;
+    color: #ff80ab;
 }

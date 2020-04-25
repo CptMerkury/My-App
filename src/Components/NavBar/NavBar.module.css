@@ -1,11 +1,12 @@
 .nav {
     grid-area: nav;
     background-color: ghostwhite;
-    padding-top: 10%;
+    padding: 10% 0 10% 0;
 }
 
 .item {
+    font-size: 20px;
     text-align: center;
-    padding: 10px 0 0 0;
+    margin: 10px 0 10px 0;
 }
 
