@@ -9,16 +9,16 @@ const NavBar = () => {
                 <NavLink to='/Profile' activeClassName={s.active}>Profile</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to='Dialogs' activeClassName={s.active}>Messages</NavLink>
+                <NavLink to='/Dialogs' activeClassName={s.active}>Messages</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to='News' activeClassName={s.active}>News</NavLink>
+                <NavLink to='/News' activeClassName={s.active}>News</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to='Music' activeClassName={s.active}>Music</NavLink>
+                <NavLink to='/Music' activeClassName={s.active}>Music</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to='Setting' activeClassName={s.active}>Setting</NavLink>
+                <NavLink to='/Setting' activeClassName={s.active}>Setting</NavLink>
             </div>
         </nav>
     )

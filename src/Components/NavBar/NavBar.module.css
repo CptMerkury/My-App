@@ -8,16 +8,4 @@
     text-align: center;
     padding: 10px 0 0 0;
 }
-a {
-    text-decoration: none;
-    color: deepskyblue;
-}
 
-.item a.active {
-    color: #ff80ab;
-    text-decoration: none;
-}
-
-a:hover {
-    color: lightslategrey;
-}

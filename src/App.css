@@ -9,11 +9,24 @@
 
 }
 
-.app-wrapper-content{
+.app-wrapper-content {
     grid-area: content;
     background-color: ghostwhite;
 }
 
+a {
+    text-decoration: none;
+    color: deepskyblue;
+}
+
+a:hover {
+    color: lightslategrey;
+}
+
+a.active {
+    color: #ff80ab;
+    text-decoration: none;
+}
 
 
 

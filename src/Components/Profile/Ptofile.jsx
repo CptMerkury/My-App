@@ -1,14 +1,13 @@
 import React from "react";
 import s from './Profile.module.css';
 import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/PtofileInfo";
 
 
 const ProfileComp = () => {
     return (
         <div>
-            <div className={s.head}>
-                <img src='https://png.pngtree.com/thumb_back/fw800/back_our/20190622/ourmid/pngtree-night-deep-space-background-download-image_210714.jpg'/>
-            </div>
+            <ProfileInfo/>
             <div className={s.avatar}>
                 <img src='https://img2-placeit-net.s3-accelerate.amazonaws.com/uploads/stage/stage_image/40597/optimized_large_thumb_stage.jpg'/>
             </div>
