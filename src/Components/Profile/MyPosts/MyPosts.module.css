@@ -1,16 +1,23 @@
-.post{
-    padding-left: 20px;
-}
-textarea {
-    margin-left: 20px;
-    padding-left: 200px;
-}
-
-p{
+.postsBlock {
     color: #ff80ab;
-    font-size: 30px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-    padding-left: 20px;
+    padding-left: 5%;
+}
+
+p {
+    font-size: 30px;
+    padding-left: 5%;
+}
+
+textarea {
+    width: 80%;
+    height: 80px;
+    padding: 0 10% 0 5%;
+}
+
+
+.post {
+    margin-top: 20px;
 }

@@ -1,4 +1,12 @@
 .head img {
-    height: 200px;
+    height: 300px;
     width: 100%;
+}
+
+.avatar img {
+    width: 200px;
+}
+
+.avatar {
+    margin: -10% 0 0 5%;
 }
