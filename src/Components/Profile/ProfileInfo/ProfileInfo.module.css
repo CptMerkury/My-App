@@ -3,11 +3,11 @@
     width: 100%;
 }
 
-.avatar img {
+.avatarBlock img {
     width: 200px;
     border-radius: 50%;
 }
 
-.avatar {
+.avatarBlock {
     margin: -10% 0 0 5%;
 }

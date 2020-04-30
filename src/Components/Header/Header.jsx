@@ -1886,7 +1886,7 @@ const Header = () => {
                              begin="mouseenter" dur="1s"></animate>
                 </path>
             </svg>
-            <img src='https://www.pikpng.com/pngl/m/41-411844_1000-x-828-10-transparent-nasa-logo-png.png'/>
+            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/220px-NASA_logo.svg.png'/>
         </header>
     )
 }
