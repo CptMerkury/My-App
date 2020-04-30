@@ -10,7 +10,6 @@ const DialogItem = (props) => {
         </div>
     )
 };
-
 const Message = (props) => {
     return (
         <div className={s.dialog}>{props.message}</div>
@@ -48,11 +47,12 @@ const Dialogs = (props) => {
         {id: 7, message: 'What`s Up'},
         {id: 8, message: 'How are you'},
         {id: 9, message: 'Hello'},
-        {id: 10, message: 'Yo'}, {id: 1, message: 'Hi'},
-        {id: 11, message: 'What`s Up'},
-        {id: 12, message: 'How are you'},
-        {id: 13, message: 'Hello'},
-        {id: 14, message: 'Yo'},
+        {id: 10, message: 'Yo'},
+        {id: 11, message: 'Hi'},
+        {id: 12, message: 'What`s Up'},
+        {id: 13, message: 'How are you'},
+        {id: 14, message: 'Hello'},
+        {id: 15, message: 'Yo'},
     ];
 
     let dialogsElements = dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
