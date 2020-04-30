@@ -4,24 +4,27 @@ import './App.css';
 import Header from "./Components/Header/Header.jsx";
 import NavBar from "./Components/NavBar/NavBar.jsx";
 import Profile from "./Components/Profile/Ptofile";
-import Dialog from "./Components/Dialogs/Dialog.jsx";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Setting from "./Components/Setting/Setting";
+import Dialog from "./Components/Dialogs/Dialog";
 
 
-const App = () => {
+const App = (props) => {
+
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <NavBar/>
                 <div className='app-wrapper-content'>
-                    <Route path='/profile' component={Profile}/>
-                    <Route path='/dialogs' component={Dialog}/>
-                    <Route path='/news' component={News}/>
-                    <Route path='/music' component={Music}/>
-                    <Route path='/setting' component={Setting}/>
+                    <Route path='/profile' render={() =>
+                        <Profile posts={props.posts}/>}/>
+                    <Route path='/dialogs' render={() =>
+                        <Dialog dialogs={props.dialogs} messages={props.messages}/>}/>
+                    <Route path='/news' render={() => <News/>}/>
+                    <Route path='/music' render={() => <Music/>}/>
+                    <Route path='/setting' render={() => <Setting/>}/>
                 </div>
             </div>
         </BrowserRouter>
