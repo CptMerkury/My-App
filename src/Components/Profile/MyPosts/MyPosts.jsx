@@ -12,7 +12,6 @@ const MyPosts = () => {
         {id: 5, message: 'Hi', likeCount: 50},
         {id: 6, message: 'Hello, anime!!!', likeCount: 40},
     ]
-
     let postsElemenet = posts.map(p => <Posts message={p.message} likeCount={p.likeCount}/>)
 
     return (
