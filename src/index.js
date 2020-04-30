@@ -11,7 +11,7 @@ let posts = [
     {id: 4, message: 'How are you', likeCount: 5},
     {id: 5, message: 'Hi', likeCount: 50},
     {id: 6, message: 'Hello, anime!!!', likeCount: 40},
-]
+];
 let dialogs = [
     {id: 1, name: 'Ivan'},
     {id: 2, name: 'Dima'},
@@ -49,6 +49,7 @@ let messages = [
     {id: 14, message: 'Hello'},
     {id: 15, message: 'Yo'},
 ];
+
 ReactDOM.render(
     <React.StrictMode>
         {<App posts={posts} dialogs={dialogs} messages={messages}/>}
