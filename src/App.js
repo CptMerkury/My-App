@@ -8,24 +8,25 @@ import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Setting from "./Components/Setting/Setting";
 import Dialog from "./Components/Dialogs/Dialog";
+import {addPost} from "./Redux/State";
 
 
 const App = (props) => {
 
     return (
-        <BrowserRouter>
-            <div className='app-wrapper'>
-                <Header/>
-                <NavBar/>
-                <div className='app-wrapper-content'>
-                    <Route path='/profile' render={() => <Profile dataPosts={props.state.profilePage}/>}/>
-                    <Route path='/dialogs' render={() => <Dialog dataDialog={props.state.dialogPage}/>}/>
-                    <Route path='/news' render={() => <News/>}/>
-                    <Route path='/music' render={() => <Music/>}/>
-                    <Route path='/setting' render={() => <Setting/>}/>
-                </div>
+        <div className='app-wrapper'>
+            <Header/>
+            <NavBar/>
+            <div className='app-wrapper-content'>
+                <Route path='/profile'
+                       render={() => <Profile dataPosts={props.state.profilePage} addPost={props.addPost}/>}/>
+                <Route path='/dialogs'
+                       render={() => <Dialog dataDialog={props.state.dialogPage}/>}/>
+                <Route path='/news' render={() => <News/>}/>
+                <Route path='/music' render={() => <Music/>}/>
+                <Route path='/setting' render={() => <Setting/>}/>
             </div>
-        </BrowserRouter>
+        </div>
     );
 }
 

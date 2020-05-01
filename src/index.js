@@ -4,10 +4,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import state from "./Redux/State";
+import {addPost} from "./Redux/State";
+import {BrowserRouter} from "react-router-dom";
+
 
 ReactDOM.render(
     <React.StrictMode>
-        {<App state={state}/>}
+        <BrowserRouter>
+            <App state={state} addPost={addPost}/>
+        </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
 );
