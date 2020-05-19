@@ -56,7 +56,7 @@ let state = {
     }
 }
 
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {
         id: 7,
         message: state.profilePage.newPostText,
@@ -67,7 +67,7 @@ export let addPost = () => {
     rerenderEntireTree(state);
 };
 
-export let addMessage = () => {
+export const addMessage = () => {
     let newMessage = {
         id: 18,
         message: state.dialogPage.newMessageText
@@ -77,14 +77,18 @@ export let addMessage = () => {
     rerenderEntireTree(state)
 }
 
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
 }
 
-export let updateNewMessageText = (newText) => {
+export const updateNewMessageText = (newText) => {
     state.dialogPage.newMessageText = newText;
     rerenderEntireTree(state)
+}
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
 }
 
 export default state;
