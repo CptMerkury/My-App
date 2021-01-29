@@ -1,6 +1,7 @@
 .app-wrapper {
     font-family: 'Montserrat', sans-serif;
     width: content-box;
+    padding: 5px;
     min-height: 100vh;
     display: grid;
     grid-template-areas: "header header" "nav content";

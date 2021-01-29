@@ -17,7 +17,7 @@ const MyPosts = (props) => {
 
     return (
         <div className={style.postField}>
-            <p>My posts</p>
+            <h3>My posts</h3>
             <div>
                 <div>
                     <textarea onChange={onPostChange}
