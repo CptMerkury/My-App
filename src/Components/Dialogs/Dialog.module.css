@@ -1,16 +1,57 @@
-.dialogs {
+.dialogsContainer {
+    background-color: ghostwhite;
+    min-height: 100%;
+    padding: 0 50px;
+}
+
+.dialogField{
     display: grid;
     grid-template-columns: 2fr 10fr;
-    padding-left: 5%;
+    margin-bottom: 20px;
 }
 
 .dialogsItem {
-    font-size: 20px;
-    padding: 20px 0 40px 0;
+    text-align: center;
+    padding: 50px 0;
 }
 
 .messages {
-    font-size: 20px;
-    padding: 20px 0 40px 10%;
-    color: #ff80ab;
+    text-align: center;
+    padding: 50px 0;
+}
+.textField {
+    width: 100%;
+}
+.textField textarea {
+    height: 150px;
+    width: 100%;
+    padding: 5px;
+    border: 2px solid rgba(75, 80, 240, .9);
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    resize: none;
+}
+
+.textField textarea:focus {
+    border: 2px solid crimson;
+}
+
+.textField button {
+    background: rgba(75, 80, 240, .9);
+    width: 150px;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+    margin-top: 20px;
+}
+
+.textField button:hover {
+    background: rgba(221, 20, 61, .9);
+}
+
+.textField button:active {
+    background: rgba(221, 20, 61, .6);
 }

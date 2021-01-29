@@ -38,6 +38,13 @@
     color: #fff;
     position: absolute;
     right: 55px;
+    outline: none;
+}
+.postField button:hover {
+    background: rgba(221, 20, 61, .9);
+}
+.postField button:active{
+    background: rgba(221, 20, 61, .6);
 }
 
 

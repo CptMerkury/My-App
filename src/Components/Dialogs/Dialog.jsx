@@ -17,25 +17,25 @@ const Dialogs = (props) => {
         props.updateNewMessageText(text)
     }
 
-
     return (
-        <div className={style.dialogs}>
-            <div className={style.dialogsItem}>
-                {dialogsElements}
+        <div className={style.dialogsContainer}>
+            <div className={style.dialogField}>
+                <div className={style.dialogsItem}>
+                    {dialogsElements}
+                </div>
+                <div className={style.messages}>
+                    {messagesElement}
+                </div>
             </div>
-            <div className={style.messages}>
-                {messagesElement}
-                <div>
+            <div className={style.textField}>
                 <textarea onChange={onMessageChange}
                           ref={newMessageElement}
                           value={props.newMessageText}
                 />
-                </div>
                 <div>
                     <button onClick={newMessage}>Send message</button>
                 </div>
             </div>
-
         </div>
     )
 };

@@ -5,7 +5,7 @@ import style from "./Profile.module.css"
 
 const ProfileComp = (props) => {
     return (
-        <div className={style.profile}>
+        <div className={style.profileContainer}>
             <ProfileInfo/>
             <MyPosts
                 posts={props.dataPosts.posts}
