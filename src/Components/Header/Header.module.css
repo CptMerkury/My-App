@@ -1,17 +1,14 @@
 .header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     grid-area: header;
-    background-color: #ffffff;
+    color: #fff;
+    background-color: rgba(75, 80, 240, .9);
 }
 
 .header img {
     width: 80px;
-    margin-top: -75px;
-    margin-left: 5%;
-    display: flex;
-
+    margin-left: 5em;
 }
 
-.prizma {
-    width: 100%;
-    height: 100%;
-}

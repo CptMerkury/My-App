@@ -1,23 +1,40 @@
-.postsBlock {
-    color: #ff80ab;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-    padding-left: 5%;
+.postField {
+    color: rgba(75, 80, 240, .9);
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 50px;
 }
 
-p {
-    font-size: 30px;
-    padding-left: 5%;
+.postField p {
+    font-size: 32px;
+    margin-bottom: 15px;
+
 }
 
-textarea {
-    width: 90%;
+.postField textarea{
     height: 100px;
-    padding: 0 5% 0 0;
+    width: 100%;
+    padding: 5px;
+    border: 2px solid rgba(75, 80, 240, .9);
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    margin-bottom: 10px;
+    resize: none;
+}
+.postField textarea:focus{
+    border: 2px solid crimson;
+}
+
+.postField button{
+    background: rgba(75, 80, 240, .9);
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
 }
 
 
-.posts {
-    margin-top: 20px;
+.postsBlock {
+    margin-top: 75px;
 }

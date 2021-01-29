@@ -1,6 +1,7 @@
 .app-wrapper {
+    font-family: 'Montserrat', sans-serif;
     width: content-box;
-    margin: 0 5% 0 5%;
+    min-height: 100vh;
     display: grid;
     grid-template-areas: "header header" "nav content";
     grid-template-rows: 80px 1fr;
@@ -10,21 +11,15 @@
 
 .app-wrapper-content {
     grid-area: content;
-    background-color: ghostwhite;
 }
 
 a {
     text-decoration: none;
-    color: deepskyblue;
-    opacity: 1.0;
-}
-
-a:hover {
-    color: lightslategrey;
+    color: rgba(75, 80, 240, .9);
 }
 
 a.active {
-    color: #ff80ab;
+    color: crimson;
     text-decoration: none;
 }
 

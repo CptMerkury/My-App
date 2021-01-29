@@ -1,12 +1,16 @@
 .nav {
     grid-area: nav;
-    background-color: ghostwhite;
-    padding: 10% 0 10% 0;
+    background: ghostwhite;
 }
 
 .item {
+    padding: 17px 60px;
+    height: 60px;
     font-size: 20px;
     text-align: center;
-    margin: 10px 0 10px 0;
+}
+
+.item:hover {
+    background-color: rgba(97,97,97,.1);
 }
 

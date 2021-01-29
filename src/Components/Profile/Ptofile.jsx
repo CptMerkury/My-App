@@ -1,17 +1,17 @@
 import React from "react";
 import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/PtofileInfo";
-
+import style from "./Profile.module.css"
 
 const ProfileComp = (props) => {
-
     return (
-        <div className='profile'>
+        <div className={style.profile}>
             <ProfileInfo/>
-            <MyPosts posts={props.dataPosts.posts}
-                     newPostText={props.dataPosts.newPostText}
-                     addPost={props.addPost}
-                     updateNewPostText={props.updateNewPostText}
+            <MyPosts
+                posts={props.dataPosts.posts}
+                newPostText={props.dataPosts.newPostText}
+                addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
             />
         </div>
     );

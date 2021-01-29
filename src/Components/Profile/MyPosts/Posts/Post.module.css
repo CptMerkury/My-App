@@ -1,16 +1,29 @@
-.item img {
-    margin: 0 15px 0 0;
-    width: 60px;
-    height: 60px;
-    border-radius: 30px 30px;
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 1px solid rgba(75, 80, 240, .9);
+    border-radius: 5px;
+    color: rgba(75, 80, 240, .9);
+    background: #fff;
+    padding: 15px;
+}
+.item + .item {
+    margin: 10px 0;
 }
 
-.item {
-    padding: 0 0 15px 5%;
-    color: deepskyblue;
+.item img {
+    margin: 0 15px 0 0;
+    border-radius: 50%;
+    width: 90px;
+}
+.item p {
 }
 
 .like {
-    padding: 10px 0 0 75px;
-    color: #757575;
+    color: crimson;
+    position: relative;
+    bottom: -35px;
+
 }

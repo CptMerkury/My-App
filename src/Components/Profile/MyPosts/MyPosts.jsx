@@ -1,11 +1,11 @@
 import React from "react";
 import Posts from "./Posts/Post";
-import s from './MyPosts.module.css';
+import style from './MyPosts.module.css';
 
 
 const MyPosts = (props) => {
 
-    let postsElemenet = props.posts.map(p => <Posts message={p.message} likeCount={p.likeCount}/>)
+    let postsElement = props.posts.map(p => <Posts message={p.message} likeCount={p.likeCount}/>)
     let newPostsElement = React.createRef()
     let newPost = () => {
         props.addPost();
@@ -16,7 +16,7 @@ const MyPosts = (props) => {
     }
 
     return (
-        <div className={s.postsBlock}>
+        <div className={style.postField}>
             <p>My posts</p>
             <div>
                 <div>
@@ -28,8 +28,8 @@ const MyPosts = (props) => {
                     <button onClick={newPost}>Add post</button>
                 </div>
             </div>
-            <div className={s.posts}>
-                {postsElemenet}
+            <div className={style.postsBlock}>
+                {postsElement}
             </div>
         </div>
     );
