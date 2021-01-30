@@ -5,16 +5,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Dialogs/Dialog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Dialogs/Dialog.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Dialogs/Dialog.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Dialogs/Dialog.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Music/Music.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Music/Music.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Music/Music.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Music/Music.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/News/News.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/News/News.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/News/News.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/News/News.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Dialogs/DialogItem/DialogItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Dialogs/DialogItem/DialogItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Dialogs/Message/Message.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Dialogs/Message/MessageItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Profile/MyPosts/MyPosts.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/MyPosts/MyPosts.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Profile/Profile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/Profile.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Profile/Ptofile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/Ptofile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Setting/Setting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Setting/Setting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Setting/Setting.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Setting/Setting.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/MyPosts/Posts/Post.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/MyPosts/Posts/Post.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/ProfileInfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/ProfileInfo.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/PtofileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/PtofileInfo.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

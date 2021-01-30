@@ -1,31 +1,48 @@
 .dialogsContainer {
     background-color: ghostwhite;
     min-height: 100%;
-    padding: 0 50px;
+    padding: 20px 50px;
 }
-
-.dialogField{
-    display: grid;
-    grid-template-columns: 2fr 10fr;
+.dialogsContainer h2{
+    font-size: 32px;
+    font-weight: 100;
+    color: rgba(75, 80, 240, .9);
+    width: 160px;
     margin-bottom: 20px;
 }
 
-.dialogsItem {
-    text-align: center;
-    padding: 50px 0;
+
+.dialogsField {
+    display: grid;
+    grid-template-columns: 5fr 10fr;
+    padding: 10px 20px;
+    border-top: 1px solid rgba(75, 80, 240, .4);
+    border-bottom: 1px solid rgba(75, 80, 240, .4);
+}
+
+.dialogs {
+}
+
+.dialogItem {
+    margin: 10px 0;
 }
 
 .messages {
-    text-align: center;
-    padding: 50px 0;
 }
+
+.messageItem {
+    margin: 10px 0;
+}
+
 .textField {
     width: 100%;
+    padding-top: 30px;
 }
+
 .textField textarea {
     height: 150px;
     width: 100%;
-    padding: 5px;
+    padding: 5px 10px;
     border: 2px solid rgba(75, 80, 240, .9);
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;

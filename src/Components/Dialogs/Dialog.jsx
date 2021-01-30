@@ -1,30 +1,35 @@
 import React from "react";
 import style from './Dialog.module.css'
 import DialogItem from './DialogItem/DialogItem'
-import Message from './Message/Message'
+import MessageItem from './Message/MessageItem'
 
 
 const Dialogs = (props) => {
 
-    let dialogsElements = props.dataDialog.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
-    let messagesElement = props.dataDialog.messages.map(m => <Message message={m.message} id={m.id}/>)
-    let newMessageElement = React.createRef()
-    let newMessage = () => {
+    const dialogsElements = props.dataDialog.dialogs.map(dData => <DialogItem name={dData.name} id={dData.id}/>);
+    const messagesElement = props.dataDialog.messages.map(mData => <MessageItem message={mData.message} id={mData.id}/>)
+    const newMessageElement = React.createRef()
+    const newMessage = () => {
         props.addMessage();
     }
-    let onMessageChange = () => {
+    const onMessageChange = () => {
         let text = newMessageElement.current.value
         props.updateNewMessageText(text)
     }
 
     return (
         <div className={style.dialogsContainer}>
-            <div className={style.dialogField}>
-                <div className={style.dialogsItem}>
-                    {dialogsElements}
+            <h2>Massages</h2>
+            <div className={style.dialogsField}>
+                <div className={style.dialogs}>
+                    <div className={style.dialogItem}>
+                        {dialogsElements}
+                    </div>
                 </div>
                 <div className={style.messages}>
-                    {messagesElement}
+                    <div className={style.messageItem}>
+                        {messagesElement}
+                    </div>
                 </div>
             </div>
             <div className={style.textField}>

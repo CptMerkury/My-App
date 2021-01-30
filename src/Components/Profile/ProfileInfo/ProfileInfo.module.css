@@ -5,13 +5,13 @@
     opacity: .8;
 }
 
-.avatarBlock img {
+.descriptionBlock img {
     width: 250px;
     border-radius: 50%;
     border: 1px solid rgba(97, 97, 97, .2);
 }
 
-.avatarBlock {
+.descriptionBlock {
     position: relative;
     top: -150px;
     left: 50px;

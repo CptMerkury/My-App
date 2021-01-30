@@ -17,7 +17,7 @@
 .postField textarea{
     height: 100px;
     width: 100%;
-    padding: 5px;
+    padding: 5px 10px;
     border: 2px solid rgba(75, 80, 240, .9);
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
@@ -49,6 +49,8 @@
 
 
 .postsBlock {
-    margin-top: 75px;
-    padding: 5px 0;
+    border-top: 1px solid rgba(75, 80, 240, .4);
+    border-bottom: 1px solid rgba(75, 80, 240, .4);
+    margin-top: 70px;
+    padding: 20px 0;
 }
