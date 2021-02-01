@@ -10,7 +10,6 @@ let state = {
             {id: 3, message: 'Hi, how are you', likeCount: 10},
             {id: 4, message: 'How are you', likeCount: 5},
             {id: 5, message: 'Hi', likeCount: 50},
-            {id: 6, message: 'Hello, anime!!!', likeCount: 40},
         ],
         newPostText: 'Add your new post'
     },
@@ -26,14 +25,6 @@ let state = {
             {id: 8, name: 'Vova'},
             {id: 9, name: 'Andrew'},
             {id: 10, name: 'Vika'},
-            {id: 11, name: 'Max'},
-            {id: 12, name: 'Vova'},
-            {id: 13, name: 'Andrew'},
-            {id: 14, name: 'Vika'},
-            {id: 15, name: 'Max'},
-            {id: 16, name: 'Vova'},
-            {id: 17, name: 'Andrew'},
-            {id: 18, name: 'Vika'},
         ],
         messages: [
             {id: 1, message: 'Hi'},
@@ -46,11 +37,6 @@ let state = {
             {id: 8, message: 'How are you'},
             {id: 9, message: 'Hello'},
             {id: 10, message: 'Yo'},
-            {id: 11, message: 'Hi'},
-            {id: 12, message: 'What`s Up'},
-            {id: 13, message: 'How are you'},
-            {id: 14, message: 'Hello'},
-            {id: 15, message: 'Yo'},
         ],
         newMessageText: 'Write your new message'
     }
@@ -58,7 +44,7 @@ let state = {
 
 export const addPost = () => {
     let newPost = {
-        id: 7,
+        id: 6,
         message: state.profilePage.newPostText,
         likeCount: 0
     };
@@ -69,7 +55,7 @@ export const addPost = () => {
 
 export const addMessage = () => {
     let newMessage = {
-        id: 18,
+        id: 11,
         message: state.dialogPage.newMessageText
     }
     state.dialogPage.messages.push(newMessage)

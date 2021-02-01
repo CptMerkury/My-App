@@ -1,6 +1,6 @@
 import React from "react";
 import Posts from "./Posts/Post";
-import style from './MyPosts.module.css';
+import classes from './MyPosts.module.css';
 
 
 const MyPosts = (props) => {
@@ -16,7 +16,7 @@ const MyPosts = (props) => {
     }
 
     return (
-        <div className={style.postField}>
+        <div className={classes.postField}>
             <h3>My posts</h3>
             <div>
                 <div>
@@ -28,7 +28,7 @@ const MyPosts = (props) => {
                     <button onClick={newPost}>Add post</button>
                 </div>
             </div>
-            <div className={style.postsBlock}>
+            <div className={classes.postsBlock}>
                 {postsElement}
             </div>
         </div>

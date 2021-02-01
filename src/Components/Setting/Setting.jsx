@@ -1,9 +1,9 @@
 import React from "react";
-import style from "./Setting.module.css"
+import classes from "./Setting.module.css"
 
 const Setting = (props) => {
     return (
-        <div className={style.settingContainer}>
+        <div className={classes.settingContainer}>
             Setting
         </div>
     )
