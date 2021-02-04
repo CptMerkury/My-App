@@ -5,12 +5,12 @@ import classes from './MyPosts.module.css';
 
 const MyPosts = (props) => {
 
-    let postsElement = props.posts.map(pData => <Posts message={pData.message} likeCount={pData.likeCount}/>)
-    let newPostsElement = React.createRef()
-    let newPost = () => {
+    const postsElement = props.posts.map(pData => <Posts message={pData.message} likeCount={pData.likeCount}/>)
+    const newPostsElement = React.createRef()
+    const newPost = () => {
         props.addPost();
     }
-    let onPostChange = () => {
+    const onPostChange = () => {
         let text = newPostsElement.current.value;
         props.updateNewPostText(text);
     }
@@ -22,7 +22,8 @@ const MyPosts = (props) => {
                 <div>
                     <textarea onChange={onPostChange}
                               ref={newPostsElement}
-                              value={props.newPostText}/>
+                              value={props.newPostText}
+                              placeholder='Add your new post'/>
                 </div>
                 <div>
                     <button onClick={newPost}>Add post</button>

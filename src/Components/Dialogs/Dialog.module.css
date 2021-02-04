@@ -20,10 +20,20 @@
 }
 
 .dialogs {
+    padding-bottom: 20px;
 }
 
 .dialogItem {
-    margin: 10px 0;
+    margin: 40px 0 0 20px;
+    position: relative;
+}
+.dialogItem img {
+    border-radius: 50%;
+    width: 45px;
+    position: absolute;
+    top: 50%;
+    left: -20%;
+    transform: translateY(-50%)translateX(10%);
 }
 
 .messages {

@@ -1,0 +1,24 @@
+.container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: rgba(75, 80, 240, .9);
+}
+
+.item {
+    text-align: center;
+    cursor: pointer;
+}
+
+.item img {
+    width: 35px;
+    border-radius: 50%;
+}
+
+.item:hover {
+    color: crimson;
+    opacity: .8;
+}
+
+

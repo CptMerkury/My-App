@@ -11,7 +11,7 @@ let state = {
             {id: 4, message: 'How are you', likeCount: 5},
             {id: 5, message: 'Hi', likeCount: 50},
         ],
-        newPostText: 'Add your new post'
+        newPostText: String,
     },
     dialogPage: {
         dialogs: [
@@ -20,11 +20,6 @@ let state = {
             {id: 3, name: 'Max'},
             {id: 4, name: 'Vova'},
             {id: 5, name: 'Andrew'},
-            {id: 6, name: 'Vika'},
-            {id: 7, name: 'Max'},
-            {id: 8, name: 'Vova'},
-            {id: 9, name: 'Andrew'},
-            {id: 10, name: 'Vika'},
         ],
         messages: [
             {id: 1, message: 'Hi'},
@@ -38,28 +33,35 @@ let state = {
             {id: 9, message: 'Hello'},
             {id: 10, message: 'Yo'},
         ],
-        newMessageText: 'Write your new message'
+        newMessageText: String
+    },
+    userList: {
+        users: [
+            {id: 1, name: 'Ivan'},
+            {id: 2, name: 'Dima'},
+            {id: 3, name: 'Max'},
+        ],
     }
 }
 
 export const addPost = () => {
     let newPost = {
-        id: 6,
+        id: state.profilePage.posts.length + 1,
         message: state.profilePage.newPostText,
         likeCount: 0
     };
     state.profilePage.posts.unshift(newPost);
-    state.profilePage.newPostText = ' ';
+    state.profilePage.newPostText = '';
     rerenderEntireTree(state);
 };
 
 export const addMessage = () => {
     let newMessage = {
-        id: 11,
+        id: state.dialogPage.messages.length + 1,
         message: state.dialogPage.newMessageText
     }
     state.dialogPage.messages.push(newMessage)
-    state.dialogPage.newMessageText = ' ';
+    state.dialogPage.newMessageText = '';
     rerenderEntireTree(state)
 }
 
