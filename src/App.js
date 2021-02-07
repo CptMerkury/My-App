@@ -10,7 +10,6 @@ import Setting from "./Components/Setting/Setting";
 import Dialog from "./Components/Dialogs/Dialog";
 import Friends from "./Components/Friends/Friends";
 
-
 const App = (props) => {
     return (
         <div className='app-wrapper'>
