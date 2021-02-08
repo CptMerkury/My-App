@@ -1,4 +1,4 @@
-import {APP_ACTIONS} from "../State";
+import {APP_ACTIONS} from "../store";
 
 //Profile
 export const addNewPost = () => ({
