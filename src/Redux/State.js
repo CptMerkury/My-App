@@ -1,3 +1,10 @@
+export const APP_ACTIONS = {
+    ADD_POST: 'ADD_POST',
+    UPDATE_NEW_POST_TEXT: 'UPDATE_NEW_POST_TEXT',
+    ADD_MESSAGE: 'ADD_MESSAGE',
+    UPDATE_NEW_MESSAGE_TEXT: 'UPDATE_NEW_MESSAGE_TEXT,'
+}
+
 let store = {
     _state: {
         profilePage: {
@@ -80,16 +87,16 @@ let store = {
 
     dispatch(action) {
         switch (action.type) {
-            case 'ADD_POST':
+            case APP_ACTIONS.ADD_POST:
                 this._addPost();
                 break;
-            case 'UPDATE_NEW_POST_TEXT':
+            case APP_ACTIONS.UPDATE_NEW_POST_TEXT:
                 this._updateNewPostText(action.payload)
                 break;
-            case 'ADD_MESSAGE':
+            case APP_ACTIONS.ADD_MESSAGE:
                 this._addMessage();
                 break;
-            case 'UPDATE_NEW_MESSAGE_TEXT':
+            case APP_ACTIONS.UPDATE_NEW_MESSAGE_TEXT:
                 this._updateNewMessageText(action.payload)
                 break;
             default:
@@ -97,7 +104,5 @@ let store = {
         }
     }
 }
-
-// window.store = store;
 
 export default store;
