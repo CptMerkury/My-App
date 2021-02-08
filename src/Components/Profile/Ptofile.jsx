@@ -10,8 +10,7 @@ const ProfileComp = (props) => {
             <MyPosts
                 posts={props.dataPosts.posts}
                 newPostText={props.dataPosts.newPostText}
-                addPost={props.addPost}
-                updateNewPostText={props.updateNewPostText}
+                dispatch={props.dispatch}
             />
         </div>
     );

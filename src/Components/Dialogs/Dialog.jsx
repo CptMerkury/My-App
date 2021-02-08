@@ -10,11 +10,16 @@ const Dialogs = (props) => {
     const messagesElement = props.dataDialog.messages.map(mData => <MessageItem message={mData.message} id={mData.id}/>)
     const newMessageElement = React.createRef()
     const newMessage = () => {
-        props.addMessage();
+        props.dispatch({
+            type: 'ADD_MESSAGE'
+        });
     }
     const onMessageChange = () => {
         let text = newMessageElement.current.value
-        props.updateNewMessageText(text)
+        props.dispatch({
+            type: 'UPDATE_NEW_MESSAGE_TEXT',
+            payload: text
+        })
     }
 
     return (

@@ -40,13 +40,10 @@ let store = {
             ],
         }
     },
-    getState(){
-        return this._state
-    },
     _callSubscriber() {
         console.log('Change state')
     },
-    addPost() {
+    _addPost() {
         let newPost = {
             id: this._state.profilePage.posts.length + 1,
             message: this._state.profilePage.newPostText,
@@ -56,7 +53,7 @@ let store = {
         this._state.profilePage.newPostText = '';
         this._callSubscriber(this._state);
     },
-    addMessage() {
+    _addMessage() {
         let newMessage = {
             id: this._state.dialogPage.messages.length + 1,
             message: this._state.dialogPage.newMessageText
@@ -65,19 +62,42 @@ let store = {
         this._state.dialogPage.newMessageText = '';
         this._callSubscriber(this._state)
     },
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
+    _updateNewPostText(text) {
+        this._state.profilePage.newPostText = text;
         this._callSubscriber(this._state);
     },
-    updateNewMessageText(newText) {
-        this._state.dialogPage.newMessageText = newText;
+    _updateNewMessageText(text) {
+        this._state.dialogPage.newMessageText = text;
         this._callSubscriber(this._state)
+    },
+
+    getState() {
+        return this._state
     },
     subscribe(observer) {
         this._callSubscriber = observer;
     },
+
+    dispatch(action) {
+        switch (action.type) {
+            case 'ADD_POST':
+                this._addPost();
+                break;
+            case 'UPDATE_NEW_POST_TEXT':
+                this._updateNewPostText(action.payload)
+                break;
+            case 'ADD_MESSAGE':
+                this._addMessage();
+                break;
+            case 'UPDATE_NEW_MESSAGE_TEXT':
+                this._updateNewMessageText(action.payload)
+                break;
+            default:
+                return store;
+        }
+    }
 }
 
-window.store = store;
+// window.store = store;
 
 export default store;
