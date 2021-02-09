@@ -7,8 +7,8 @@ import Profile from "./Components/Profile/Ptofile";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Setting from "./Components/Setting/Setting";
-import Dialog from "./Components/Dialogs/Dialog";
 import Friends from "./Components/Friends/Friends";
+import DialogContainer from "./Components/Dialogs/DialogContainer";
 
 const App = (props) => {
     return (
@@ -24,7 +24,7 @@ const App = (props) => {
                 />
                 <Route
                     path='/dialogs'
-                    render={() => <Dialog
+                    render={() => <DialogContainer
                         dataDialog={props.state.dialogPage}
                         dispatch={props.dispatch}/>}
                 />

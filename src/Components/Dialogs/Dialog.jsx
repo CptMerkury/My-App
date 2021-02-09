@@ -2,8 +2,6 @@ import React from "react";
 import classes from './Dialog.module.css'
 import DialogItem from './DialogItem/DialogItem'
 import MessageItem from './MessageItem/MessageItem'
-import { sendMessageCreator, updateMessageBodyCreator} from '../../store/action';
-
 
 const Dialogs = (props) => {
 
@@ -11,11 +9,11 @@ const Dialogs = (props) => {
     const messagesElement = props.dataDialog.messages.map(mData => <MessageItem message={mData.message} id={mData.id}/>)
 
     const sendMessage = () => {
-        props.dispatch(sendMessageCreator());
+        props.createMessage();
     }
     const onMessageChange = (e) => {
         let text = e.target.value
-        props.dispatch(updateMessageBodyCreator(text))
+        props.changeHandler(text)
     }
 
     return (
@@ -35,7 +33,7 @@ const Dialogs = (props) => {
             </div>
             <div className={classes.textField}>
                 <textarea onChange={onMessageChange}
-                          value={props.dataDialog.newMessageText}
+                          value={props.textMessage}
                           placeholder='Write your new message'
                 />
                 <div>

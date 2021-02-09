@@ -1,7 +1,7 @@
 import React from "react";
 import classes from '../Sidebar.module.css';
 
-const FriendBar = (props) => {
+const SidebarFriends = (props) => {
     return (
         <div className={classes.item}>
             <img
@@ -12,4 +12,4 @@ const FriendBar = (props) => {
     )
 }
 
-export default FriendBar
+export default SidebarFriends

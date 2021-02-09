@@ -1,19 +1,17 @@
 import React from "react";
 import Posts from "./Posts/Post";
 import classes from './MyPosts.module.css';
-import {addPostCreator, updatePostBodyCreator} from "../../../store/action";
-
 
 const MyPosts = (props) => {
-
     const postsElement = props.posts.map(pData => <Posts message={pData.message} likeCount={pData.likeCount}/>)
+
     const addPost = () => {
-        props.dispatch(addPostCreator());
+        props.createPost()
     }
 
     const onPostChange = (e) => {
         let text = e.target.value;
-        props.dispatch(updatePostBodyCreator(text));
+        props.changeHandler(text)
     }
 
     return (
@@ -22,7 +20,7 @@ const MyPosts = (props) => {
             <div>
                 <div>
                     <textarea onChange={onPostChange}
-                              value={props.newPostText}
+                              value={props.textPost}
                               placeholder='Add your new post'/>
                 </div>
                 <div>

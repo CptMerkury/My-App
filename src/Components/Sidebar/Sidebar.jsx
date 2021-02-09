@@ -1,10 +1,10 @@
 import React from "react";
 import classes from './Sidebar.module.css';
-import FriendBar from './SidebarItem/FriendBar'
+import SidebarFriends from './SidebarItem/sidebarFriends'
 
 
 const Sidebar = (props) => {
-    const friendItem = props.sidebarData.userList.map(uData => <FriendBar name={uData.name} key={uData.id}/>)
+    const friendItem = props.sidebarData.userList.map(uData => <SidebarFriends name={uData.name} key={uData.id}/>)
 
     return (
         <div className={classes.container}>
