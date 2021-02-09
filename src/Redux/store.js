@@ -1,9 +1,6 @@
-export const APP_ACTIONS = {
-    ADD_POST: 'ADD_POST',
-    UPDATE_NEW_POST_TEXT: 'UPDATE_NEW_POST_TEXT',
-    ADD_MESSAGE: 'ADD_MESSAGE',
-    UPDATE_NEW_MESSAGE_TEXT: 'UPDATE_NEW_MESSAGE_TEXT,'
-}
+import profileReducer from "./profileReducer";
+import dialogsReducer from "./dialogsReducer";
+import sidebarReducer from "./sidebarReducer";
 
 let store = {
     _state: {
@@ -39,8 +36,8 @@ let store = {
             ],
             newMessageText: String
         },
-        userList: {
-            users: [
+        sidebarPage: {
+            userList: [
                 {id: 1, name: 'Ivan'},
                 {id: 2, name: 'Dima'},
                 {id: 3, name: 'Max'},
@@ -49,33 +46,6 @@ let store = {
     },
     _callSubscriber() {
         console.log('Change state')
-    },
-    _addPost() {
-        let newPost = {
-            id: this._state.profilePage.posts.length + 1,
-            message: this._state.profilePage.newPostText,
-            likeCount: 0
-        };
-        this._state.profilePage.posts.unshift(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
-    },
-    _addMessage() {
-        let newMessage = {
-            id: this._state.dialogPage.messages.length + 1,
-            message: this._state.dialogPage.newMessageText
-        }
-        this._state.dialogPage.messages.push(newMessage)
-        this._state.dialogPage.newMessageText = '';
-        this._callSubscriber(this._state)
-    },
-    _updateNewPostText(text) {
-        this._state.profilePage.newPostText = text;
-        this._callSubscriber(this._state);
-    },
-    _updateNewMessageText(text) {
-        this._state.dialogPage.newMessageText = text;
-        this._callSubscriber(this._state)
     },
 
     getState() {
@@ -86,22 +56,10 @@ let store = {
     },
 
     dispatch(action) {
-        switch (action.type) {
-            case APP_ACTIONS.ADD_POST:
-                this._addPost();
-                break;
-            case APP_ACTIONS.UPDATE_NEW_POST_TEXT:
-                this._updateNewPostText(action.payload)
-                break;
-            case APP_ACTIONS.ADD_MESSAGE:
-                this._addMessage();
-                break;
-            case APP_ACTIONS.UPDATE_NEW_MESSAGE_TEXT:
-                this._updateNewMessageText(action.payload)
-                break;
-            default:
-                return store;
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogPage = dialogsReducer(this._state.dialogPage, action)
+        this._state.sidebarPage = sidebarReducer(this._state.sidebarPage, action)
+        this._callSubscriber(this._state)
     }
 }
 

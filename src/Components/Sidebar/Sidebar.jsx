@@ -4,7 +4,7 @@ import FriendBar from './SidebarItem/FriendBar'
 
 
 const Sidebar = (props) => {
-    const friendItem = props.userList.users.map(uData => <FriendBar name={uData.name} key={uData.id}/>)
+    const friendItem = props.sidebarData.userList.map(uData => <FriendBar name={uData.name} key={uData.id}/>)
 
     return (
         <div className={classes.container}>

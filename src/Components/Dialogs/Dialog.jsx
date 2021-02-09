@@ -2,21 +2,20 @@ import React from "react";
 import classes from './Dialog.module.css'
 import DialogItem from './DialogItem/DialogItem'
 import MessageItem from './MessageItem/MessageItem'
-import {addNewMessage, changeMessageTextarea} from '../../Redux/app/action';
+import { sendMessageCreator, updateMessageBodyCreator} from '../../Redux/action';
 
 
 const Dialogs = (props) => {
 
     const dialogsElements = props.dataDialog.dialogs.map(dData => <DialogItem name={dData.name} id={dData.id}/>);
     const messagesElement = props.dataDialog.messages.map(mData => <MessageItem message={mData.message} id={mData.id}/>)
-    const newMessageElement = React.createRef()
 
-    const addMessage = () => {
-        props.dispatch(addNewMessage());
+    const sendMessage = () => {
+        props.dispatch(sendMessageCreator());
     }
-    const onMessageChange = () => {
-        let text = newMessageElement.current.value
-        props.dispatch(changeMessageTextarea(text))
+    const onMessageChange = (e) => {
+        let text = e.target.value
+        props.dispatch(updateMessageBodyCreator(text))
     }
 
     return (
@@ -36,12 +35,11 @@ const Dialogs = (props) => {
             </div>
             <div className={classes.textField}>
                 <textarea onChange={onMessageChange}
-                          ref={newMessageElement}
-                          value={props.newMessageText}
+                          value={props.dataDialog.newMessageText}
                           placeholder='Write your new message'
                 />
                 <div>
-                    <button onClick={addMessage}>Send message</button>
+                    <button onClick={sendMessage}>Send message</button>
                 </div>
             </div>
         </div>
