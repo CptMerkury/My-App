@@ -2,7 +2,7 @@ import profileReducer from "./profileReducer";
 import dialogsReducer from "./dialogsReducer";
 import sidebarReducer from "./sidebarReducer";
 
-let store = {
+let localStore = {
     _state: {
         profilePage: {
             posts: [
@@ -36,7 +36,7 @@ let store = {
             ],
             newMessageText: String
         },
-        sidebarPage: {
+        sidebar: {
             userList: [
                 {id: 1, name: 'Ivan'},
                 {id: 2, name: 'Dima'},
@@ -58,9 +58,9 @@ let store = {
     dispatch(action) {
         this._state.profilePage = profileReducer(this._state.profilePage, action)
         this._state.dialogPage = dialogsReducer(this._state.dialogPage, action)
-        this._state.sidebarPage = sidebarReducer(this._state.sidebarPage, action)
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action)
         this._callSubscriber(this._state)
     }
 }
 
-export default store;
+export default localStore;

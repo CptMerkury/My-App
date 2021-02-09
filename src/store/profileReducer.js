@@ -1,0 +1,33 @@
+import {APP_ACTIONS} from "./action";
+
+let initialState = {
+    posts: [
+        {id: 1, message: 'Hi, how are you', likeCount: 50},
+        {id: 2, message: 'It`s my first post', likeCount: 20},
+        {id: 3, message: 'Hi, how are you', likeCount: 10},
+        {id: 4, message: 'How are you', likeCount: 5},
+        {id: 5, message: 'Hi', likeCount: 50},
+    ],
+    newPostText: String,
+};
+
+const profileReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case APP_ACTIONS.ADD_POST:
+            let newPost = {
+                id: state.posts.length + 1,
+                message: state.newPostText,
+                likeCount: 0
+            };
+            state.posts.unshift(newPost);
+            state.newPostText = '';
+            return state;
+        case APP_ACTIONS.UPDATE_NEW_POST_TEXT:
+            state.newPostText = action.payload;
+            return state;
+        default:
+            return state
+    }
+}
+
+export default profileReducer
