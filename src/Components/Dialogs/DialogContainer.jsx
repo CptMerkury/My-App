@@ -1,20 +1,22 @@
 import React from "react";
-import {sendMessageCreator, updateMessageBodyCreator} from '../../store/action';
+import {sendMessageCreator, updateMessageBodyCreator} from '../../store/dialogsReducer';
 import Dialog from "./Dialog";
 
 
 const DialogsContainer = (props) => {
+    let state = props.store.getState().dialogPage;
 
     const sendNewMessage = () => {
-        props.dispatch(sendMessageCreator());
+        props.store.dispatch(sendMessageCreator());
     }
     const onMessageTextChange = (value) => {
-        props.dispatch(updateMessageBodyCreator(value))
+        props.store.dispatch(updateMessageBodyCreator(value))
     }
 
     return <Dialog
-        dataDialog={props.dataDialog}
-        textMessage={props.dataDialog.newMessageText}
+        dialogs={state.dialogs}
+        messages={state.messages}
+        textMessage={state.newMessageText}
         createMessage={sendNewMessage}
         changeHandler={onMessageTextChange}
     />

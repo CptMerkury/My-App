@@ -1,23 +1,26 @@
 import React from "react";
-import {addPostCreator, updatePostBodyCreator} from "../../../store/action";
+import {addPostCreator, updatePostBodyCreator} from "../../../store/profileReducer";
 import MyPosts from "./MyPosts";
 
 
 const MyPostsContainer = (props) => {
 
+    let state = props.store.getState().profilePage;
+
     const onCreatePost = () => {
-        props.dispatch(addPostCreator());
+        props.store.dispatch(addPostCreator());
     }
 
     const onChangeTextPost = (value) => {
-        props.dispatch(updatePostBodyCreator(value));
+        props.store.dispatch(updatePostBodyCreator(value));
     }
 
     return <MyPosts
-        posts={props.posts}
+        posts={state.posts}
+        textPost={state.newPostText}
         changeHandler={onChangeTextPost}
         createPost={onCreatePost}
-        textPost={props.newPostText}
+
     />
 }
 

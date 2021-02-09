@@ -8,7 +8,7 @@ let initialState = {
         {id: 4, message: 'How are you', likeCount: 5},
         {id: 5, message: 'Hi', likeCount: 50},
     ],
-    newPostText: String,
+    newPostText: '',
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -29,5 +29,14 @@ const profileReducer = (state = initialState, action) => {
             return state
     }
 }
+
+export const addPostCreator = () => ({
+    type: APP_ACTIONS.ADD_POST
+})
+
+export const updatePostBodyCreator = (value) => ({
+    type: APP_ACTIONS.UPDATE_NEW_POST_TEXT,
+    payload: value
+})
 
 export default profileReducer

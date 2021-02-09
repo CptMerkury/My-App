@@ -8,9 +8,7 @@ const ProfileComp = (props) => {
         <div className={classes.profileContainer}>
             <ProfileInfo/>
             <MyPostsContainer
-                posts={props.dataPosts.posts}
-                newPostText={props.dataPosts.newPostText}
-                dispatch={props.dispatch}
+                store={props.store}
             />
         </div>
     );

@@ -3,9 +3,9 @@ import Sidebar from "./Sidebar";
 
 
 const SidebarContainer = (props) => {
-
+    let state = props.store.getState();
     return <Sidebar
-        sidebarData={props.sidebarData}
+        sidebarData={state.sidebar}
     />
 }
 export default SidebarContainer
