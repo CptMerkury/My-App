@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+
 ## Clone repo :<br />
 
 After that run commant <br />
@@ -8,6 +8,8 @@ After that run commant <br />
 ### `yarn install` if you use yarn, or<br/>
 
 ### `npm install`	if you use npm
+
+## Available Scripts
 
 In the project directory, you can run:
 
