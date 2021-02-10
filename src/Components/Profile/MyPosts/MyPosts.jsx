@@ -3,7 +3,7 @@ import Posts from "./Posts/Post";
 import classes from './MyPosts.module.css';
 
 const MyPosts = (props) => {
-    const postsElement = props.posts.map(pData => <Posts message={pData.message} likeCount={pData.likeCount}/>)
+    const postsElement = props.posts.map(pData => <Posts message={pData.message} likeCount={pData.likeCount} key={pData.id}/>)
 
     const addPost = () => {
         props.createPost()
