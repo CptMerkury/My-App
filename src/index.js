@@ -12,7 +12,7 @@ export let rerenderEntireTree = () => {
         <React.StrictMode>
             <BrowserRouter>
                 <Provider store={store}>
-                    <App />
+                    <App/>
                 </Provider>
             </BrowserRouter>
         </React.StrictMode>,
