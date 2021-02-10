@@ -21,12 +21,18 @@ const profileReducer = (state = initialState, action) => {
             };
             state.posts.unshift(newPost);
             state.newPostText = '';
-            return state;
+            return {
+                ...state
+            };
         case APP_ACTIONS.UPDATE_NEW_POST_TEXT:
             state.newPostText = action.payload;
-            return state;
+            return {
+                ...state
+            };
         default:
-            return state
+            return {
+                ...state
+            }
     }
 }
 

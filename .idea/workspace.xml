@@ -2,20 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a29d8341-0448-4915-b5b1-bb9499c54fc1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_02_2021,_17_22_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_02_2021__17_22__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Dialogs/Dialog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Dialogs/Dialog.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Dialogs/DialogContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Dialogs/DialogContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/NavBar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavBar/NavBar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Profile/MyPosts/MyPostsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/MyPosts/MyPostsContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Profile/Ptofile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/Ptofile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Sidebar/SidebarContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Sidebar/SidebarContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/action.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/dialogsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/dialogsReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/profileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/profileReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/sidebarReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/sidebarReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +91,7 @@
       <workItem from="1612793775022" duration="368000" />
       <workItem from="1612802645061" duration="570000" />
       <workItem from="1612858413936" duration="15542000" />
+      <workItem from="1612938931977" duration="5601000" />
     </task>
     <servers />
   </component>

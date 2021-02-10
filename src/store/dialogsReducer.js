@@ -32,14 +32,20 @@ const dialogsReducer = (state = initialState, action) => {
             }
             state.messages.push(newMessage)
             state.newMessageText = '';
-            return state;
+            return {
+                ...state
+            };
 
         case APP_ACTIONS.UPDATE_NEW_MESSAGE_TEXT:
             state.newMessageText = action.payload;
-            return state;
+            return {
+                ...state
+            };
 
         default:
-            return state;
+            return {
+                ...state
+            };
     }
 }
 

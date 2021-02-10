@@ -10,19 +10,19 @@ import Setting from "./Components/Setting/Setting";
 import Friends from "./Components/Friends/Friends";
 import DialogContainer from "./Components/Dialogs/DialogContainer";
 
-const App = (props) => {
+const App = () => {
     return (
         <div className='app-wrapper'>
             <Header/>
-            <NavBar store={props.store}/>
+            <NavBar />
             <div className='app-wrapper-content'>
                 <Route
                     path='/profile'
-                    render={() => <Profile store={props.store}/>}
+                    render={() => <Profile />}
                 />
                 <Route
                     path='/dialogs'
-                    render={() => <DialogContainer store={props.store}/>}
+                    render={() => <DialogContainer />}
                 />
                 <Route path='/news'
                        render={() => <News/>}

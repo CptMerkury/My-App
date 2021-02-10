@@ -27,7 +27,7 @@ const NavBar = (props) => {
                 <NavLink to='/friends'>Friends</NavLink>
             </div>
             <hr/>
-            <SidebarContainer store={props.store}/>
+            <SidebarContainer/>
         </nav>
     )
 }
