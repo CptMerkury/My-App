@@ -39,6 +39,7 @@
     position: absolute;
     right: 55px;
     outline: none;
+    transition: all .15s linear;
 }
 .postField button:hover {
     background: rgba(221, 20, 61, .9);

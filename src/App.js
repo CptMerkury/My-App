@@ -7,8 +7,8 @@ import Profile from "./Components/Profile/Ptofile";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Setting from "./Components/Setting/Setting";
-import Friends from "./Components/Friends/Friends";
 import DialogContainer from "./Components/Dialogs/DialogContainer";
+import UsersContainer from "./Components/Users/UsersContainer";
 
 const App = () => {
     return (
@@ -24,6 +24,9 @@ const App = () => {
                     path='/dialogs'
                     render={() => <DialogContainer />}
                 />
+                <Route path='/users'
+                       render={() => <UsersContainer />}
+                />
                 <Route path='/news'
                        render={() => <News/>}
                 />
@@ -32,9 +35,6 @@ const App = () => {
                 />
                 <Route path='/setting'
                        render={() => <Setting/>}
-                />
-                <Route path='/friends'
-                       render={() => <Friends/>}
                 />
             </div>
         </div>

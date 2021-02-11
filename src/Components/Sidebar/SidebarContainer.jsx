@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {
     return {
-        sidebarData: state.sidebar
+        sidebar: state.sidebar
     }
 }
 

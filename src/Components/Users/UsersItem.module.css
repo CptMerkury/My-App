@@ -1,0 +1,98 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    border: 1px solid rgba(75, 80, 240, .9);
+    border-radius: 5px;
+    color: rgba(75, 80, 240, .9);
+    background: #fff;
+    padding: 15px;
+}
+
+.container + .container {
+    margin: 10px 0;
+}
+
+.usersItemBtn {
+    height: 30px;
+    width: 100px;
+    border: 1px solid rgba(75, 80, 240, .9);
+    border-radius: 5px;
+    color: rgba(75, 80, 240, .9);
+    background: #fff;
+    padding: 5px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all .15s linear;
+}
+
+.usersFollowBtn:hover {
+    color: #fff;
+    background: rgba(75, 80, 240, .8);
+}
+.usersUnfollowBtn:hover{
+    color: #fff;
+    background: rgba(221, 20, 61, .8);
+}
+
+.item {
+    min-height: 100px;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid rgba(75, 80, 240, .3);
+    border-radius: 5px;
+    color: rgba(75, 80, 240, .9);
+    padding: 15px;
+}
+
+.item p {
+    color: rgba(75, 80, 240, .9);
+}
+
+
+.item:last-child {
+    margin-bottom: 0;
+}
+
+.usersImg {
+    border-radius: 50%;
+    width: 100px;
+}
+
+.wrapper1 {
+}
+
+.wrapper2 {
+    color: crimson;
+    cursor: default;
+}
+
+.wrapper3 {
+    color: crimson;
+    cursor: default;
+}
+
+.info {
+    display: flex;
+    margin: 0 20px;
+    min-width: 100px;
+    padding: 5px 0;
+}
+
+.info p {
+    margin-left: 10px;
+}
+
+.location {
+    display: flex;
+    margin: 0 10px;
+    min-width: 100px;
+    padding: 5px 0;
+}
+
+.location p {
+    margin-left: 10px;
+}

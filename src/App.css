@@ -12,6 +12,7 @@
 
 .app-wrapper-content {
     grid-area: content;
+
 }
 
 a {
@@ -23,6 +24,11 @@ a.active {
     color: crimson;
     text-decoration: none;
 }
+
+button {
+    outline: none;
+}
+
 
 
 

@@ -9,6 +9,7 @@
 .item {
     text-align: center;
     cursor: pointer;
+    transition: all .15s linear;
 }
 
 .item img {

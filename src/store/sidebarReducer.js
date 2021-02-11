@@ -1,7 +1,7 @@
 // import {APP_ACTIONS} from "./action";
 
 let initialState = {
-    userList: [
+    friendList: [
         {id: 1, name: 'Ivan'},
         {id: 2, name: 'Dima'},
         {id: 3, name: 'Max'},
@@ -10,9 +10,7 @@ let initialState = {
 
 const sidebarReducer = (state = initialState, action) => {
 
-    return {
-        ...state
-    }
+    return state
 }
 
 export default sidebarReducer
