@@ -4,7 +4,7 @@ import {followAC, setUsersAC, unfollowAC} from "../../store/usersReducer";
 
 const mapStateToProps = (state) => {
     return {
-        usersPage: state.userPage.usersList
+        usersPage: state.userPage.users
     }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -15,8 +15,8 @@ const mapDispatchToProps = (dispatch) => {
         setUnfollow: (userID) => {
             dispatch(unfollowAC(userID))
         },
-        setUsers: async (users) => {
-            await dispatch(setUsersAC(users))
+        setUsers: (users) => {
+            dispatch(setUsersAC(users))
         }
     }
 }

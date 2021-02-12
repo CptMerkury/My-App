@@ -1,61 +1,15 @@
 import React from "react";
 import classes from "./Users.module.css"
 import classesItem from "./UsersItem.module.css"
+import * as axios from "axios";
 
 const Users = (props) => {
 
-   if (props.usersPage.length === 0){
-       props.setUsers([
-           {
-               id: 1,
-               followed: false,
-               name: 'Ivan',
-               photoUrl: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg',
-               status: 'Hi!',
-               location: {country: 'Russia', city: 'Moscow'}
-           },
-           {
-               id: 2,
-               followed: false,
-               name: 'Dmitriy',
-               photoUrl: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg',
-               status: 'On job',
-               location: {country: 'Belarus', city: 'Minsk'}
-           },
-           {
-               id: 3,
-               followed: false,
-               name: 'Max',
-               photoUrl: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg',
-               status: 'Hello darling',
-               location: {country: 'Russia', city: 'Kazan'}
-           },
-           {
-               id: 4,
-               followed: true,
-               name: 'Andrew',
-               photoUrl: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg',
-               status: 'Hello darling',
-               location: {country: 'Russia', city: 'Saints-Petersburg'}
-           },
-           {
-               id: 5,
-               followed: true,
-               name: 'Vladimir',
-               photoUrl: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg',
-               status: 'Hello darling',
-               location: {country: 'Ukraine', city: 'Kiev'}
-           },
-           {
-               id: 6,
-               followed: true,
-               name: 'Tommy',
-               photoUrl: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg',
-               status: 'USA!!! USA!!! USA!!!',
-               location: {country: 'United State', city: 'Washington'}
-           },
-       ])
-   }
+    if (props.usersPage.length < 10) {
+        axios
+            .get('https://social-network.samuraijs.com/api/1.0/users')
+            .then(response => props.setUsers(response.data.items))
+    }
 
     const setFollowHandler = (id) => {
         props.setFollow(id)
@@ -70,35 +24,47 @@ const Users = (props) => {
                 <div className={classesItem.wrapper1}>
                     <div>
                         <img className={classesItem.usersImg}
-                             src={uData.photoUrl}
+                             src={
+                                 (uData.photos.large || uData.photos.small || undefined) ?
+                                     uData.photos.large :
+                                     'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg'}
                              alt="avatar"/>
                     </div>
                     <div>
                         {uData.followed ?
                             <button
                                 className={`${classesItem.usersUnfollowBtn} ${classesItem.usersItemBtn}`}
-                                onClick={ () => setUnfollowHandler(uData.id)}
+                                onClick={() => setUnfollowHandler(uData.id)}
                             >Unfollow</button>
                             :
                             <button
                                 className={`${classesItem.usersFollowBtn} ${classesItem.usersItemBtn}`}
-                                onClick={ () => setFollowHandler(uData.id)}
+                                onClick={() => setFollowHandler(uData.id)}
                             >Follow</button>}
                     </div>
                 </div>
                 <div className={classesItem.item}>
                     <div className={classesItem.wrapper2}>
-                        <span className={classesItem.info}>User name:<p>{uData.name}</p></span>
-                        <span className={classesItem.info}>User status: <p>{uData.status}</p></span>
+                        <span className={classesItem.info}>User name:
+                            <p>{(uData.name || undefined) ? uData.name : 'Not indicated'}</p>
+                        </span>
+                        <span className={classesItem.info}>User status:
+                            <p>{(uData.status || undefined) ? uData.status : 'Not indicated'}</p>
+                        </span>
                     </div>
                     <div className={classesItem.wrapper3}>
-                        <span className={classesItem.location}>Country: <p>{uData.location.country}</p></span>
-                        <span className={classesItem.location}>City: <p>{uData.location.city}</p></span>
+                        <span className={classesItem.location}>Country:
+                            <p>{(uData.location || undefined) ? uData.location.country : 'Not indicated'}</p>
+                        </span>
+                        <span className={classesItem.location}>City:
+                            <p>{(uData.location || undefined) ? uData.location.country : 'Not indicated'}</p>
+                        </span>
                     </div>
                 </div>
             </div>
         )
     })
+
     return (
         <div className={classes.usersContainer}>
             <h2>Users</h2>
