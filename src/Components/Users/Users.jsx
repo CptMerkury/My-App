@@ -5,9 +5,11 @@ import * as axios from "axios";
 
 const Users = (props) => {
 
-    if (props.usersPage.length < 10) {
+    const BASE_URL = 'https://social-network.samuraijs.com/api/1.0/users'
+
+    const getUsers = (url) => {
         axios
-            .get('https://social-network.samuraijs.com/api/1.0/users')
+            .get(url)
             .then(response => props.setUsers(response.data.items))
     }
 
@@ -24,10 +26,8 @@ const Users = (props) => {
                 <div className={classesItem.wrapper1}>
                     <div>
                         <img className={classesItem.usersImg}
-                             src={
-                                 (uData.photos.large || uData.photos.small || undefined) ?
-                                     uData.photos.large :
-                                     'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg'}
+                             src={uData.photos.small ||
+                             'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg'}
                              alt="avatar"/>
                     </div>
                     <div>
@@ -57,7 +57,7 @@ const Users = (props) => {
                             <p>{(uData.location || undefined) ? uData.location.country : 'Not indicated'}</p>
                         </span>
                         <span className={classesItem.location}>City:
-                            <p>{(uData.location || undefined) ? uData.location.country : 'Not indicated'}</p>
+                            <p>{(uData.location || undefined) ? uData.location.city : 'Not indicated'}</p>
                         </span>
                     </div>
                 </div>
@@ -73,7 +73,11 @@ const Users = (props) => {
                     <div className={classes.usersBlock}>
                         {userItem}
                     </div>
-                    <button className={classes.usersContainerBtn}>Show More</button>
+                    <button
+                        className={classes.usersContainerBtn}
+                        onClick={() => getUsers(BASE_URL)}
+                    >Show More
+                    </button>
                 </div>
             </div>
         </div>

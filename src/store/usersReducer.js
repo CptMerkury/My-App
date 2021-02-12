@@ -10,7 +10,7 @@ let initialState = {
                 large: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg',
                 small: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg'
             },
-            status: 'It-kamasutra!!!!',
+            status: 'IT-KAMASUTRA!!!!',
             location: {country: 'Belarus', city: 'Minsk'}
         },
         {
