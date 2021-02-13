@@ -3,7 +3,8 @@
     min-height: 100%;
     padding: 20px 50px;
 }
-.usersContainer h2{
+
+.usersContainer h2 {
     font-size: 32px;
     font-weight: 100;
     color: rgba(75, 80, 240, .9);
@@ -16,7 +17,8 @@
     color: rgba(75, 80, 240, .9);
     text-align: center;
 }
-.usersContainerBtn{
+
+.usersContainerBtn {
     height: 50px;
     width: 300px;
     border: 1px solid rgba(75, 80, 240, .9);
@@ -27,13 +29,14 @@
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.usersContainerBtn:hover{
+
+.usersContainerBtn:hover {
     color: #fff;
     background: rgba(75, 80, 240, .9);
 }
 
 .users {
-    padding-top: 30px;
+    padding: 5px;
 }
 
 .usersItem {
@@ -42,4 +45,40 @@
 
 .usersBlock {
     margin-bottom: 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.paginationItem {
+    margin: 5px;
+    width: 70px;
+    height: 30px;
+    padding: 0 1%;
+    border: 1px solid rgba(75, 80, 240, .9);
+    border-radius: 5px;
+    color: rgba(75, 80, 240, .9);
+    font-size: 16px;
+    background: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.paginationBtnSelect {
+    margin: 0 5px;
+    padding: 0 1%;
+    border-radius: 5px;
+    color: rgba(75, 80, 240, .9);
+    background: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 80px;
+    height: 40px;
+    font-size: 21px;
+    border: 1px solid rgba(221, 20, 61, .7);
 }

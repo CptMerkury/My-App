@@ -4,8 +4,10 @@
     <list default="true" id="a29d8341-0448-4915-b5b1-bb9499c54fc1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/Users.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Users/Users.module.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Users/UsersClass.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/UsersClass.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/action.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/usersReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,10 +49,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Components/Users" />
+      <recent name="$PROJECT_DIR$/src/store" />
       <recent name="$PROJECT_DIR$/src/Components/Users/UsersItem" />
       <recent name="$PROJECT_DIR$/src/Components/Sidebar" />
       <recent name="$PROJECT_DIR$/src/Components/Dialogs" />
-      <recent name="$PROJECT_DIR$/src/Components/Profile/MyPosts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Components/Users" />
@@ -90,7 +92,7 @@
       <workItem from="1612938931977" duration="8697000" />
       <workItem from="1613041750360" duration="20849000" />
       <workItem from="1613130465620" duration="8764000" />
-      <workItem from="1613211610991" duration="3376000" />
+      <workItem from="1613211610991" duration="26788000" />
     </task>
     <servers />
   </component>

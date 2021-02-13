@@ -5,9 +5,21 @@ import * as axios from "axios";
 
 class Users extends React.Component {
 
-    getUsers = (url) => {
+    componentDidMount() {
         axios
-            .get(url)
+            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+            .then(response => {
+                this.props.setUsers(response.data.items)
+                this.props.setTotalCount(response.data.totalCount)
+            })
+    }
+
+    componentWillUnmount() {
+    }
+
+    getUsers = () => {
+        axios
+            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
             .then(response => this.props.setUsers(response.data.items))
     }
     setFollowHandler = (id) => {
@@ -17,17 +29,42 @@ class Users extends React.Component {
         this.props.setUnfollow(id)
     }
 
-    BASE_URL = 'https://social-network.samuraijs.com/api/1.0/users'
+    selectPage = (num) => {
+        this.props.setPage(num)
+        axios
+            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${num}&count=${this.props.pageSize}`)
+            .then(response => this.props.setUsers(response.data.items))
+    }
 
     render() {
+        const pagesCount = Math.ceil(this.props.totalCount / this.props.pageSize)
+
+        const pagesArray = new Array(pagesCount).fill(1)
+
+        const btnArray = []
+
+        pagesArray.map((btn, idx) => {
+           return btnArray.push(idx + 1)
+        })
+
+        const pagesBtn = btnArray.map((btn) => {
+            return (
+                <button
+                    className={this.props.currentPage === btn ? classes.paginationBtnSelect : classes.paginationItem}
+                    onClick={() => this.selectPage(btn)}
+                >
+                    {btn}
+                </button>
+            )
+        })
+
         const userItem = this.props.usersPage.map(uData => {
             return (
                 <div className={classesItem.container}>
                     <div className={classesItem.wrapper1}>
                         <div>
                             <img className={classesItem.usersImg}
-                                 src={uData.photos.small ||
-                                 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg'}
+                                 src={uData.photos.small || 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg'}
                                  alt="avatar"/>
                         </div>
                         <div>
@@ -64,18 +101,20 @@ class Users extends React.Component {
                 </div>
             )
         })
-
         return (
             <div className={classes.usersContainer}>
                 <h2>Users</h2>
                 <div className={classes.usersField}>
                     <div className={classes.users}>
+                        <div className={classes.pagination}>
+                            {pagesBtn}
+                        </div>
                         <div className={classes.usersBlock}>
                             {userItem}
                         </div>
                         <button
                             className={classes.usersContainerBtn}
-                            onClick={() => this.getUsers(this.BASE_URL)}
+                            onClick={() => this.getUsers()}
                         >Show More
                         </button>
                     </div>
