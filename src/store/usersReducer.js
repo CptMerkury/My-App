@@ -2,28 +2,61 @@ import {APP_ACTIONS} from "./action";
 
 let initialState = {
     users: [
-        // {
-        //     id: 1,
-        //     followed: false,
-        //     name: 'Dmitriy',
-        //     photos: {
-        //         large: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg',
-        //         small: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg'
-        //     },
-        //     status: 'IT-KAMASUTRA!!!!',
-        //     location: {country: 'Belarus', city: 'Minsk'}
-        // },
-        // {
-        //     id: 2,
-        //     followed: true,
-        //     name: 'Max',
-        //     photos: {
-        //         large: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg',
-        //         small: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg'
-        //     },
-        //     status: 'On Job!',
-        //     location: {country: 'Russia', city: 'Kazan'}
-        // }
+        {
+            id: 1,
+            followed: true,
+            name: 'Dmitriy',
+            photos: {
+                large: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg',
+                small: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg'
+            },
+            status: 'IT-KAMASUTRA!!!',
+            location: {country: 'Belarus', city: 'Minsk'}
+        },
+        {
+            id: 2,
+            followed: false,
+            name: 'Max',
+            photos: {
+                large: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg',
+                small: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg'
+            },
+            status: 'Learning...',
+            location: {country: 'Russia', city: 'Kazan'}
+        },
+        {
+            id: 3,
+            followed: true,
+            name: 'Den',
+            photos: {
+                large: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg',
+                small: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg'
+            },
+            status: 'Changed World!!!',
+            location: {country: 'Latvia', city: 'Riga'}
+        },
+        {
+            id: 4,
+            followed: true,
+            name: 'Vadim',
+            photos: {
+                large: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg',
+                small: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg'
+            },
+            status: 'Created Game!!!',
+            location: {country: 'Russia', city: 'Kazan'}
+        },
+        {
+            id: 5,
+            followed: false,
+            name: 'Tomas',
+            photos: {
+                large: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg',
+                small: 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg'
+            },
+            status: '...',
+            location: {country: 'USA', city: 'New-York'}
+        }
     ]
 };
 

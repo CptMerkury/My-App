@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a29d8341-0448-4915-b5b1-bb9499c54fc1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/Users/UsersClass.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/Users.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Users/UsersClass.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/UsersClass.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/usersReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +90,7 @@
       <workItem from="1612938931977" duration="8697000" />
       <workItem from="1613041750360" duration="20849000" />
       <workItem from="1613130465620" duration="8764000" />
-      <workItem from="1613211610991" duration="2656000" />
+      <workItem from="1613211610991" duration="3376000" />
     </task>
     <servers />
   </component>

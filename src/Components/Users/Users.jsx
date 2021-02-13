@@ -20,10 +20,6 @@ const Users = (props) => {
         props.setUnfollow(id)
     }
 
-    if (props.usersPage.length === 0){
-        getUsers(BASE_URL)
-    }
-
     const userItem = props.usersPage.map(uData => {
         return (
             <div className={classesItem.container}>

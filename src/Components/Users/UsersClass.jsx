@@ -4,15 +4,6 @@ import classesItem from "./UsersItem.module.css"
 import * as axios from "axios";
 
 class Users extends React.Component {
-    constructor(props) {
-        super(props)
-        alert('NEW')
-        if (props.usersPage.length === 0){
-            axios
-                .get('https://social-network.samuraijs.com/api/1.0/users')
-                .then(response => this.props.setUsers(response.data.items))
-        }
-    }
 
     getUsers = (url) => {
         axios
