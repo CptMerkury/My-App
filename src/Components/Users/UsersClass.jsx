@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./Users.module.css"
 import classesItem from "./UsersItem.module.css"
+import ReactPaginate from 'react-paginate';
 import * as axios from "axios";
 
 class Users extends React.Component {
@@ -17,11 +18,6 @@ class Users extends React.Component {
     componentWillUnmount() {
     }
 
-    getUsers = () => {
-        axios
-            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
-            .then(response => this.props.setUsers(response.data.items))
-    }
     setFollowHandler = (id) => {
         this.props.setFollow(id)
     }
@@ -38,25 +34,6 @@ class Users extends React.Component {
 
     render() {
         const pagesCount = Math.ceil(this.props.totalCount / this.props.pageSize)
-
-        const pagesArray = new Array(pagesCount).fill(1)
-
-        const btnArray = []
-
-        pagesArray.map((btn, idx) => {
-           return btnArray.push(idx + 1)
-        })
-
-        const pagesBtn = btnArray.map((btn) => {
-            return (
-                <button
-                    className={this.props.currentPage === btn ? classes.paginationBtnSelect : classes.paginationItem}
-                    onClick={() => this.selectPage(btn)}
-                >
-                    {btn}
-                </button>
-            )
-        })
 
         const userItem = this.props.usersPage.map(uData => {
             return (
@@ -106,17 +83,20 @@ class Users extends React.Component {
                 <h2>Users</h2>
                 <div className={classes.usersField}>
                     <div className={classes.users}>
-                        <div className={classes.pagination}>
-                            {pagesBtn}
-                        </div>
+                        <ReactPaginate
+                            previousLabel={"PREV"}
+                            nextLabel={"NEXT"}
+                            breakLabel={'...'}
+                            breakClassName={false}
+                            pageCount={pagesCount}
+                            marginPagesDisplayed={2}
+                            pageRangeDisplayed={2}
+                            onPageChange={(e) => this.selectPage(e.selected + 1)}
+                            containerClassName={classes.pagination}
+                            activeClassName={classes.paginationBtnSelect}/>
                         <div className={classes.usersBlock}>
                             {userItem}
                         </div>
-                        <button
-                            className={classes.usersContainerBtn}
-                            onClick={() => this.getUsers()}
-                        >Show More
-                        </button>
                     </div>
                 </div>
             </div>

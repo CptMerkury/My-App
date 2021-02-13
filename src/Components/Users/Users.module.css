@@ -49,36 +49,43 @@
 
 .pagination {
     display: flex;
+    height: 50px;
+    font-size: 14px;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     margin-bottom: 10px;
-}
-
-.paginationItem {
-    margin: 5px;
-    width: 70px;
-    height: 30px;
-    padding: 0 1%;
-    border: 1px solid rgba(75, 80, 240, .9);
-    border-radius: 5px;
-    color: rgba(75, 80, 240, .9);
-    font-size: 16px;
-    background: inherit;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    list-style: none;
+    outline: none;
 }
 
 .paginationBtnSelect {
-    margin: 0 5px;
-    padding: 0 1%;
-    border-radius: 5px;
-    color: rgba(75, 80, 240, .9);
-    background: inherit;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    width: 80px;
-    height: 40px;
     font-size: 21px;
-    border: 1px solid rgba(221, 20, 61, .7);
+}
+
+.pagination > li > a {
+    margin: 0 5px;
+    border: 1px solid rgba(75, 80, 240, .9);
+    border-radius: 5px;
+    padding: 5px 15px;
+    outline: none;
+    cursor: pointer;
+}
+
+.pagination > .paginationBtnSelect > a, .pagination > .paginationBtnSelect > span, .pagination > .paginationBtnSelect > a:hover, .pagination > .paginationBtnSelect > span:hover, .pagination > .paginationBtnSelect > a:focus, .pagination > .paginationBtnSelect > span:focus {
+    background-color: rgba(75, 80, 240, .9);
+    color: #fff;
+    border: 1px solid rgba(75, 80, 240, .9);
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span {
+    border-radius: 5px;
+    color: rgba(75, 80, 240, .5);
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span {
+    border-radius: 5px;
 }
