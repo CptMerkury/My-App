@@ -1,0 +1,79 @@
+.userInfoWrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    border: 1px solid rgba(75, 80, 240, .9);
+    border-radius: 5px;
+    color: rgba(75, 80, 240, .9);
+    background: #fff;
+    padding: 15px;
+}
+
+.userInfoWrapper + .userInfoWrapper {
+    margin: 10px 0;
+}
+
+.userSubscribeBtn {
+    height: 30px;
+    width: 100px;
+    border: 1px solid rgba(75, 80, 240, .9);
+    border-radius: 5px;
+    color: rgba(75, 80, 240, .9);
+    background: #fff;
+    padding: 5px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all .15s linear;
+}
+
+.followBtn:hover {
+    color: #fff;
+    background: rgba(75, 80, 240, .8);
+}
+
+.unFollowBtn:hover {
+    color: #fff;
+    background: rgba(221, 20, 61, .8);
+}
+
+.userInfoContainer {
+    min-height: 100px;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid rgba(75, 80, 240, .3);
+    border-radius: 5px;
+    color: rgba(221, 20, 61, .8);
+    padding: 15px;
+}
+
+.infoWrapperImg {
+    border-radius: 50%;
+    width: 100px;
+}
+
+.userInfoContainer .info {
+    display: flex;
+    margin: 0 20px;
+    min-width: 100px;
+    padding: 5px 0;
+}
+
+.userInfoContainer .location {
+    display: flex;
+    margin: 0 10px;
+    min-width: 100px;
+    padding: 5px 0;
+}
+
+.info p {
+    margin-left: 10px;
+    color: rgba(75, 80, 240, .9);
+}
+
+.location p {
+    margin-left: 10px;
+    color: rgba(75, 80, 240, .9);
+}

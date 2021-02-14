@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from "../Users.module.css";
-import classesItem from "./Users.module.css";
 import ReactPaginate from "react-paginate";
 import UsersItem from "./UserItem/UserItem";
 import {Preloader} from "../../common/preloader/index";
@@ -55,8 +54,8 @@ const Users = (props) => {
                             marginPagesDisplayed={2}
                             pageRangeDisplayed={2}
                             onPageChange={(e) => props.selectPage(e.selected + 1)}
-                            containerClassName={classesItem.reactPaginate}
-                            activeClassName={classesItem.reactPaginationBtn}
+                            containerClassName={classes.reactPaginate}
+                            activeClassName={classes.reactPaginationBtn}
                         />
                         {/*<div className={classes.myPagination}>*/}
                         {/*    {pagesBtn}*/}

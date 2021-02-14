@@ -1,5 +1,5 @@
 import React from 'react'
-import classesItem from "../Users.module.css";
+import classesItem from "./Users.module.css";
 
 const UsersItem = (props) => {
     return (
