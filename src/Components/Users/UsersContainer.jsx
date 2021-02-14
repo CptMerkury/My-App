@@ -4,7 +4,7 @@ import React from "react";
 import * as axios from "axios";
 import UserItem from "./UserItem/UserItem";
 
-class UsersClass extends React.Component {
+class UsersContainer extends React.Component {
 
     componentDidMount() {
         axios
@@ -74,6 +74,4 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 }
-const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersClass)
-
-export default UsersContainer
+export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)

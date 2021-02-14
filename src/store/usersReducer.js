@@ -2,7 +2,7 @@ import {APP_ACTIONS} from "./action";
 
 let initialState = {
     users: [],
-    pageSize: 100,
+    pageSize: 5,
     totalCount: 400,
     currentPage: 1,
 };
