@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a29d8341-0448-4915-b5b1-bb9499c54fc1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/Users/UserItem/UserItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Users/Users.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Users/Users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/Users.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Users/UsersClass.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Users/UsersItem.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/UserItem/UsersItem.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/usersReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +26,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/Components/Users/UsersClass.jsx" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1a90JvXTbeGR28vrMc6ZO8qoLAl" />
   <component name="ProjectViewState">
@@ -50,11 +53,11 @@
       <recent name="$PROJECT_DIR$/src/Components/Dialogs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/Users/UserItem" />
       <recent name="$PROJECT_DIR$/src/Components/Users" />
+      <recent name="$PROJECT_DIR$/src/Components/Users/Presentation" />
       <recent name="$PROJECT_DIR$/src/Redux" />
       <recent name="$PROJECT_DIR$/src/Components" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -88,12 +91,24 @@
       <workItem from="1613041750360" duration="20849000" />
       <workItem from="1613130465620" duration="8764000" />
       <workItem from="1613211610991" duration="26897000" />
-      <workItem from="1613248512008" duration="8047000" />
+      <workItem from="1613248512008" duration="8141000" />
+      <workItem from="1613284840681" duration="6453000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

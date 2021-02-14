@@ -1,6 +1,51 @@
 import {connect} from "react-redux";
-import Users from "./UsersClass";
 import {followAC, setPageAC, setTotalCountAC, setUsersAC, unfollowAC} from "../../store/usersReducer";
+import React from "react";
+import * as axios from "axios";
+import UserItem from "./UserItem/UserItem";
+
+class UsersClass extends React.Component {
+
+    componentDidMount() {
+        axios
+            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+            .then(response => {
+                this.props.setUsers(response.data.items)
+                this.props.setTotalCount(response.data.totalCount)
+            })
+    }
+
+    componentWillUnmount() {
+    }
+
+    setFollowHandler = (id) => {
+        this.props.setFollow(id)
+    }
+    setUnfollowHandler = (id) => {
+        this.props.setUnfollow(id)
+    }
+
+    selectPage = (num) => {
+        this.props.setPage(num)
+        axios
+            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${num}&count=${this.props.pageSize}`)
+            .then(response => this.props.setUsers(response.data.items))
+    }
+
+    render() {
+        return (
+            <UserItem
+                usersPage={this.props.usersPage}
+                totalCount={this.props.totalCount}
+                pageSize={this.props.pageSize}
+                currentPage={this.props.currentPage}
+                selectPage={(num) => this.selectPage(num)}
+                setFollowHandler={(id) => this.setFollowHandler(id)}
+                setUnfollowHandler={(id) => this.setUnfollowHandler(id)}
+            />
+        )
+    }
+}
 
 const mapStateToProps = (state) => {
     return {
@@ -29,6 +74,6 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 }
-const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(Users)
+const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersClass)
 
 export default UsersContainer
