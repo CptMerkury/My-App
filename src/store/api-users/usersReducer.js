@@ -5,6 +5,7 @@ let initialState = {
     pageSize: 5,
     totalCount: 400,
     currentPage: 1,
+    isLoading: false,
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -38,17 +39,22 @@ const usersReducer = (state = initialState, action) => {
         case APP_ACTIONS.SET_USERS:
             return {
                 ...state,
-                users: action.payload
+                users: action.payload,
             };
         case APP_ACTIONS.SET_PAGE:
             return {
                 ...state,
-                currentPage: action.payload
+                currentPage: action.payload,
             };
         case APP_ACTIONS.SET_TOTAL_COUNT:
             return {
                 ...state,
                 totalCount: action.payload
+            };
+        case APP_ACTIONS.IS_FETCHING:
+            return {
+                ...state,
+                isLoading: action.payload
             };
         default:
             return state
@@ -75,6 +81,10 @@ export const setPageAC = (num) => ({
 export const setTotalCountAC = (num) => ({
     type: APP_ACTIONS.SET_TOTAL_COUNT,
     payload: num
+})
+export const toggleFetchAC = (bool) => ({
+    type: APP_ACTIONS.IS_FETCHING,
+    payload: bool
 })
 
 export default usersReducer

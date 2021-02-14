@@ -1,0 +1,12 @@
+.userLoading{
+    background-color: ghostwhite;
+    min-height: 100%;
+    padding: 20px 50px;
+}
+.spinner{
+    width: 90%;
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
