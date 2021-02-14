@@ -1,9 +1,9 @@
 import React from 'react'
-import classes from "./userSpinner.module.css";
+import classes from "./spinner.module.css";
 import spinner from '../../../assets/icons/35.svg'
 
 
-const UserSpinner = () => {
+export const Preloader = () => {
     return (
         <div className={classes.userLoading}>
             <div className={classes.spinner}>
@@ -12,5 +12,3 @@ const UserSpinner = () => {
         </div>
     )
 }
-
-export default UserSpinner

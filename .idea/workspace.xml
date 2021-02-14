@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a29d8341-0448-4915-b5b1-bb9499c54fc1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Users/UserItem/UserItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/Users/Users.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Users/UserItem/UsersItem.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/Users/Users.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Users/Users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/Users.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/api-users/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/api-users/usersReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Users/UserSpinner/UserSpinner.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Users/UserSpinner/userSpinner.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Users/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/Users/Users.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +32,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/store" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components/common/preloader" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -45,11 +42,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/common/preloader" />
       <recent name="$PROJECT_DIR$/src/store" />
       <recent name="$PROJECT_DIR$/src/Components/Users" />
       <recent name="$PROJECT_DIR$/src/Components/Users/UsersItem" />
       <recent name="$PROJECT_DIR$/src/Components/Sidebar" />
-      <recent name="$PROJECT_DIR$/src/Components/Dialogs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/store/actions" />
@@ -91,7 +88,7 @@
       <workItem from="1613130465620" duration="8764000" />
       <workItem from="1613211610991" duration="26897000" />
       <workItem from="1613248512008" duration="8141000" />
-      <workItem from="1613284840681" duration="12570000" />
+      <workItem from="1613284840681" duration="13634000" />
     </task>
     <servers />
   </component>

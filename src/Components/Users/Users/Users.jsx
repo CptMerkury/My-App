@@ -3,7 +3,7 @@ import classes from "../Users.module.css";
 import classesItem from "./Users.module.css";
 import ReactPaginate from "react-paginate";
 import UsersItem from "./UserItem/UserItem";
-import UserSpinner from "../UserSpinner/UserSpinner";
+import {Preloader} from "../../common/preloader/index";
 
 const Users = (props) => {
 
@@ -23,6 +23,7 @@ const Users = (props) => {
     //         <button
     //             className={props.currentPage === btn ? classesItem.myPaginationBtnActive : classesItem.myPaginationBtn}
     //             onClick={() => props.selectPage(btn)}
+    //             disabled={props.isLoading}
     //         >
     //             {btn}
     //         </button>
@@ -60,7 +61,7 @@ const Users = (props) => {
                         {/*<div className={classes.myPagination}>*/}
                         {/*    {pagesBtn}*/}
                         {/*</div>*/}
-                        {props.isLoading ? <UserSpinner/> : <>{userItem}</>}
+                        {props.isLoading ? <Preloader/> : <>{userItem}</>}
                     </div>
                 </div>
             </div>
