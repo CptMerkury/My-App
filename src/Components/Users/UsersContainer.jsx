@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {followAC, setPageAC, setTotalCountAC, setUsersAC, unfollowAC} from "../../store/usersReducer";
+import {followAC, setPageAC, setTotalCountAC, setUsersAC, unfollowAC} from "../../store/api-users/usersReducer";
 import React from "react";
 import * as axios from "axios";
 import UserItem from "./UserItem/UserItem";
