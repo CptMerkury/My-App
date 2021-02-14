@@ -1,14 +1,17 @@
 import React from 'react'
 import classesItem from "./Users.module.css";
+import {NavLink} from "react-router-dom";
 
 const UsersItem = (props) => {
     return (
         <div className={classesItem.userInfoWrapper}>
             <div>
                 <div>
+                    <NavLink to={'/profile/'+ props.id}>
                     <img className={classesItem.infoWrapperImg}
                          src={props.photos.small || 'https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg'}
                          alt="avatar"/>
+                    </NavLink>
                 </div>
                 <div>
                     {props.followed ?

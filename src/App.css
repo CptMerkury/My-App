@@ -21,8 +21,14 @@ a {
 }
 
 a.active {
-    color: crimson;
+    color: rgba(221, 20, 61, .7);
     text-decoration: none;
+}
+
+a:hover{
+    font-weight: bold;
+    outline: none;
+    transition: all .15s linear;
 }
 
 button {

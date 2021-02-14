@@ -1,11 +1,11 @@
 import {connect} from "react-redux";
 import {
-    followAC,
-    setPageAC,
-    setTotalCountAC,
-    setUsersAC,
-    toggleFetchAC,
-    unfollowAC
+    follow,
+    setPage,
+    setTotalCount,
+    setUsers,
+    toggleFetch,
+    unfollow
 } from "../../store/api-users/usersReducer";
 import React from "react";
 import * as axios from "axios";
@@ -28,10 +28,10 @@ class UsersContainer extends React.Component {
     }
 
     setFollowHandler = (id) => {
-        this.props.setFollow(id)
+        this.props.follow(id)
     }
     setUnfollowHandler = (id) => {
-        this.props.setUnfollow(id)
+        this.props.unfollow(id)
     }
 
     selectPage = (num) => {
@@ -71,26 +71,37 @@ const mapStateToProps = (state) => {
         isLoading: state.userPage.isLoading,
     }
 }
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setFollow: (userID) => {
-            dispatch(followAC(userID))
-        },
-        setUnfollow: (userID) => {
-            dispatch(unfollowAC(userID))
-        },
-        setUsers: (users) => {
-            dispatch(setUsersAC(users))
-        },
-        setPage: (num) => {
-            dispatch(setPageAC(num))
-        },
-        setTotalCount: (num) => {
-            dispatch(setTotalCountAC(num))
-        },
-        toggleFetch: (bool) => {
-            dispatch(toggleFetchAC(bool))
-        }
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
+
+export default connect(mapStateToProps, {
+    follow,
+    unfollow,
+    setUsers,
+    setPage,
+    setTotalCount,
+    toggleFetch
+})(UsersContainer)
+
+//Вместо mapDispatchToProps мы передаем в connect объект action creates
+//Его мы сократили до современного синтаксиса и функция connect сама обернет их функциями callback's
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         setFollow: (userID) => {
+//             dispatch(followAC(userID))
+//         },
+//         setUnfollow: (userID) => {
+//             dispatch(unfollowAC(userID))
+//         },
+//         setUsers: (users) => {
+//             dispatch(setUsersAC(users))
+//         },
+//         setPage: (num) => {
+//             dispatch(setPageAC(num))
+//         },
+//         setTotalCount: (num) => {
+//             dispatch(setTotalCountAC(num))
+//         },
+//         toggleFetch: (bool) => {
+//             dispatch(toggleFetchAC(bool))
+//         }
+//     }
+// }

@@ -3,13 +3,13 @@ import ProfileInfo from "./ProfileInfo/PtofileInfo";
 import classes from "./Profile.module.css"
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
-const ProfileComp = () => {
+const Profile = (props) => {
     return (
         <div className={classes.profileContainer}>
-            <ProfileInfo/>
+            <ProfileInfo profile={props.profile} contacts={props.contacts} status={props.status}/>
             <MyPostsContainer/>
         </div>
     );
 }
 
-export default ProfileComp
+export default Profile

@@ -60,29 +60,29 @@ const usersReducer = (state = initialState, action) => {
             return state
     }
 }
-export const followAC = (userID) => ({
+export const follow = (userID) => ({
     type: APP_ACTIONS.FOLLOW,
     payload: userID
 })
-export const unfollowAC = (userID) => ({
+export const unfollow = (userID) => ({
     type: APP_ACTIONS.UNFOLLOW,
     payload: userID
 })
 
-export const setUsersAC = (users) => ({
+export const setUsers = (users) => ({
     type: APP_ACTIONS.SET_USERS,
     payload: users
 })
 
-export const setPageAC = (num) => ({
+export const setPage = (num) => ({
     type: APP_ACTIONS.SET_PAGE,
     payload: num
 })
-export const setTotalCountAC = (num) => ({
+export const setTotalCount = (num) => ({
     type: APP_ACTIONS.SET_TOTAL_COUNT,
     payload: num
 })
-export const toggleFetchAC = (bool) => ({
+export const toggleFetch = (bool) => ({
     type: APP_ACTIONS.IS_FETCHING,
     payload: bool
 })

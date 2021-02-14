@@ -5,7 +5,6 @@ import SidebarContainer from "../Sidebar/SidebarContainer";
 
 
 const NavBar = (props) => {
-
     return (
         <nav className={classes.nav}>
             <div className={classes.item}>
