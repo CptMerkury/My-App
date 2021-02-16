@@ -46,11 +46,12 @@ const ProfileInfo = (props) => {
                         </div>
                     </div>
                     <div className={classes.jobBlock}>
-                        <div className={classes.jobDescr}>
-                            <div>{!props.profile.lookingForAJobDescription ?
-                                'Not indicated' :
-                                props.profile.lookingForAJobDescription}</div>
-                        </div>
+                        {!props.profile.lookingForAJob ?
+                            <div/> :
+                            <div className={classes.jobDescr}>
+                                <div>{props.profile.lookingForAJobDescription}</div>
+                            </div>
+                        }
                         <div className={classes.openJobStatus}>
                             <p>Open for job :<span>&nbsp;&nbsp;</span></p>
                             {props.profile.lookingForAJob ?

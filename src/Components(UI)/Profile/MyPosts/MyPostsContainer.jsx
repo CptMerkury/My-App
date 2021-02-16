@@ -1,4 +1,4 @@
-import {addPostCreator, updatePostBodyCreator} from "../../../store/api-profile/profileReducer";
+import {addPostCreator, updatePostBodyCreator} from "../../../store(BLL)/reducers/profile/profileReducer";
 import MyPosts from "./MyPosts";
 import {connect} from "react-redux";
 

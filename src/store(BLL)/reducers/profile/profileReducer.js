@@ -1,4 +1,4 @@
-import {APP_ACTIONS} from "../actions/action";
+import {APP_ACTIONS} from "../../actions/action";
 
 let initialState = {
     profile: [],

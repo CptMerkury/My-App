@@ -1,10 +1,10 @@
 import React from "react";
 import classes from "./Profile.module.css"
 import Profile from "./Ptofile";
-import * as axios from "axios";
 import {connect} from "react-redux";
-import {getStatus, setProfileData} from "../../store/api-profile/profileReducer";
+import {getStatus, setProfileData} from "../../store(BLL)/reducers/profile/profileReducer";
 import {withRouter} from "react-router";
+import {getProfile, getStatusProfile} from "../../api(DAL)/profile-api";
 
 class ProfileContainer extends React.Component {
 
@@ -15,12 +15,10 @@ class ProfileContainer extends React.Component {
             userId = 14886
         }
 
-        axios
-            .get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)
+        getProfile(userId)
             .then(response => this.props.setProfileData(response.data))
 
-        axios
-            .get(`https://social-network.samuraijs.com/api/1.0/profile/status/${userId}`)
+        getStatusProfile(userId)
             .then(response => this.props.getStatus(response.data))
 
     }
