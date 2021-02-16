@@ -4,7 +4,7 @@ import Profile from "./Ptofile";
 import {connect} from "react-redux";
 import {getStatus, setProfileData} from "../../store(BLL)/reducers/profile/profileReducer";
 import {withRouter} from "react-router";
-import {getProfile, getStatusProfile} from "../../api(DAL)/profile-api";
+import {profileAPI} from "../../api(DAL)/api";
 
 class ProfileContainer extends React.Component {
 
@@ -15,11 +15,11 @@ class ProfileContainer extends React.Component {
             userId = 14886
         }
 
-        getProfile(userId)
-            .then(response => this.props.setProfileData(response.data))
+        profileAPI.getProfile(userId)
+            .then(data => this.props.setProfileData(data))
 
-        getStatusProfile(userId)
-            .then(response => this.props.getStatus(response.data))
+        profileAPI.getStatusProfile(userId)
+            .then(data => this.props.getStatus(data))
 
     }
 

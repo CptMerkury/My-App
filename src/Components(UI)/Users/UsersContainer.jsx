@@ -9,17 +9,17 @@ import {
 } from "../../store(BLL)/reducers/users/usersReducer";
 import React from "react";
 import Users from "./Users/Users";
-import {getPage, getUsers, setFollow, setUnfollow} from "../../api(DAL)/users-api";
+import {usersAPI} from "../../api(DAL)/api";
 
 class UsersContainer extends React.Component {
 
     componentDidMount() {
         this.props.toggleFetch(true)
         //Мы сделали инкапсуляцию axios метода в файл api
-        getUsers(this.props.currentPage, this.props.pageSize)
-            .then(response => {
-                this.props.setUsers(response.data.items)
-                this.props.setTotalCount(response.data.totalCount)
+        usersAPI.getUsers(this.props.currentPage, this.props.pageSize)
+            .then(data => {
+                this.props.setUsers(data.items)
+                this.props.setTotalCount(data.totalCount)
                 this.props.toggleFetch(false)
             })
 
@@ -30,23 +30,23 @@ class UsersContainer extends React.Component {
 
     setFollowHandler = (id) => {
         //Мы сделали инкапсуляцию axios метода в файл api
-        setFollow(id).then(response => {
-            if (response.data.resultCode === 0) {
+        usersAPI.setFollow(id).then(data => {
+            if (data.resultCode === 0) {
                 this.props.follow(id)
-                console.log('Follow', response.data)
+                console.log('Follow', data)
             } else {
-                console.log('Error AXIOS', response.data)
+                console.log('Error AXIOS', data)
             }
         })
     }
     setUnfollowHandler = (id) => {
         //Мы сделали инкапсуляцию axios метода в файл api
-        setUnfollow(id).then(response => {
-            if (response.data.resultCode === 0) {
+        usersAPI.setUnfollow(id).then(data => {
+            if (data.resultCode === 0) {
                 this.props.unfollow(id)
-                console.log('Unfollow', response.data)
+                console.log('Unfollow', data)
             } else {
-                console.log('Error AXIOS', response.data)
+                console.log('Error AXIOS', data)
             }
         })
     }
@@ -55,8 +55,8 @@ class UsersContainer extends React.Component {
         this.props.setPage(num)
         this.props.toggleFetch(true)
         //Мы сделали инкапсуляцию axios метода в файл api
-        getPage(num, this.props.pageSize).then(response => {
-            this.props.setUsers(response.data.items)
+        usersAPI.getPage(num, this.props.pageSize).then(data => {
+            this.props.setUsers(data.items)
             this.props.toggleFetch(false)
         })
     }
