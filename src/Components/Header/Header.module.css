@@ -1,14 +1,59 @@
-.header {
+.headerWrapper {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: space-between;
     grid-area: header;
-    color: #fff;
+    width: 100%;
     background-color: rgba(75, 80, 240, .9);
 }
 
-.header img {
+.mediaBlock {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+}
+
+.mediaBlock img {
     width: 80px;
     margin-left: 5em;
+}
+
+.loginBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+.userName{
+    min-width: 10%;
+    padding: 0 20px;
+    color: #fff;
+}
+
+.authBtn {
+    padding: 7px 13px;
+    border-radius: 7px;
+    font-weight: 700;
+    border: none;
+    color: rgba(75, 80, 240, .9);
+    cursor: pointer;
+    transition: all .3s ease;
+
+}
+
+.authBtn:hover, .authBtn:focus {
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: rgba(221, 20, 61, .8);
+    transition: all .3s ease;
+}
+
+.authBtn:active {
+    opacity: .5;
+    border: 2px solid #fff;
+    transition: all .3s ease;
 }
 

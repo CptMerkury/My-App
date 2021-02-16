@@ -17,24 +17,50 @@
 .userSubscribeBtn {
     height: 30px;
     width: 100px;
-    border: 1px solid rgba(75, 80, 240, .9);
+    border: none;
     border-radius: 5px;
     color: rgba(75, 80, 240, .9);
     background: #fff;
     padding: 5px 15px;
     margin-top: 10px;
     cursor: pointer;
-    transition: all .15s linear;
+    transition: all .3s ease;
+}
+
+.followBtn {
+    color: #fff;
+    background: rgba(75, 80, 240, .9);
+    transition: all .3s ease;
 }
 
 .followBtn:hover {
-    color: #fff;
-    background: rgba(75, 80, 240, .8);
+    background: rgba(75, 80, 240, .7);
+    transition: all .3s ease;
+}
+
+.followBtn:active {
+    color: rgba(75, 80, 240, .5);
+    background: inherit;
+    transition: all .3s ease;
+}
+
+.unFollowBtn {
+    border: 1px solid rgba(75, 80, 240, .9);
+    transition: all .3s ease;
 }
 
 .unFollowBtn:hover {
+    border: 1px solid rgba(221, 20, 61, .1);
     color: #fff;
-    background: rgba(221, 20, 61, .8);
+    background: rgba(221, 20, 61, .7);
+    transition: all .3s ease;
+}
+
+.unFollowBtn:active {
+    border: 1px solid rgba(221, 20, 61, .1);
+    color: rgba(221, 20, 61, .8);
+    background: inherit;
+    transition: all .3s ease;
 }
 
 .userInfoContainer {

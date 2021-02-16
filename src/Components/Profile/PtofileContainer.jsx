@@ -26,7 +26,6 @@ class ProfileContainer extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             <div className={classes.profileContainer}>
                 <Profile {...this.props}
@@ -43,7 +42,8 @@ const mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
     status: state.profilePage.status,
 })
-
+// Используем withRouter чтобы обернуть контейнерную компоненту
+// в другую контейнерную компоненту и передать в нее данные состояния uri
 const ProfileWithUrlData = withRouter(ProfileContainer)
 
 export default connect(mapStateToProps, {

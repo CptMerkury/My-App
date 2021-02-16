@@ -34,7 +34,8 @@
 /* Status block */
 
 .statusBlock {
-    width: 20%;
+    min-width: 20%;
+    max-width: 60%;
     margin-left: 35px;
 }
 
@@ -137,15 +138,16 @@
 }
 
 .nameBlock{
-    min-height: 50px;
     margin-top: 10px;
     margin-left: 20%;
+    margin-bottom: 15px;
     width: 80%;
     text-align: center;
     color: #fff;
 }
 
 .nameBlock h4{
+    min-height: 40px;
     background-color: rgba(75, 80, 240, .9);
     border-radius: 10px;
     padding: 5px;

@@ -15,30 +15,60 @@ class UsersContainer extends React.Component {
 
     componentDidMount() {
         this.props.toggleFetch(true)
-        axios
-            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`, {
+            withCredentials: true
+        })
             .then(response => {
                 this.props.setUsers(response.data.items)
                 this.props.setTotalCount(response.data.totalCount)
                 this.props.toggleFetch(false)
             })
+
     }
 
     componentWillUnmount() {
     }
 
     setFollowHandler = (id) => {
-        this.props.follow(id)
+        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${id}`, null, {
+            withCredentials: true,
+            headers: {
+                'API-KEY': '3a48cb66-64d9-4e3b-a80f-5d88883726bc'
+            }
+        })
+            .then(response => {
+                if (response.data.resultCode === 0) {
+                    this.props.follow(id)
+                    console.log('Follow')
+                } else {
+                    console.log('Error', response.data)
+                }
+            })
     }
     setUnfollowHandler = (id) => {
-        this.props.unfollow(id)
+        axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${id}`, {
+            withCredentials: true,
+            headers: {
+                'API-KEY': '3a48cb66-64d9-4e3b-a80f-5d88883726bc'
+            }
+        })
+            .then(response => {
+                if (response.data.resultCode === 0) {
+                    this.props.unfollow(id)
+                    console.log('Unfollow')
+                } else {
+                    console.log('Error', response.data)
+                }
+            })
     }
 
     selectPage = (num) => {
         this.props.setPage(num)
         this.props.toggleFetch(true)
         axios
-            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${num}&count=${this.props.pageSize}`)
+            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${num}&count=${this.props.pageSize}`, {
+                withCredentials: true
+            })
             .then(response => {
                 this.props.setUsers(response.data.items)
                 this.props.toggleFetch(false)
@@ -82,7 +112,10 @@ export default connect(mapStateToProps, {
 })(UsersContainer)
 
 //Вместо mapDispatchToProps мы передаем в connect объект action creates
-//Его мы сократили до современного синтаксиса и функция connect сама обернет их функциями callback's
+//чтобы сократить код до современного синтаксиса,
+//функция connect сама обернет dispatch в callback's
+
+// тоже самое :
 // const mapDispatchToProps = (dispatch) => {
 //     return {
 //         setFollow: (userID) => {

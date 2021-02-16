@@ -61,6 +61,7 @@ const usersReducer = (state = initialState, action) => {
     }
 }
 export const follow = (userID) => ({
+    //required параметр type
     type: APP_ACTIONS.FOLLOW,
     payload: userID
 })

@@ -3,18 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="a29d8341-0448-4915-b5b1-bb9499c54fc1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/NavBar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavBar/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/ProfileInfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/ProfileInfo.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/PtofileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/PtofileInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Profile/Ptofile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/Ptofile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/PtofileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/PtofileContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Users/Users/UserItem/UserItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/Users/UserItem/UserItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Users/Users/UserItem/Users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/Users/UserItem/Users.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/common/preloader/spinner.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/preloader/spinner.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/actions/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/api-profile/profileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/api-profile/profileReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/api-users/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/api-users/usersReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components/Profile" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components/Header" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -52,11 +51,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/Header" />
+      <recent name="$PROJECT_DIR$/src/store" />
       <recent name="$PROJECT_DIR$/src/Components/Profile" />
       <recent name="$PROJECT_DIR$/src/Components/common/preloader" />
-      <recent name="$PROJECT_DIR$/src/store" />
       <recent name="$PROJECT_DIR$/src/Components/Users" />
-      <recent name="$PROJECT_DIR$/src/Components/Users/UsersItem" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Components/Users/Users/UserItem" />
@@ -98,7 +97,8 @@
       <workItem from="1613130465620" duration="8764000" />
       <workItem from="1613211610991" duration="26897000" />
       <workItem from="1613248512008" duration="8141000" />
-      <workItem from="1613284840681" duration="37174000" />
+      <workItem from="1613284840681" duration="37394000" />
+      <workItem from="1613397114706" duration="12809000" />
     </task>
     <servers />
   </component>
@@ -115,6 +115,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
