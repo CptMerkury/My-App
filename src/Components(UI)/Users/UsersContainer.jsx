@@ -4,6 +4,7 @@ import {
     setPage,
     setTotalCount,
     setUsers,
+    toggleDisabledBtn,
     toggleFetch,
     unfollow
 } from "../../store(BLL)/reducers/users/usersReducer";
@@ -29,22 +30,26 @@ class UsersContainer extends React.Component {
     }
 
     setFollowHandler = (id) => {
+        this.props.toggleDisabledBtn(true, id)
         //Мы сделали инкапсуляцию axios метода в файл api
         usersAPI.setFollow(id).then(data => {
             if (data.resultCode === 0) {
                 this.props.follow(id)
                 console.log('Follow', data)
+                this.props.toggleDisabledBtn(false, id)
             } else {
                 console.log('Error AXIOS', data)
             }
         })
     }
     setUnfollowHandler = (id) => {
+        this.props.toggleDisabledBtn(true, id)
         //Мы сделали инкапсуляцию axios метода в файл api
         usersAPI.setUnfollow(id).then(data => {
             if (data.resultCode === 0) {
                 this.props.unfollow(id)
                 console.log('Unfollow', data)
+                this.props.toggleDisabledBtn(false, id)
             } else {
                 console.log('Error AXIOS', data)
             }
@@ -74,6 +79,7 @@ class UsersContainer extends React.Component {
                 setUnfollowHandler={(id) => this.setUnfollowHandler(id)}
 
                 isLoading={this.props.isLoading}
+                isDisabled={this.props.isDisabledBtn}
             />
         )
     }
@@ -87,6 +93,7 @@ const mapStateToProps = (state) => {
         totalCount: state.userPage.totalCount,
         currentPage: state.userPage.currentPage,
         isLoading: state.userPage.isLoading,
+        isDisabledBtn: state.userPage.isDisabledBtn
     }
 }
 
@@ -96,7 +103,8 @@ export default connect(mapStateToProps, {
     setUsers,
     setPage,
     setTotalCount,
-    toggleFetch
+    toggleFetch,
+    toggleDisabledBtn
 })(UsersContainer)
 
 //Вместо mapDispatchToProps мы передаем в connect объект action creates

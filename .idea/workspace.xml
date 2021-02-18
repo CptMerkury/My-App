@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a29d8341-0448-4915-b5b1-bb9499c54fc1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_02_2021,_17_22_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_02_2021__17_22__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Profile/PtofileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components(UI)/Profile/PtofileContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Users/Users/UserItem/UserItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components(UI)/Users/Users/UserItem/UserItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Users/Users/UserItem/Users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components(UI)/Users/Users/UserItem/Users.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Users/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components(UI)/Users/Users/Users.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components(UI)/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components(UI)/Users/UsersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api(DAL)/profile-api.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api(DAL)/users-api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api(DAL)/instance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api(DAL)/instance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store(BLL)/actions/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store(BLL)/actions/action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store(BLL)/reducers/users/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store(BLL)/reducers/users/usersReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +98,8 @@
       <workItem from="1613397114706" duration="13059000" />
       <workItem from="1613464366295" duration="116000" />
       <workItem from="1613466890220" duration="3670000" />
-      <workItem from="1613500023612" duration="1763000" />
+      <workItem from="1613500023612" duration="2050000" />
+      <workItem from="1613651809047" duration="3926000" />
     </task>
     <servers />
   </component>

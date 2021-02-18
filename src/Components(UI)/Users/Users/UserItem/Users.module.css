@@ -103,3 +103,8 @@
     margin-left: 10px;
     color: rgba(75, 80, 240, .9);
 }
+
+.userSubscribeBtn:disabled {
+    background: rgba(50, 50, 50, .4);
+    color: #fff;
+}

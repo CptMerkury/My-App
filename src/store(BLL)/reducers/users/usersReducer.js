@@ -6,6 +6,7 @@ let initialState = {
     totalCount: 400,
     currentPage: 1,
     isLoading: false,
+    isDisabledBtn: [],
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -56,6 +57,14 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 isLoading: action.payload
             };
+        case APP_ACTIONS.IS_DISABLED_BTN:
+            return {
+                ...state,
+                isDisabledBtn: action.payload
+                    ? [...state.isDisabledBtn, action.userId]
+                    //метод filter вернет нам новый массив, в котором удалит тот id, который мы передали
+                    : state.isDisabledBtn.filter(id => id !== action.userId)
+            };
         default:
             return state
     }
@@ -86,6 +95,11 @@ export const setTotalCount = (num) => ({
 export const toggleFetch = (bool) => ({
     type: APP_ACTIONS.IS_FETCHING,
     payload: bool
+})
+export const toggleDisabledBtn = (bool, id) => ({
+    type: APP_ACTIONS.IS_DISABLED_BTN,
+    payload: bool,
+    userId: id,
 })
 
 export default usersReducer

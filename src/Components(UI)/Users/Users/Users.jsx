@@ -38,6 +38,7 @@ const Users = (props) => {
         id={uData.id}
         setUnfollowHandler={(id) => props.setUnfollowHandler(id)}
         setFollowHandler={(id) => props.setFollowHandler(id)}
+        isDisabled={props.isDisabled}
         key={uData.id}/>)
 
     return (

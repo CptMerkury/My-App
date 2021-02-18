@@ -6,6 +6,6 @@ export const instance = axios.create({
     withCredentials: true,
     headers: {
         //мы добавляем в headers api-key, чтобы сервер мог понять кто обращается к серверу.
-        'API-KEY': '3a48cb66-64d9-4e3b-a80f-5d88883726bc'
+        'API-KEY': '362b278f-c4ca-440b-be1b-b8d0336b86ac'
     }
 })

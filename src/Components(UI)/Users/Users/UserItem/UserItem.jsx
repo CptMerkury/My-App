@@ -18,11 +18,15 @@ const UsersItem = (props) => {
                         <button
                             className={`${classesItem.unFollowBtn} ${classesItem.userSubscribeBtn}`}
                             onClick={() => props.setUnfollowHandler(props.id)}
+                            //метод some вернет на true если id находится в массиве
+                            disabled={props.isDisabled.some(id => id === props.id)}
                         >Unfollow</button>
                         :
                         <button
                             className={`${classesItem.followBtn} ${classesItem.userSubscribeBtn}`}
+                            //метод some вернет на true если id находится в массиве
                             onClick={() => props.setFollowHandler(props.id)}
+                            disabled={props.isDisabled.some(id => id === props.id)}
                         >Follow</button>}
                 </div>
             </div>
