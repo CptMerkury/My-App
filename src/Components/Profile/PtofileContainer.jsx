@@ -2,9 +2,8 @@ import React from "react";
 import classes from "./Profile.module.css"
 import Profile from "./Ptofile";
 import {connect} from "react-redux";
-import {getStatus, setProfileData} from "../../store(BLL)/reducers/profile/profileReducer";
 import {withRouter} from "react-router";
-import {profileAPI} from "../../api(DAL)/api";
+import {getProfileThunkCreator, getStatusThunkCreator} from "../../store/redux-thunk/profile-thunk";
 
 class ProfileContainer extends React.Component {
 
@@ -15,12 +14,9 @@ class ProfileContainer extends React.Component {
             userId = 14886
         }
 
-        profileAPI.getProfile(userId)
-            .then(data => this.props.setProfileData(data))
+        this.props.getProfileThunkCreator(userId)
 
-        profileAPI.getStatusProfile(userId)
-            .then(data => this.props.getStatus(data))
-
+        this.props.getStatusThunkCreator(userId)
     }
 
     render() {
@@ -45,6 +41,6 @@ const mapStateToProps = (state) => ({
 const ProfileWithUrlData = withRouter(ProfileContainer)
 
 export default connect(mapStateToProps, {
-    setProfileData,
-    getStatus,
+    getProfileThunkCreator,
+    getStatusThunkCreator,
 })(ProfileWithUrlData)

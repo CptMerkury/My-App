@@ -1,14 +1,14 @@
 import React from 'react';
 import {Route} from "react-router-dom";
 import './App.css';
-import NavBar from "./Components(UI)/NavBar/NavBar.jsx";
-import News from "./Components(UI)/News/News";
-import Music from "./Components(UI)/Music/Music";
-import Setting from "./Components(UI)/Setting/Setting";
-import DialogContainer from "./Components(UI)/Dialogs/DialogContainer";
-import UsersContainer from "./Components(UI)/Users/UsersContainer";
-import ProfileContainer from "./Components(UI)/Profile/PtofileContainer";
-import HeaderContainer from "./Components(UI)/Header/HeaderContainer";
+import NavBar from "./Components/NavBar/NavBar.jsx";
+import News from "./Components/News/News";
+import Music from "./Components/Music/Music";
+import Setting from "./Components/Setting/Setting";
+import DialogContainer from "./Components/Dialogs/DialogContainer";
+import UsersContainer from "./Components/Users/UsersContainer";
+import ProfileContainer from "./Components/Profile/PtofileContainer";
+import HeaderContainer from "./Components/Header/HeaderContainer";
 
 const App = () => {
     return (

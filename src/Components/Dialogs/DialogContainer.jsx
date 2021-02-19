@@ -1,4 +1,4 @@
-import {sendMessageCreator, updateMessageBodyCreator} from '../../store(BLL)/reducers/dialogs/dialogsReducer';
+import {sendMessageCreator, updateMessageBodyCreator} from '../../store/reducers/dialogs/dialogsReducer';
 import Dialog from "./Dialog";
 import {connect} from "react-redux";
 

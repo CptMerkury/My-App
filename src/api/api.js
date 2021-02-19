@@ -50,3 +50,13 @@ export const profileAPI = {
             })
     }
 }
+
+export const authAPI = {
+    checkAuth() {
+        return instance
+            .get('/auth/me')
+            .then(response => {
+                return response.data
+            })
+    }
+}

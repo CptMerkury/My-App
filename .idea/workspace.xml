@@ -3,13 +3,57 @@
   <component name="ChangeListManager">
     <list default="true" id="a29d8341-0448-4915-b5b1-bb9499c54fc1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Users/Users/UserItem/UserItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components(UI)/Users/Users/UserItem/UserItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Users/Users/UserItem/Users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components(UI)/Users/Users/UserItem/Users.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Users/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components(UI)/Users/Users/Users.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components(UI)/Users/UsersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api(DAL)/instance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api(DAL)/instance.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store(BLL)/actions/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store(BLL)/actions/action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store(BLL)/reducers/users/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store(BLL)/reducers/users/usersReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Dialogs/Dialog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Dialogs/Dialog.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Dialogs/Dialog.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Dialogs/Dialog.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Dialogs/DialogContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Dialogs/DialogContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Dialogs/DialogItem/DialogItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Dialogs/DialogItem/DialogItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Dialogs/MessageItem/MessageItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Dialogs/MessageItem/MessageItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/HeaderContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Music/Music.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Music/Music.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Music/Music.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Music/Music.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/NavBar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavBar/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/NavBar/NavBar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavBar/NavBar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/News/News.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/News/News.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/News/News.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/News/News.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Profile/MyPosts/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/MyPosts/MyPosts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Profile/MyPosts/MyPosts.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/MyPosts/MyPosts.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Profile/MyPosts/MyPostsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/MyPosts/MyPostsContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Profile/MyPosts/Posts/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/MyPosts/Posts/Post.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Profile/MyPosts/Posts/Post.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/MyPosts/Posts/Post.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Profile/Profile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/Profile.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Profile/ProfileInfo/ProfileInfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/ProfileInfo.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Profile/ProfileInfo/PtofileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/PtofileInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Profile/Ptofile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/Ptofile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Profile/PtofileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/PtofileContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Setting/Setting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Setting/Setting.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Setting/Setting.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Setting/Setting.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Sidebar/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Sidebar/Sidebar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Sidebar/SidebarContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Sidebar/SidebarContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Sidebar/SidebarItem/sidebarFriends.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Sidebar/SidebarItem/sidebarFriends.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Users/Users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/Users.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Users/Users/UserItem/UserItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/Users/UserItem/UserItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Users/Users/UserItem/Users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/Users/UserItem/Users.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Users/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/Users/Users.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/common/preloader/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/preloader/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components(UI)/common/preloader/spinner.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/preloader/spinner.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api(DAL)/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api(DAL)/instance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/instance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store(BLL)/actions/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store(BLL)/local-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/local-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store(BLL)/reducers/auth/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/auth/authReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store(BLL)/reducers/dialogs/dialogsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/dialogs/dialogsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store(BLL)/reducers/profile/profileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/profile/profileReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store(BLL)/reducers/sidebar/sidebarReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/sidebar/sidebarReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store(BLL)/reducers/users/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/users/usersReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store(BLL)/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +143,7 @@
       <workItem from="1613464366295" duration="116000" />
       <workItem from="1613466890220" duration="3670000" />
       <workItem from="1613500023612" duration="2050000" />
-      <workItem from="1613651809047" duration="3926000" />
+      <workItem from="1613651809047" duration="9641000" />
     </task>
     <servers />
   </component>
