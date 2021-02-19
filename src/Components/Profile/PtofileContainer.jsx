@@ -3,7 +3,7 @@ import classes from "./Profile.module.css"
 import Profile from "./Ptofile";
 import {connect} from "react-redux";
 import {withRouter} from "react-router";
-import {getProfileThunkCreator, getStatusThunkCreator} from "../../store/redux-thunk/profile-thunk";
+import {getProfileThunkCreator, getStatusThunkCreator} from "../../store/thunk/profile";
 
 class ProfileContainer extends React.Component {
 

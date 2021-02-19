@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import {connect} from "react-redux";
-import {checkAuthThunkCreator} from "../../store/redux-thunk/auth-thunk";
+import {checkAuthThunkCreator} from "../../store/thunk/auth";
 
 class HeaderContainer extends React.Component {
     componentDidMount() {

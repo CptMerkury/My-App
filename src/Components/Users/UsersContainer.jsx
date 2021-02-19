@@ -6,7 +6,7 @@ import {
     getUsersThunkCreator,
     setFollowThunkCreator,
     setUnfollowThunkCreator
-} from "../../store/redux-thunk/users-thunk";
+} from "../../store/thunk/users";
 
 class UsersContainer extends React.Component {
 

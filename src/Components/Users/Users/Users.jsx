@@ -52,8 +52,8 @@ const Users = (props) => {
                             nextLabel={"NEXT"}
                             breakLabel={'...'}
                             pageCount={pagesCount}
-                            marginPagesDisplayed={2}
-                            pageRangeDisplayed={2}
+                            marginPagesDisplayed={1}
+                            pageRangeDisplayed={3}
                             onPageChange={(e) => props.selectPage(e.selected + 1)}
                             containerClassName={classes.reactPaginate}
                             activeClassName={classes.reactPaginationBtn}
