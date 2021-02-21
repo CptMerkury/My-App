@@ -1,9 +1,13 @@
 import React from "react";
+import {connect} from "react-redux";
+import { withRouter } from "react-router";
+
 import classes from "./Profile.module.css"
 import Profile from "./Ptofile";
-import {connect} from "react-redux";
-import {withRouter} from "react-router";
 import {getProfileThunkCreator, getStatusThunkCreator} from "../../store/thunk/profile";
+import withAuthRedirect from "../../HOC/authRedirect";
+import {compose} from "redux";
+
 
 class ProfileContainer extends React.Component {
 
@@ -36,11 +40,22 @@ const mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
     status: state.profilePage.status,
 })
-// Используем withRouter чтобы обернуть контейнерную компоненту
-// в другую контейнерную компоненту и передать в нее данные состояния uri
-const ProfileWithUrlData = withRouter(ProfileContainer)
 
-export default connect(mapStateToProps, {
-    getProfileThunkCreator,
-    getStatusThunkCreator,
-})(ProfileWithUrlData)
+export default compose(
+    connect(mapStateToProps, {getProfileThunkCreator, getStatusThunkCreator}),
+    withRouter,
+    withAuthRedirect
+)(ProfileContainer)
+
+// Вызов всех эти обработчиков ниже мы заменили на одну функцию compose выше
+//
+// const withAuth = withAuthRedirect(ProfileContainer)
+//
+// // Используем withRouter чтобы обернуть контейнерную компоненту
+// // в другую контейнерную компоненту и передать в нее данные состояния uri
+// const ProfileWithUrlData = withRouter(withAuth)
+//
+// export default connect(mapStateToProps, {
+//     getProfileThunkCreator,
+//     getStatusThunkCreator,
+// })(ProfileWithUrlData)

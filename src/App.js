@@ -9,25 +9,29 @@ import DialogContainer from "./Components/Dialogs/DialogContainer";
 import UsersContainer from "./Components/Users/UsersContainer";
 import ProfileContainer from "./Components/Profile/PtofileContainer";
 import HeaderContainer from "./Components/Header/HeaderContainer";
+import Login from "./Components/Login/Login";
 
 const App = () => {
     return (
         <div className='app-wrapper'>
             <HeaderContainer/>
-            <NavBar />
+            <NavBar/>
             <div className='app-wrapper-content'>
+                <Route path='/login'
+                       render={() => <Login/>}
+                />
                 <Route
                     // Указываем не обязательный параметр :userId?
                     // чтобы если не '/profile', передать в state данные о uri строке
                     path='/profile/:userId?'
-                    render={() => <ProfileContainer />}
+                    render={() => <ProfileContainer/>}
                 />
                 <Route
                     path='/dialogs'
-                    render={() => <DialogContainer />}
+                    render={() => <DialogContainer/>}
                 />
                 <Route path='/users'
-                       render={() => <UsersContainer />}
+                       render={() => <UsersContainer/>}
                 />
                 <Route path='/news'
                        render={() => <News/>}

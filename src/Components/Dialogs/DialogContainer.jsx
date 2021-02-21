@@ -1,6 +1,9 @@
+import {connect} from "react-redux";
+
 import {sendMessageCreator, updateMessageBodyCreator} from '../../store/reducers/dialogs/dialogsReducer';
 import Dialog from "./Dialog";
-import {connect} from "react-redux";
+import withAuthRedirect from "../../HOC/authRedirect";
+import {compose} from "redux";
 
 const mapStateToProps = (state) => {
     return {
@@ -20,6 +23,16 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialog)
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withAuthRedirect
+)(Dialog)
 
-export default DialogsContainer
+// Вызов всех эти обработчиков ниже мы заменили на одну функцию compose выше
+//
+// //Redirect use in HOC function
+// const withAuth = withAuthRedirect(Dialog)
+//
+// const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(withAuth)
+//
+// export default DialogsContainer

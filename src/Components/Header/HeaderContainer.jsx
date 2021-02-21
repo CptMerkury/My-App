@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Header";
 import {connect} from "react-redux";
 import {checkAuthThunkCreator} from "../../store/thunk/auth";
+import {compose} from "redux";
 
 class HeaderContainer extends React.Component {
     componentDidMount() {
@@ -21,5 +22,6 @@ const mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth,
 })
 
-
-export default connect(mapStateToProps, {checkAuthThunkCreator})(HeaderContainer)
+export default compose(
+    connect(mapStateToProps, {checkAuthThunkCreator})
+)(HeaderContainer)

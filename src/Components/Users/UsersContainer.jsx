@@ -7,6 +7,7 @@ import {
     setFollowThunkCreator,
     setUnfollowThunkCreator
 } from "../../store/thunk/users";
+import {compose} from "redux";
 
 class UsersContainer extends React.Component {
 
@@ -57,13 +58,14 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {
-    //Теперь мы предаем не actionCreator, а thunkCreator, внутри которых уже будет выполняться вся логика
-    getUsersThunkCreator,
-    getPageThunkCreator,
-    setFollowThunkCreator,
-    setUnfollowThunkCreator
-})(UsersContainer)
+export default compose(
+    connect(mapStateToProps, {
+        getUsersThunkCreator,
+        getPageThunkCreator,
+        setFollowThunkCreator,
+        setUnfollowThunkCreator
+    })
+)(UsersContainer)
 
 //Вместо mapDispatchToProps мы передаем в connect объект action creates
 //чтобы сократить код до современного синтаксиса,

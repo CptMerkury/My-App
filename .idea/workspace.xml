@@ -3,13 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a29d8341-0448-4915-b5b1-bb9499c54fc1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Dialogs/DialogContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Dialogs/DialogContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/HeaderContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/Ptofile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/Ptofile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Profile/PtofileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/PtofileContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Users/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/Users/Users.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/redux-thunk/auth-thunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunk/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/redux-thunk/profile-thunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunk/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/redux-thunk/users-thunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunk/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/instance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/instance.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components/Header" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components/Login" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -48,11 +48,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/Login" />
       <recent name="$PROJECT_DIR$/src/Components/Header" />
       <recent name="$PROJECT_DIR$/src/store" />
       <recent name="$PROJECT_DIR$/src/Components/Profile" />
       <recent name="$PROJECT_DIR$/src/Components/common/preloader" />
-      <recent name="$PROJECT_DIR$/src/Components/Users" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/store(BLL)/reducers" />
@@ -99,7 +99,13 @@
       <workItem from="1613464366295" duration="116000" />
       <workItem from="1613466890220" duration="3670000" />
       <workItem from="1613500023612" duration="2050000" />
-      <workItem from="1613651809047" duration="10625000" />
+      <workItem from="1613651809047" duration="11059000" />
+      <workItem from="1613765480473" duration="523000" />
+      <workItem from="1613819112162" duration="852000" />
+      <workItem from="1613823843561" duration="1056000" />
+      <workItem from="1613827764604" duration="578000" />
+      <workItem from="1613837877352" duration="2084000" />
+      <workItem from="1613911761990" duration="5776000" />
     </task>
     <servers />
   </component>
