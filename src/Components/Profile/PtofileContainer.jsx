@@ -5,7 +5,7 @@ import { withRouter } from "react-router";
 import classes from "./Profile.module.css"
 import Profile from "./Ptofile";
 import {getProfileThunkCreator, getStatusThunkCreator} from "../../store/thunk/profile";
-import withAuthRedirect from "../../HOC/authRedirect";
+// import withAuthRedirect from "../../HOC/authRedirect";
 import {compose} from "redux";
 
 
@@ -44,7 +44,7 @@ const mapStateToProps = (state) => ({
 export default compose(
     connect(mapStateToProps, {getProfileThunkCreator, getStatusThunkCreator}),
     withRouter,
-    withAuthRedirect
+    // withAuthRedirect
 )(ProfileContainer)
 
 // Вызов всех эти обработчиков ниже мы заменили на одну функцию compose выше

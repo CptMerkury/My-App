@@ -1,12 +1,15 @@
 .userLoading{
-    background-color: inherit;
-    min-height: 100%;
-    padding: 20px 50px;
+    max-height: 80%;
 }
-.spinner{
-    width: 90%;
+
+.spinner {
     display: flex;
-    margin-top: 50px;
     justify-content: center;
     align-items: center;
+}
+
+.spinner img {
+    min-height: 10%;
+    max-height: 80%;
+    padding: 20%;
 }

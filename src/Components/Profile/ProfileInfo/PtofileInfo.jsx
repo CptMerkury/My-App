@@ -1,6 +1,7 @@
 import React from "react";
 import classes from './ProfileInfo.module.css';
 import {Preloader} from "../../common/preloader";
+import ProfileStatus from "./ProfileStatus";
 
 
 const ProfileInfo = (props) => {
@@ -17,13 +18,7 @@ const ProfileInfo = (props) => {
                                 'https://img2-placeit-net.s3-accelerate.amazonaws.com/uploads/stage/stage_image/40597/optimized_large_thumb_stage.jpg' :
                                 props.profile.photos.large} alt="ava"/>}
                     </div>
-                    <div className={classes.statusBlock}>
-                        <div className={classes.statusDescr}>
-                            <h3>... {!props.status ? 'Not indicated' : props.status}</h3>
-                        </div>
-                        <div className={classes.bubble2}/>
-                        <div className={classes.bubble1}/>
-                    </div>
+                    <ProfileStatus status={props.status}/>
                 </div>
 
                 <div className={classes.infoBlock}>

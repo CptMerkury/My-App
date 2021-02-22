@@ -3,13 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a29d8341-0448-4915-b5b1-bb9499c54fc1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Dialogs/DialogContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Dialogs/DialogContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/HeaderContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Profile/Ptofile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/Ptofile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/ProfileInfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/ProfileInfo.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/PtofileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/PtofileInfo.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Profile/PtofileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/PtofileContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/instance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/instance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/common/preloader/spinner.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/preloader/spinner.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +105,8 @@
       <workItem from="1613827764604" duration="578000" />
       <workItem from="1613837877352" duration="2084000" />
       <workItem from="1613911761990" duration="5776000" />
+      <workItem from="1613934375514" duration="5006000" />
+      <workItem from="1613995631811" duration="4328000" />
     </task>
     <servers />
   </component>
