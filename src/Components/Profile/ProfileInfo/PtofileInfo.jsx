@@ -18,7 +18,7 @@ const ProfileInfo = (props) => {
                                 'https://img2-placeit-net.s3-accelerate.amazonaws.com/uploads/stage/stage_image/40597/optimized_large_thumb_stage.jpg' :
                                 props.profile.photos.large} alt="ava"/>}
                     </div>
-                    <ProfileStatus status={props.status}/>
+                    <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
                 </div>
 
                 <div className={classes.infoBlock}>
@@ -31,13 +31,13 @@ const ProfileInfo = (props) => {
                             <p>{!props.profile.aboutMe ? 'Not indicated' : props.profile.aboutMe}</p>
                         </div>
                         <div className={classes.linkBlock}>
-                            <a href={!props.contacts ? '#' : props.contacts.facebook}>Facebook</a>
-                            <a href={!props.contacts ? '#' : props.contacts.website}>Website</a>
-                            <a href={!props.contacts ? '#' : props.contacts.vk}>VK</a>
-                            <a href={!props.contacts ? '#' : props.contacts.twitter}>Twitter</a>
-                            <a href={!props.contacts ? '#' : props.contacts.instagram}>Instagram</a>
-                            <a href={!props.contacts ? '#' : props.contacts.github}>Github</a>
-                            <a href={!props.contacts ? '#' : props.contacts.mainLink}>mainLink</a>
+                            <a href={!props.contacts ? '#' : props.contacts.facebook} target='_blank'>Facebook</a>
+                            <a href={!props.contacts ? '#' : props.contacts.website} target='_blank'>Website</a>
+                            <a href={!props.contacts ? '#' : props.contacts.vk} target='_blank'>VK</a>
+                            <a href={!props.contacts ? '#' : props.contacts.twitter} target='_blank'>Twitter</a>
+                            <a href={!props.contacts ? '#' : props.contacts.instagram} target='_blank'>Instagram</a>
+                            <a href={!props.contacts ? '#' : props.contacts.github} target='_blank'>Github</a>
+                            <a href={!props.contacts ? '#' : props.contacts.mainLink} target='_blank'>mainLink</a>
                         </div>
                     </div>
                     <div className={classes.jobBlock}>

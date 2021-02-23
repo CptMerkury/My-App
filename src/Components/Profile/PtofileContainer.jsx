@@ -1,12 +1,12 @@
 import React from "react";
 import {connect} from "react-redux";
-import { withRouter } from "react-router";
+import {withRouter} from "react-router";
 
 import classes from "./Profile.module.css"
 import Profile from "./Ptofile";
-import {getProfileThunkCreator, getStatusThunkCreator} from "../../store/thunk/profile";
-// import withAuthRedirect from "../../HOC/authRedirect";
+import {getProfileThunkCreator, getStatusThunkCreator, setStatusThunkCreator} from "../../store/thunk/profile";
 import {compose} from "redux";
+import {Preloader} from "../common/preloader";
 
 
 class ProfileContainer extends React.Component {
@@ -17,9 +17,7 @@ class ProfileContainer extends React.Component {
         if (!userId) {
             userId = 14886
         }
-
         this.props.getProfileThunkCreator(userId)
-
         this.props.getStatusThunkCreator(userId)
     }
 
@@ -30,6 +28,7 @@ class ProfileContainer extends React.Component {
                          profile={this.props.profile}
                          contacts={this.props.profile.contacts}
                          status={this.props.status}
+                         updateStatus={this.props.setStatusThunkCreator}
                 />
             </div>
         )
@@ -42,9 +41,8 @@ const mapStateToProps = (state) => ({
 })
 
 export default compose(
-    connect(mapStateToProps, {getProfileThunkCreator, getStatusThunkCreator}),
+    connect(mapStateToProps, {getProfileThunkCreator, getStatusThunkCreator, setStatusThunkCreator}),
     withRouter,
-    // withAuthRedirect
 )(ProfileContainer)
 
 // Вызов всех эти обработчиков ниже мы заменили на одну функцию compose выше

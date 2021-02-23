@@ -48,6 +48,10 @@ export const profileAPI = {
             .then(response => {
                 return response.data
             })
+    },
+    setStatus(newStatus) {
+        return instance
+            .put('/profile/status', {status: newStatus})
     }
 }
 

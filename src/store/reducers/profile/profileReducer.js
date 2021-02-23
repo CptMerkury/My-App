@@ -2,7 +2,7 @@ import {APP_ACTIONS} from "../../actions/action";
 
 let initialState = {
     profile: [],
-    status: null,
+    status: '',
     posts: [
         {id: 1, message: 'Hi, how are you', likeCount: 50},
         {id: 2, message: 'It`s my first post', likeCount: 20},
