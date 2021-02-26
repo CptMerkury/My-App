@@ -63,4 +63,21 @@ export const authAPI = {
                 return response.data
             })
     }
+
+}
+export const logAPI = {
+    setLogout(){
+        return instance
+            .delete('/auth/login')
+            .then(response => {
+                return response.data
+            })
+    },
+    setLogin(data){
+        return instance
+            .post('/auth/login', {data})
+            .then(response => {
+                return response.data
+            })
+    }
 }

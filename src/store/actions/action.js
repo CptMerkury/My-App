@@ -17,4 +17,5 @@ export const APP_ACTIONS = {
     GET_STATUS: 'GET_STATUS',
     // authReducer
     SET_AUTH_DATA: 'SET_AUTH_DATA',
+    LOGOUT: 'LOGOUT',
 }

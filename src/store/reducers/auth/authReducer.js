@@ -17,6 +17,12 @@ const authReducer = (state = initialState, action) => {
                 isAuth: true
             };
         }
+        case APP_ACTIONS.LOGOUT : {
+            return {
+                ...state,
+                isAuth: false
+            }
+        }
         default:
             return state;
     }
@@ -25,6 +31,9 @@ const authReducer = (state = initialState, action) => {
 export const setAuthData = (id, login, email) => ({
     type: APP_ACTIONS.SET_AUTH_DATA,
     payload: {id, login, email}
+})
+export const setLogoutAC = () => ({
+    type: APP_ACTIONS.LOGOUT
 })
 
 
