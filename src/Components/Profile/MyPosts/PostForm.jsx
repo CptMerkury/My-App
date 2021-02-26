@@ -21,12 +21,4 @@ const PostReduxForm = reduxForm({
     form: 'post'
 })(PostForm)
 
-const PostField = (props) => {
-    const onSubmit = (formData) => {
-        props.setText(formData.body)
-        props.addPost()
-        formData.body = ''
-    }
-    return <PostReduxForm onSubmit={onSubmit}/>
-}
-export default PostField
+export default PostReduxForm

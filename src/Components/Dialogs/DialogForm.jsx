@@ -21,12 +21,4 @@ const DialogReduxForm = reduxForm({
     form: 'dialog'
 })(DialogForm)
 
-const DialogField = (props) => {
-    const onSubmit = (formData) => {
-        props.setText(formData.body)
-        props.addMessage()
-        formData.body = ''
-    }
-    return <DialogReduxForm onSubmit={onSubmit}/>
-}
-export default DialogField
+export default DialogReduxForm

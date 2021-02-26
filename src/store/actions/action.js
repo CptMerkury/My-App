@@ -1,9 +1,6 @@
 export const APP_ACTIONS = {
     // dialogReducer
-    ADD_POST: 'ADD_POST',
     SEND_MESSAGE: 'SEND_MESSAGE',
-    UPDATE_NEW_POST_TEXT: 'UPDATE_NEW_POST_TEXT',
-    UPDATE_NEW_MESSAGE_TEXT: 'UPDATE_NEW_MESSAGE_TEXT',
     // userReducer
     FOLLOW: 'FOLLOW',
     UNFOLLOW: 'UNFOLLOW',
@@ -13,6 +10,7 @@ export const APP_ACTIONS = {
     IS_FETCHING: 'IS_FETCHING',
     IS_DISABLED_BTN: 'IS_DISABLED_BTN',
     // profileReducer
+    ADD_POST: 'ADD_POST',
     SET_PROFILE_DATA: 'SET_PROFILE_DATA',
     GET_STATUS: 'GET_STATUS',
     // authReducer

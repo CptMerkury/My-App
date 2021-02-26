@@ -20,7 +20,6 @@ let initialState = {
         {id: 9, message: 'Hello'},
         {id: 10, message: 'Yo'},
     ],
-    newMessageText: ''
 };
 
 const dialogsReducer = (state = initialState, action) => {
@@ -28,18 +27,11 @@ const dialogsReducer = (state = initialState, action) => {
         case APP_ACTIONS.SEND_MESSAGE: {
             let newMessage = {
                 id: state.messages.length + 1,
-                message: state.newMessageText
+                message: action.payload
             }
             return {
                 ...state,
-                newMessageText: '',
                 messages: [...state.messages, newMessage]
-            };
-        }
-        case APP_ACTIONS.UPDATE_NEW_MESSAGE_TEXT: {
-            return {
-                ...state,
-                newMessageText: action.payload
             };
         }
         default:
@@ -47,12 +39,8 @@ const dialogsReducer = (state = initialState, action) => {
     }
 }
 
-export const sendMessageCreator = () => ({
-    type: APP_ACTIONS.SEND_MESSAGE
-})
-
-export const updateMessageBodyCreator = (value) => ({
-    type: APP_ACTIONS.UPDATE_NEW_MESSAGE_TEXT,
+export const sendMessageCreator = (value) => ({
+    type: APP_ACTIONS.SEND_MESSAGE,
     payload: value
 })
 
