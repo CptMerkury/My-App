@@ -12,10 +12,10 @@ const Header = (props) => {
             </header>
             <div className={classes.loginBlock}>
                 <NavLink to={'/profile'}>
-                    {props.auth ? <div className={classes.userName}>{props.login}</div> : null}
+                    {props.auth ? <div className={classes.userName}>{props.userLogin}</div> : null}
                 </NavLink>
                 {props.auth
-                    ? <button className={classes.authBtn} onClick={props.setLogout}>LOGOUT</button>
+                    ? <button className={classes.authBtn} onClick={props.logout}>LOGOUT</button>
                     : <NavLink to={'/login'}>
                         <button className={classes.authBtn}>LOGIN</button>
                     </NavLink>

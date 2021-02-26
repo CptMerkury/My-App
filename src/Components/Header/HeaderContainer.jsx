@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import {connect} from "react-redux";
-import {checkAuthThunkCreator, setLogoutThunkCreator} from "../../store/thunk/auth";
+import {checkAuthThunkCreator, signOutThunkCreator} from "../../store/thunk/auth";
 import {compose} from "redux";
 
 class HeaderContainer extends React.Component {
@@ -9,16 +9,16 @@ class HeaderContainer extends React.Component {
         this.props.checkAuthThunkCreator()
     }
 
-    setLogout() {
-        this.props.setLogoutThunkCreator()
+    signOut = () => {
+       this.props.signOutThunkCreator()
     }
 
     render() {
         return (
             <Header {...this.props}
                     auth={this.props.isAuth}
-                    login={this.props.login}
-                    setLogout={this.props.setLogout}
+                    userLogin={this.props.login}
+                    logout={this.signOut}
             />
         )
     }
@@ -31,5 +31,5 @@ const mapStateToProps = (state) => ({
 })
 
 export default compose(
-    connect(mapStateToProps, {checkAuthThunkCreator, setLogoutThunkCreator})
+    connect(mapStateToProps, {checkAuthThunkCreator, signOutThunkCreator})
 )(HeaderContainer)

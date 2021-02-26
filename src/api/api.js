@@ -11,7 +11,8 @@ export const usersAPI = {
     setFollow(id) {
         //Для POST запросов объект withCredentials нужно передавать 3-м параметром как и в PUT методе,
         // но так как мы создали instance, мы его уже не передаем
-        return instance.post(`/follow/${id}`, null)
+        return instance
+            .post(`/follow/${id}`, null)
             .then(response => {
                 return response.data
             })
@@ -63,19 +64,11 @@ export const authAPI = {
                 return response.data
             })
     }
-
 }
 export const logAPI = {
-    setLogout(){
+    signOut() {
         return instance
             .delete('/auth/login')
-            .then(response => {
-                return response.data
-            })
-    },
-    setLogin(data){
-        return instance
-            .post('/auth/login', {data})
             .then(response => {
                 return response.data
             })

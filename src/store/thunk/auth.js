@@ -1,5 +1,5 @@
-import {authAPI} from "../../api/api";
-import {setLogoutAC, setAuthData} from "../reducers/auth/authReducer";
+import {authAPI, logAPI} from "../../api/api";
+import {setAuthData, signOut} from "../reducers/auth/authReducer";
 
 export const checkAuthThunkCreator = () => {
     return (dispatch) => {
@@ -8,17 +8,20 @@ export const checkAuthThunkCreator = () => {
                 if (response.resultCode === 0) {
                     let {id, login, email} = response.data
                     dispatch(setAuthData(id, login, email))
+                }else{
+                    alert(response.data.messages)
                 }
             })
     }
 }
-export const setLogoutThunkCreator = () => {
+export const signOutThunkCreator = () => {
     return (dispatch) => {
-        authAPI.setLogout()
+        logAPI.signOut()
             .then(response => {
                 if (response.resultCode === 0) {
-                    console.log('Logout')
-                    dispatch(setLogoutAC())
+                    dispatch(signOut())
+                }else{
+                    alert(response.data.messages)
                 }
             })
     }

@@ -8,6 +8,7 @@ let initialState = {
     isLoading: false
 };
 
+
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case APP_ACTIONS.SET_AUTH_DATA: {
@@ -17,11 +18,11 @@ const authReducer = (state = initialState, action) => {
                 isAuth: true
             };
         }
-        case APP_ACTIONS.LOGOUT : {
+        case APP_ACTIONS.SIGN_OUT: {
             return {
                 ...state,
                 isAuth: false
-            }
+            };
         }
         default:
             return state;
@@ -32,9 +33,8 @@ export const setAuthData = (id, login, email) => ({
     type: APP_ACTIONS.SET_AUTH_DATA,
     payload: {id, login, email}
 })
-export const setLogoutAC = () => ({
-    type: APP_ACTIONS.LOGOUT
+export const signOut = () => ({
+    type: APP_ACTIONS.SIGN_OUT,
 })
-
 
 export default authReducer

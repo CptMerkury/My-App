@@ -6,7 +6,6 @@ import classes from "./Profile.module.css"
 import Profile from "./Ptofile";
 import {getProfileThunkCreator, getStatusThunkCreator, setStatusThunkCreator} from "../../store/thunk/profile";
 import {compose} from "redux";
-import {Preloader} from "../common/preloader";
 
 
 class ProfileContainer extends React.Component {
