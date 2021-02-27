@@ -1,6 +1,6 @@
 import {Field, reduxForm} from "redux-form";
-import {maxLength, minValue} from "../../utils/validators/validator";
-import {Textarea} from "../common/textarea";
+import {maxLength, minValue, required} from "../../utils/validators/validator";
+import {Textarea} from "../common/textarea/textarea";
 
 const maxLength200 = maxLength(200)
 const minValue1 = minValue(1)
@@ -13,7 +13,7 @@ const DialogForm = (props) => {
                        name={'body'}
                        type='text'
                        placeholder={'Write your new message'}
-                       validate={[maxLength200, minValue1]}
+                       validate={[required, maxLength200, minValue1]}
                 />
             </div>
             <div>

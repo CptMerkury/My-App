@@ -1,7 +1,7 @@
 import {Field, reduxForm} from "redux-form";
 import classes from "./ProfileInfo.module.css";
 import React from "react";
-import {maxLength, minLength, minValue, required} from "../../../utils/validators/validator";
+import {maxLength, minValue, required} from "../../../utils/validators/validator";
 import {Input} from "../../common/Input/input";
 
 const maxLength50 = maxLength(50)
@@ -17,7 +17,7 @@ const StatusForm = (props) => {
                            type='text'
                            autoFocus={true}
                            placeholder={'Change status'}
-                           validate={[maxLength50, minValue1]}
+                           validate={[required, maxLength50, minValue1]}
                     />
                 </div>
                 <div>
