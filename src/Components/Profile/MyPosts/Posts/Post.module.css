@@ -1,35 +1,43 @@
 .item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
+    justify-content: space-between;
     border: 1px solid rgba(75, 80, 240, .9);
     border-radius: 5px;
     color: rgba(75, 80, 240, .9);
     background: #fff;
-    padding: 15px;
+    padding: 10px 15px;
 }
 
 .item + .item {
     margin: 10px 0;
 }
 
-.item:last-child {
-    margin-bottom: 0;
+.ava_wrapper {
+    text-align: center;
+    padding: 5px;
 }
 
-.item img {
-    margin: 0 15px 0 0;
+.ava_item {
+    width: 100px;
     border-radius: 50%;
-    width: 90px;
 }
 
-.item p {
+.body_wrapper {
+    text-align: center;
+    padding: 5px 15px;
 }
 
-.like {
+.post_body_item {
+    width: 55vh;
+    word-wrap: break-word;
+}
+
+.like_wrapper {
+    text-align: center;
+    padding: 5px;
+}
+
+.like_item {
     color: crimson;
-    position: relative;
-    bottom: -35px;
-
 }

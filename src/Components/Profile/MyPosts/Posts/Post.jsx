@@ -4,12 +4,16 @@ import React from "react";
 const Post = (props) => {
     return (
         <div className={classes.item}>
-            <img
-                src='https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg'
-                alt="avatar"/>
-            <p>{props.message}</p>
-            <div className={classes.like}>
-                <span>like {props.likeCount}</span>
+            <div className={classes.ava_wrapper}>
+                <img className={classes.ava_item}
+                    src='https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg'
+                    alt="avatar"/>
+            </div>
+            <div className={classes.body_wrapper}>
+                <p className={classes.post_body_item}>{props.message}</p>
+            </div>
+            <div className={classes.like_wrapper}>
+                <div className={classes.like_item}>likes {props.likeCount}</div>
             </div>
         </div>
     );

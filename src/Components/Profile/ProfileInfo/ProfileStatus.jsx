@@ -1,25 +1,30 @@
 import React from 'react'
 import classes from "./ProfileInfo.module.css";
+import StatusReduxForm from "./StatusForm";
 
 class ProfileStatus extends React.Component {
     state = {
         editMode: false,
         status: this.props.status
     }
+
+    addStatus = (value) => {
+        this.setState({
+            status: value.body,
+            editMode: false,
+        })
+        this.props.updateStatus(value.body)
+    }
+
     onEditMode = () => {
         this.setState({
             editMode: true,
         })
     }
+
     offEditMode = () => {
         this.setState({
             editMode: false,
-        })
-        this.props.updateStatus(this.state.status)
-    }
-    onChangeStatus = (event) => {
-        this.setState({
-            status: event.currentTarget.value
         })
     }
 
@@ -35,18 +40,11 @@ class ProfileStatus extends React.Component {
         return (
             <div className={classes.statusBlock}>
                 {!this.state.editMode
-                    ? <div className={classes.statusDescr}>
-                        <p onClick={this.onEditMode}>{this.props.status || 'Not indicated'}</p>
+                    ? <div className={classes.statusDescr} onClick={this.onEditMode}>
+                        <p>{this.props.status || 'Not indicated'}</p>
                     </div>
-                    : <div className={classes.statusDescr}>
-                        <input
-                            onChange={this.onChangeStatus}
-                            autoFocus={true}
-                            onBlur={this.offEditMode}
-                            placeholder={'Change status'}
-                            value={this.state.status}
-                        />
-                        <button className={classes.changeStatusBtn} onClick={this.offEditMode}>Change</button>
+                    : <div onDoubleClick={this.offEditMode}>
+                        <StatusReduxForm onSubmit={this.addStatus} offEdit={this.offEditMode}/>
                     </div>
                 }
                 <div className={classes.bubble2}/>

@@ -35,9 +35,7 @@
 /* Status block */
 
 .statusBlock {
-    min-width: 20%;
-    max-width: 60%;
-    min-height: 20px;
+    max-width: 72%;
     margin-left: 35px;
 }
 
@@ -68,9 +66,6 @@
 .statusDescr {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    min-height: 30px;
-    max-height: 70px;
     position: relative;
     top: -20px;
     left: 10px;
@@ -79,6 +74,7 @@
     border: 1px solid rgba(255, 255, 255, .5);
     color: #fff;
     padding: 10px 15px;
+    cursor: pointer;
 }
 
 .statusDescr input {
@@ -103,10 +99,29 @@
 }
 
 .statusDescr .changeStatusBtn:hover {
+    background-color: rgba(75, 176, 80, .9);
+    border: 1px solid rgba(75, 176, 80, .9);
+    transition: all .3s ease;
+}
+
+.statusDescr .cancelStatusBtn {
+    margin-left: 5px;
+    border: 1px solid rgba(255, 255, 255, .9);
+    border-radius: 10px;
+    background-color: rgba(75, 80, 240, .9);
+    padding: 4px 10px;
+    color: rgba(255, 255, 255, .9);
+    cursor: pointer;
+    transition: all .3s ease;
+
+}
+
+.statusDescr .cancelStatusBtn:hover {
     background-color: rgba(221, 20, 61, .9);
     border: 1px solid rgba(221, 20, 61, .9);
     transition: all .3s ease;
 }
+
 
 /* Job Block */
 .infoBlock {

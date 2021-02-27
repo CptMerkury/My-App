@@ -1,4 +1,9 @@
 import {Field, reduxForm} from "redux-form";
+import {maxLength, minLength} from "../../../utils/validators/validator";
+import {Textarea} from "../../common/textarea";
+
+const maxLength200 = maxLength(200)
+const minLength2 = minLength(2)
 
 const PostForm = (props) => {
     return (
@@ -8,6 +13,7 @@ const PostForm = (props) => {
                        name={'body'}
                        type='text'
                        placeholder={'Add your new post'}
+                       validate={[maxLength200,minLength2]}
                 />
             </div>
             <div>
