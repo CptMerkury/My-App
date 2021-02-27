@@ -1,22 +1,23 @@
 import {Field, reduxForm} from "redux-form";
 import classes from "./ProfileInfo.module.css";
 import React from "react";
-import {maxLength, minLength, required} from "../../../utils/validators/validator";
+import {maxLength, minLength, minValue, required} from "../../../utils/validators/validator";
+import {Input} from "../../common/Input/input";
 
 const maxLength50 = maxLength(50)
-const maxLength1 = minLength(1)
+const minValue1 = minValue(1)
 
 const StatusForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div className={classes.statusDescr}>
                 <div>
-                    <Field component={'input'}
+                    <Field component={Input}
                            name={'body'}
                            type='text'
                            autoFocus={true}
                            placeholder={'Change status'}
-                           validate={[required, maxLength50, maxLength1]}
+                           validate={[maxLength50, minValue1]}
                     />
                 </div>
                 <div>

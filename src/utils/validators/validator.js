@@ -1,15 +1,10 @@
-export const required = value => {
-    if (!value) return 'error msg'
+export const required = value => (value ? undefined : 'Required')
 
-    return undefined
-}
+export const maxLength = max => value =>
+    value && value.length > max ? `Must be ${max} characters or less` : undefined
 
-export const maxLength = (max) => (value) => {
-    if (value && value.length > max) return `Max length ${max} symbols`
-    return undefined
-}
+export const minLength = min => value =>
+    value && value.length < min ? `Must be ${min} characters or more` : undefined
 
-export const minLength = (min) => (value) => {
-    if (value && value.length < min) return `Min length ${min} symbols`
-    return undefined
-}
+export const minValue = min => value =>
+    value && value < min ? `Must be at least ${min}` : undefined
