@@ -1,9 +1,9 @@
 import {APP_ACTIONS} from "../../actions/action";
 
 let initialState = {
-    id: null,
-    login: null,
+    userId: null,
     email: null,
+    login: null,
     isAuth: false,
     isLoading: false
 };
@@ -15,13 +15,6 @@ const authReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...action.payload,
-                isAuth: true
-            };
-        }
-        case APP_ACTIONS.SIGN_OUT: {
-            return {
-                ...state,
-                isAuth: false
             };
         }
         default:
@@ -29,12 +22,9 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
-export const setAuthData = (id, login, email) => ({
+export const setAuthData = (userId, email, login, isAuth) => ({
     type: APP_ACTIONS.SET_AUTH_DATA,
-    payload: {id, login, email}
-})
-export const signOut = () => ({
-    type: APP_ACTIONS.SIGN_OUT,
+    payload: {userId, email, login, isAuth}
 })
 
 export default authReducer

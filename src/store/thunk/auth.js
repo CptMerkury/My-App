@@ -1,27 +1,33 @@
-import {authAPI, logAPI} from "../../api/api";
-import {setAuthData, signOut} from "../reducers/auth/authReducer";
+import {authAPI} from "../../api/api";
+import {setAuthData} from "../reducers/auth/authReducer";
 
 export const checkAuthThunkCreator = () => {
     return (dispatch) => {
         authAPI.checkAuth()
             .then(response => {
                 if (response.resultCode === 0) {
-                    let {id, login, email} = response.data
-                    dispatch(setAuthData(id, login, email))
-                }else{
-                    alert(response.data.messages)
+                    console.log(response.resultCode)
+                    let {id, login, email, isAuth = true} = response.data
+                    dispatch(setAuthData(id, email, login, isAuth))
                 }
             })
     }
 }
 export const signOutThunkCreator = () => {
     return (dispatch) => {
-        logAPI.signOut()
+        authAPI.signOut()
             .then(response => {
                 if (response.resultCode === 0) {
-                    dispatch(signOut())
-                }else{
-                    alert(response.data.messages)
+                    dispatch(setAuthData(null, null, null,  false))}
+            })
+    }
+}
+export const signInThunkCreator = (email, password, rememberMe) => {
+    return (dispatch) => {
+        authAPI.signIn(email, password, rememberMe)
+            .then(response => {
+                if (response.resultCode === 0) {
+                    dispatch(checkAuthThunkCreator())
                 }
             })
     }

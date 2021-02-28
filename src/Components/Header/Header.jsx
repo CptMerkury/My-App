@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import classes from './Header.module.css';
 import logo from "../../logo.svg"
 import {NavLink} from "react-router-dom";
@@ -12,10 +12,10 @@ const Header = (props) => {
             </header>
             <div className={classes.loginBlock}>
                 <NavLink to={'/profile'}>
-                    {props.auth ? <div className={classes.userName}>{props.userLogin}</div> : null}
+                    {props.isAuth ? <div className={classes.userName}>{props.login}</div> : null}
                 </NavLink>
-                {props.auth
-                    ? <button className={classes.authBtn} onClick={props.logout}>LOGOUT</button>
+                {props.isAuth
+                    ? <button className={classes.authBtn} onClick={props.signOut}>LOGOUT</button>
                     : <NavLink to={'/login'}>
                         <button className={classes.authBtn}>LOGIN</button>
                     </NavLink>

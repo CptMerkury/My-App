@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.error_input{
+    border: 2px solid crimson;
+    border-radius: 10px;
+    background: rgba(255, 0, 0, .1);
+    outline: none;
+}
+
+.error_msg_light {
+    color: ghostwhite;
+    padding: 1px 5px;
+}
+.error_msg {
+    color: crimson;
+    padding: 1px 5px;
+}

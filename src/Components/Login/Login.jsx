@@ -2,28 +2,34 @@ import React from 'react'
 import classes from "./Login.module.css"
 import {Field, reduxForm} from "redux-form";
 import {required} from "../../utils/validators/validator";
-import {LoginInput} from "../common/Input/login-input";
+import {connect} from "react-redux";
+import {signInThunkCreator} from "../../store/thunk/auth";
+import {Redirect} from "react-router-dom";
+import {LoginInput, PasswordInput} from "../common/input/input";
 
 
 const LoginForm = (props) => {
-    const { error, handleSubmit, pristine, reset, submitting } = props
+    const {handleSubmit, pristine, submitting, reset} = props
     return (
         <form onSubmit={handleSubmit}>
             <div>
                 <Field
                     component={LoginInput}
-                    name={'user_login'}
-                    type='text'
-                    placeholder={'Login'}
+                    name={'email'}
                     validate={[required]}
                 />
             </div>
             <div>
-                <Field component={LoginInput} name={'user_password'} type='password' placeholder={'Password'} validate={[required]}/>
-                {error && <strong>{error}</strong>}
+                <Field component={PasswordInput}
+                       name={'password'}
+                       validate={[required]}/>
             </div>
             <div>
-                <Field component={'input'} name={'remember_me'} type="checkbox"/>Remember me
+                <Field
+                    component={'input'}
+                    name={'rememberMe'}
+                    type="checkbox"
+                />Remember me
             </div>
             <div>
                 <button type="submit" disabled={submitting}>Submit</button>
@@ -36,13 +42,19 @@ const LoginForm = (props) => {
 }
 
 const LoginReduxForm = reduxForm({
-    form: 'login'
+    form: 'login',
 })(LoginForm)
 
-const Login = () => {
+const Login = (props) => {
+
     const onSubmit = (formData) => {
-        console.log(formData)
+        props.signInThunkCreator(formData.email, formData.password, formData.rememberMe)
     }
+
+    if (props.isAuth) {
+        return <Redirect to={'/profile'}/>
+    }
+
     return (
         <div className={classes.loginContainer}>
             <h2>Login</h2>
@@ -51,4 +63,8 @@ const Login = () => {
     )
 }
 
-export default Login
+const mapStateToProps = (state) => ({
+    isAuth: state.auth.isAuth
+})
+
+export default connect(mapStateToProps, {signInThunkCreator})(Login)

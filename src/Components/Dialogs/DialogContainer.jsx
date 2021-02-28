@@ -1,9 +1,9 @@
 import {connect} from "react-redux";
+import {compose} from "redux";
 
 import {sendMessageCreator} from '../../store/reducers/dialogs/dialogsReducer';
 import Dialog from "./Dialog";
 import withAuthRedirect from "../../HOC/authRedirect";
-import {compose} from "redux";
 
 const mapStateToProps = (state) => {
     return {
@@ -20,8 +20,8 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default compose(
+    withAuthRedirect,
     connect(mapStateToProps, mapDispatchToProps),
-    withAuthRedirect
 )(Dialog)
 
 // Вызов всех эти обработчиков ниже мы заменили на одну функцию compose выше

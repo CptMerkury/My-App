@@ -2,7 +2,7 @@ import {Field, reduxForm} from "redux-form";
 import classes from "./ProfileInfo.module.css";
 import React from "react";
 import {maxLength, minValue, required} from "../../../utils/validators/validator";
-import {Input} from "../../common/Input/input";
+import {Input} from "../../common/input/input";
 
 const maxLength50 = maxLength(50)
 const minValue1 = minValue(1)

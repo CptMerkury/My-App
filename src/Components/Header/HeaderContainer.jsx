@@ -9,16 +9,10 @@ class HeaderContainer extends React.Component {
         this.props.checkAuthThunkCreator()
     }
 
-    signOut = () => {
-       this.props.signOutThunkCreator()
-    }
-
     render() {
         return (
             <Header {...this.props}
-                    auth={this.props.isAuth}
-                    userLogin={this.props.login}
-                    logout={this.signOut}
+                    signOut={this.props.signOutThunkCreator}
             />
         )
     }
