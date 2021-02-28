@@ -1,13 +1,10 @@
 import React from "react";
 import Header from "./Header";
 import {connect} from "react-redux";
-import {checkAuthThunkCreator, signOutThunkCreator} from "../../store/thunk/auth";
+import { signOutThunkCreator} from "../../store/thunk/auth";
 import {compose} from "redux";
 
 class HeaderContainer extends React.Component {
-    componentDidMount() {
-        this.props.checkAuthThunkCreator()
-    }
 
     render() {
         return (
@@ -25,5 +22,5 @@ const mapStateToProps = (state) => ({
 })
 
 export default compose(
-    connect(mapStateToProps, {checkAuthThunkCreator, signOutThunkCreator})
+    connect(mapStateToProps, {signOutThunkCreator})
 )(HeaderContainer)

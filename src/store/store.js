@@ -6,9 +6,11 @@ import usersReducer from "./reducers/users/usersReducer";
 import authReducer from "./reducers/auth/authReducer";
 import thunkMiddleware from "redux-thunk";
 import { reducer as formReducer } from 'redux-form'
+import appReducer from "./reducers/app/appReducer";
 
 //Передаем в store с помощью combineReducers все Reducer который объеденит их в один
 let reducers = combineReducers({
+    app: appReducer,
     profilePage: profileReducer,
     dialogPage: dialogsReducer,
     userPage: usersReducer,

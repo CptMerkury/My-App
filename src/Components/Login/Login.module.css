@@ -3,3 +3,10 @@
     background: ghostwhite;
     padding: 20px 50px;
 }
+
+.error_msg_summary{
+    border: 2px solid crimson;
+    color: crimson;
+    padding: 2px 5px;
+    background: rgba(255, 0, 0, .1);
+}

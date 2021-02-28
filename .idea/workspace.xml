@@ -3,22 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="a29d8341-0448-4915-b5b1-bb9499c54fc1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Dialogs/DialogContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Dialogs/DialogContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Dialogs/DialogForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Dialogs/DialogForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/HeaderContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Profile/MyPosts/PostForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/MyPosts/PostForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/StatusForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/StatusForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Login/Login.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Login/Login.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NavBar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavBar/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/MyPosts/MyPosts.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/MyPosts/MyPosts.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Profile/PtofileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/PtofileContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/common/Input/input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/input/input.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/common/Input/login-input.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/common/input/input.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/input/input.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/actions/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/auth/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/auth/authReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/thunk/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunk/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/thunk/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunk/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunk/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunk/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +131,7 @@
       <workItem from="1614337324729" duration="13735000" />
       <workItem from="1614428871122" duration="20712000" />
       <workItem from="1614503671569" duration="17000" />
-      <workItem from="1614505921161" duration="13150000" />
+      <workItem from="1614505921161" duration="21542000" />
     </task>
     <servers />
   </component>

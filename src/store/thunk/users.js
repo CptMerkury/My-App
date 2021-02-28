@@ -45,7 +45,6 @@ export const setFollowThunkCreator = (id) => {
         usersAPI.setFollow(id).then(data => {
             if (data.resultCode === 0) {
                 dispatch(follow(id))
-                console.log('Follow', data)
                 dispatch(toggleDisabledBtn(false, id))
             } else {
                 console.log('Error AXIOS', data)

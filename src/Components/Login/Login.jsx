@@ -9,7 +9,7 @@ import {LoginInput, PasswordInput} from "../common/input/input";
 
 
 const LoginForm = (props) => {
-    const {handleSubmit, pristine, submitting, reset} = props
+    const {handleSubmit, pristine, submitting, reset, error} = props
     return (
         <form onSubmit={handleSubmit}>
             <div>
@@ -31,6 +31,7 @@ const LoginForm = (props) => {
                     type="checkbox"
                 />Remember me
             </div>
+            {error ? <div className={classes.error_msg_summary}>{error}</div> : null}
             <div>
                 <button type="submit" disabled={submitting}>Submit</button>
                 <button type="button" disabled={pristine || submitting} onClick={reset}>
