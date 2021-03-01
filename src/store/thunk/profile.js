@@ -1,5 +1,5 @@
 import {profileAPI} from "../../api/api";
-import {getStatus, setProfileData} from "../reducers/profile/profileReducer";
+import {getStatus, setProfileData} from "../reducers_selectors/profile/profileReducer";
 
 export const getProfileThunkCreator = (id) => {
     return (dispatch) => {

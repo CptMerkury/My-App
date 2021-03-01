@@ -8,6 +8,13 @@ import {
     setUnfollowThunkCreator
 } from "../../store/thunk/users";
 import {compose} from "redux";
+import {
+    getUsersSelector,
+    getPageSizeSelector,
+    getUsersLengthSelector,
+    getCurrantPageSelector,
+    checkLoadingSelector, isUnUseBtnSelector,
+} from "../../store/reducers_selectors/users/usersSelectors";
 
 class UsersContainer extends React.Component {
 
@@ -47,14 +54,25 @@ class UsersContainer extends React.Component {
 
 }
 
+// const mapStateToProps = (state) => {
+//     return {
+//         usersPage: state.userPage.users,
+//         pageSize: state.userPage.pageSize,
+//         totalCount: state.userPage.totalCount,
+//         currentPage: state.userPage.currentPage,
+//         isLoading: state.userPage.isLoading,
+//         isDisabledBtn: state.userPage.isDisabledBtn
+//     }
+// }
+
 const mapStateToProps = (state) => {
     return {
-        usersPage: state.userPage.users,
-        pageSize: state.userPage.pageSize,
-        totalCount: state.userPage.totalCount,
-        currentPage: state.userPage.currentPage,
-        isLoading: state.userPage.isLoading,
-        isDisabledBtn: state.userPage.isDisabledBtn
+        usersPage: getUsersSelector(state),
+        pageSize: getPageSizeSelector(state),
+        totalCount: getUsersLengthSelector(state),
+        currentPage: getCurrantPageSelector(state),
+        isLoading: checkLoadingSelector(state),
+        isDisabledBtn: isUnUseBtnSelector(state),
     }
 }
 

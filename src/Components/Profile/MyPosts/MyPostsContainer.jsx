@@ -1,4 +1,4 @@
-import {addPostCreator} from "../../../store/reducers/profile/profileReducer";
+import {addPostCreator} from "../../../store/reducers_selectors/profile/profileReducer";
 import MyPosts from "./MyPosts";
 import {connect} from "react-redux";
 

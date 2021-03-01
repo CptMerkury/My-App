@@ -7,6 +7,12 @@ import classes from "./Profile.module.css"
 import Profile from "./Ptofile";
 import {getProfileThunkCreator, setStatusThunkCreator} from "../../store/thunk/profile";
 import withAuthRedirect from "../../HOC/authRedirect";
+import {
+    checkAuthSelector,
+    getProfileSelector,
+    getStatusSelector,
+    getUserIdSelector
+} from "../../store/reducers_selectors/profile/profileSelectors";
 
 
 class ProfileContainer extends React.Component {
@@ -32,10 +38,10 @@ class ProfileContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    profile: state.profilePage.profile,
-    status: state.profilePage.status,
-    authUserID: state.auth.userId,
-    isAuth: state.auth.isAuth
+    profile: getProfileSelector(state),
+    status: getStatusSelector(state),
+    authUserID: getUserIdSelector(state),
+    isAuth: checkAuthSelector(state)
 })
 
 export default compose(

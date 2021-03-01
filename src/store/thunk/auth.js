@@ -1,5 +1,5 @@
 import {authAPI} from "../../api/api";
-import {setAuthData} from "../reducers/auth/authReducer";
+import {setAuthData} from "../reducers_selectors/auth/authReducer";
 import {stopSubmit} from "redux-form";
 
 export const checkAuthThunkCreator = () => (dispatch) => {

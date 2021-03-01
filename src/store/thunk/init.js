@@ -1,4 +1,4 @@
-import {InitializeSuccess} from "../reducers/app/appReducer";
+import {InitializeSuccess} from "../reducers_selectors/app/appReducer";
 import {checkAuthThunkCreator} from "./auth";
 
 export const InitializeApp = () => (dispatch) => {

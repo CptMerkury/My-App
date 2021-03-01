@@ -7,7 +7,7 @@ import {
     toggleDisabledBtn,
     toggleFetch,
     unfollow
-} from "../reducers/users/usersReducer";
+} from "../reducers_selectors/users/usersReducer";
 
 
 export const getUsersThunkCreator = (currentPage, pageSize) => {
@@ -47,7 +47,7 @@ export const setFollowThunkCreator = (id) => {
                 dispatch(follow(id))
                 dispatch(toggleDisabledBtn(false, id))
             } else {
-                console.log('Error AXIOS', data)
+                console.log('Error AXIOS', data.messages)
             }
         })
     }
@@ -60,10 +60,9 @@ export const setUnfollowThunkCreator = (id) => {
         usersAPI.setUnfollow(id).then(data => {
             if (data.resultCode === 0) {
                 dispatch(unfollow(id))
-                console.log('Unfollow', data)
                 dispatch(toggleDisabledBtn(false, id))
             } else {
-                console.log('Error AXIOS', data)
+                console.log('Error AXIOS', data.messages)
             }
         })
     }
