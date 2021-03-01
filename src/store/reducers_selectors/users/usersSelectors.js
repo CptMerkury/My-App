@@ -25,7 +25,7 @@ export const isUnUseBtnSelector = (state) => {
 }
 
 // future, create this selector, he must work with all simple selectors
-// and into switch/case return all and new value from state
+// and into switch/case return all and new value from state (maybe useSelector)
 export const componentSelector = createSelector(
     [],() => {
 
