@@ -3,23 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a29d8341-0448-4915-b5b1-bb9499c54fc1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Dialogs/DialogContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Dialogs/DialogContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Profile/MyPosts/MyPostsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/MyPosts/MyPostsContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Profile/PtofileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/PtofileContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/local-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/local-store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/app/appReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers_selectors/app/appReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/auth/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers_selectors/auth/authReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/dialogs/dialogsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers_selectors/dialogs/dialogsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/profile/profileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers_selectors/profile/profileReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/sidebar/sidebarReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers_selectors/sidebar/sidebarReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/users/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers_selectors/users/usersReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunk/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunk/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunk/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunk/init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunk/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunk/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunk/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunk/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NavBar/NavBar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavBar/NavBar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/ProfileInfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/ProfileInfo.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/ProfileStatus.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +41,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/store/reducers_selectors/profile" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components/Profile/ProfileInfo" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -67,9 +53,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/Profile/ProfileInfo" />
       <recent name="$PROJECT_DIR$/src/store/reducers_selectors/profile" />
       <recent name="$PROJECT_DIR$/src/Components/common/Input" />
-      <recent name="$PROJECT_DIR$/src/Components/Profile/ProfileInfo" />
       <recent name="$PROJECT_DIR$/src/Components/Login" />
       <recent name="$PROJECT_DIR$/src/Components/Header" />
     </key>
@@ -136,6 +122,7 @@
       <workItem from="1614503671569" duration="17000" />
       <workItem from="1614505921161" duration="22530000" />
       <workItem from="1614618636968" duration="2430000" />
+      <workItem from="1614685950491" duration="6976000" />
     </task>
     <servers />
   </component>

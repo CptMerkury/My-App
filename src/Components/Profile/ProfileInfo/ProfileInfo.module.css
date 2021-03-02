@@ -42,7 +42,7 @@
 .bubble1 {
     position: relative;
     top: -20px;
-    left: -25px;
+    left: -30px;
     background-color: rgba(75, 80, 240, .7);
     border: 1px solid rgba(255, 255, 255, .5);
     color: #fff;
@@ -54,7 +54,7 @@
 .bubble2 {
     position: relative;
     top: -25px;
-    left: -10px;
+    left: -15px;
     width: 25px;
     height: 25px;
     background-color: rgba(75, 80, 240, .8);

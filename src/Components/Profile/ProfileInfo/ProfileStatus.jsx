@@ -1,57 +1,49 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import classes from "./ProfileInfo.module.css";
-import StatusReduxForm from "./StatusForm";
 
-class ProfileStatus extends React.Component {
-    state = {
-        editMode: false,
-        status: this.props.status
+const ProfileStatus = (props) => {
+
+    const [editMode, setEditMode] = useState(false)
+    const [status, setStatus] = useState(props.status)
+
+    const onEditMode = () => setEditMode(true)
+    const offEditMode = () => setEditMode(false)
+
+    const addStatus = () => {
+        setEditMode(false)
+        props.updateStatus(status)
     }
 
-    addStatus = (value) => {
-        this.setState({
-            status: value.body,
-            editMode: false,
-        })
-        this.props.updateStatus(value.body)
-    }
+    const updateTextStatus = (e) => setStatus(e.target.value)
 
-    onEditMode = () => {
-        this.setState({
-            editMode: true,
-        })
-    }
-
-    offEditMode = () => {
-        this.setState({
-            editMode: false,
-        })
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-        if (prevProps.status !== this.props.status) {
-            this.setState({
-                status: this.props.status
-            })
+    useEffect(() => {
+        if (!status) {
+            setStatus(props.status)
         }
-    }
+    }, [props.status])
 
-    render() {
-        return (
-            <div className={classes.statusBlock}>
-                {!this.state.editMode
-                    ? <div className={classes.statusDescr} onClick={this.onEditMode}>
-                        <p>{this.props.status || 'Not indicated'}</p>
+    return (
+        <div className={classes.statusBlock}>
+            {!editMode
+                ? <div className={classes.statusDescr} onClick={onEditMode}>
+                    <p>{props.status || 'Not indicated'}</p>
+                </div>
+                :
+                <div className={classes.statusDescr}>
+                    <div>
+                        <input onChange={updateTextStatus} type='text' autoFocus='true' placeholder='Change status'
+                               value={status}/>
                     </div>
-                    : <div onDoubleClick={this.offEditMode}>
-                        <StatusReduxForm onSubmit={this.addStatus} offEdit={this.offEditMode}/>
+                    <div>
+                        <button type='submit' className={classes.changeStatusBtn} onClick={addStatus}>Change</button>
+                        <button type='button' className={classes.cancelStatusBtn} onClick={offEditMode}>Cancel</button>
                     </div>
-                }
-                <div className={classes.bubble2}/>
-                <div className={classes.bubble1}/>
-            </div>
-        )
-    }
+                </div>
+            }
+            <div className={classes.bubble2}/>
+            <div className={classes.bubble1}/>
+        </div>
+    )
 }
 
 export default ProfileStatus
