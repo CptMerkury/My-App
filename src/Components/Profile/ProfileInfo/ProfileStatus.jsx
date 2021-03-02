@@ -17,9 +17,7 @@ const ProfileStatus = (props) => {
     const updateTextStatus = (e) => setStatus(e.target.value)
 
     useEffect(() => {
-        if (!status) {
             setStatus(props.status)
-        }
     }, [props.status])
 
     return (
