@@ -3,8 +3,12 @@ import Posts from "./Posts/Post";
 import classes from './MyPosts.module.css';
 import PostReduxForm from "./PostForm";
 
-const MyPosts = (props) => {
-    const postsElement = props.posts.map(pData => <Posts message={pData.message} likeCount={pData.likeCount} key={pData.id}/>)
+const MyPosts = React.memo((props) => {
+
+    // Мы используем reverse к копии массива постов, так как этот метод мутирующего типа
+    const postsElement = [...props.posts].reverse().map(pData => <Posts message={pData.message}
+                                                                        likeCount={pData.likeCount}
+                                                                        key={pData.id}/>)
 
     const addPost = (value) => {
         props.createPost(value.body)
@@ -21,6 +25,6 @@ const MyPosts = (props) => {
             </div>
         </div>
     );
-}
+})
 
 export default MyPosts

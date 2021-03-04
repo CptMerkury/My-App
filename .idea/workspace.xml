@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a29d8341-0448-4915-b5b1-bb9499c54fc1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/ProfileStatus.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/ProfileStatus.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/MyPosts/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/MyPosts/MyPosts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers_selectors/profile/profileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers_selectors/profile/profileReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +46,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
@@ -63,6 +67,69 @@
       <recent name="$PROJECT_DIR$/src/store/api-users" />
       <recent name="$PROJECT_DIR$/src/store/api-sidebar" />
     </key>
+  </component>
+  <component name="RunManager" selected="Jest.Length not should be decrement, if id not correct">
+    <configuration name="Check likes count equals 0" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/test/profileReducer.test.js" />
+      <test-names>
+        <test-name value="Check likes count equals 0" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Length not should be decrement, if id not correct" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/test/profileReducer.test.js" />
+      <test-names>
+        <test-name value="Length not should be decrement, if id not correct" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Length should be decrement" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/test/profileReducer.test.js" />
+      <test-names>
+        <test-name value="Length should be decrement" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="profileReducer.test.js" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/src/test/profileReducer.test.js" />
+      <method v="2" />
+    </configuration>
+    <configuration name="profileReducer.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/store/reducers_selectors/profile/profileReducer.js" working-dir="$PROJECT_DIR$/src/store/reducers_selectors/profile">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.Length not should be decrement, if id not correct" />
+        <item itemvalue="Jest.profileReducer.test.js" />
+        <item itemvalue="Node.js.profileReducer.js" />
+        <item itemvalue="Jest.Length should be decrement" />
+        <item itemvalue="Jest.Check likes count equals 0" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -119,7 +186,10 @@
       <workItem from="1614503671569" duration="17000" />
       <workItem from="1614505921161" duration="22530000" />
       <workItem from="1614618636968" duration="2430000" />
-      <workItem from="1614685950491" duration="7283000" />
+      <workItem from="1614685950491" duration="7458000" />
+      <workItem from="1614854516936" duration="736000" />
+      <workItem from="1614855441954" duration="47000" />
+      <workItem from="1614855509596" duration="4467000" />
     </task>
     <servers />
   </component>
