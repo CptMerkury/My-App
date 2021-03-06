@@ -1,21 +1,21 @@
+import './App.css';
 import React from 'react';
 import {Route, withRouter} from "react-router-dom";
-import './App.css';
-
 import {connect} from "react-redux";
 import {compose} from "redux";
-import {InitializeApp} from "./store/thunk/init";
 
-import {Preloader} from "./view/components/common/preloader";
-import HeaderContainer from "./view/components/Header/HeaderContainer";
-import NavBar from "./view/components/NavBar/NavBar";
-import Login from "./view/components/Login/Login";
-import ProfileContainer from "./view/components/Profile/PtofileContainer";
-import DialogContainer from "./view/components/Dialogs/DialogContainer";
-import UsersContainer from "./view/components/Users/UsersContainer";
-import News from "./view/components/News/News";
-import Music from "./view/components/Music/Music";
-import Setting from "./view/components/Setting/Setting";
+import {InitializeApp} from "./store/thunk/app/initThunk";
+
+import {Preloader} from "./components/common/preloader";
+import HeaderContainer from "./components/Header/HeaderContainer";
+import NavBar from "./components/NavBar/NavBar";
+import Login from "./components/Login/Login";
+import ProfileContainer from "./components/Profile/PtofileContainer";
+import DialogContainer from "./components/Dialogs/DialogContainer";
+import UsersContainer from "./components/Users/UsersContainer";
+import News from "./components/News/News";
+import Music from "./components/Music/Music";
+import Setting from "./components/Setting/Setting";
 
 class App extends React.Component {
     componentDidMount() {
@@ -32,33 +32,26 @@ class App extends React.Component {
                 <NavBar/>
                 <div className='app-wrapper-content'>
                     <Route path='/login'
-                           render={() => <Login/>}
-                    />
+                           render={() => <Login/>}/>
                     <Route
                         // Указываем не обязательный параметр :userId?
                         // чтобы если не '/profile', передать в state данные о uri строке
                         path='/profile/:userId?'
-                        render={() => <ProfileContainer/>}
-                    />
+                        render={() => <ProfileContainer/>}/>
                     <Route
                         path='/dialogs'
-                        render={() => <DialogContainer/>}
-                    />
+                        render={() => <DialogContainer/>}/>
                     <Route path='/users'
-                           render={() => <UsersContainer/>}
-                    />
+                           render={() => <UsersContainer/>}/>
                     <Route path='/news'
-                           render={() => <News/>}
-                    />
+                           render={() => <News/>}/>
                     <Route path='/music'
-                           render={() => <Music/>}
-                    />
+                           render={() => <Music/>}/>
                     <Route path='/setting'
-                           render={() => <Setting/>}
-                    />
+                           render={() => <Setting/>}/>
                 </div>
             </div>
-        );
+        )
     }
 }
 

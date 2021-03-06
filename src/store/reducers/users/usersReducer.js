@@ -1,4 +1,5 @@
 import {USER_ACTIONS} from "../../actions/actions";
+import {UpdateObjectInArray} from "../../../utils/helpers/object-helpers";
 
 let initialState = {
     users: [],
@@ -14,28 +15,12 @@ const usersReducer = (state = initialState, action) => {
         case USER_ACTIONS.FOLLOW:
             return {
                 ...state,
-                users: state.users.map(user => {
-                    if (user.id === action.payload) {
-                        return {
-                            ...user,
-                            followed: true
-                        }
-                    }
-                    return user
-                })
+                users: UpdateObjectInArray(state.users, action.payload, 'id', {followed: true})
             }
         case USER_ACTIONS.UNFOLLOW:
             return {
                 ...state,
-                users: state.users.map(user => {
-                    if (user.id === action.payload) {
-                        return {
-                            ...user,
-                            followed: false
-                        }
-                    }
-                    return user
-                })
+                users: UpdateObjectInArray(state.users, action.payload, 'id', {followed: false})
             }
         case USER_ACTIONS.SET_USERS:
             return {
