@@ -1,19 +1,21 @@
 import React from 'react';
 import {Route, withRouter} from "react-router-dom";
 import './App.css';
-import NavBar from "./Components/NavBar/NavBar.jsx";
-import News from "./Components/News/News";
-import Music from "./Components/Music/Music";
-import Setting from "./Components/Setting/Setting";
-import DialogContainer from "./Components/Dialogs/DialogContainer";
-import UsersContainer from "./Components/Users/UsersContainer";
-import ProfileContainer from "./Components/Profile/PtofileContainer";
-import HeaderContainer from "./Components/Header/HeaderContainer";
-import Login from "./Components/Login/Login";
+
 import {connect} from "react-redux";
 import {compose} from "redux";
 import {InitializeApp} from "./store/thunk/init";
-import {Preloader} from "./Components/common/preloader";
+
+import {Preloader} from "./view/components/common/preloader";
+import HeaderContainer from "./view/components/Header/HeaderContainer";
+import NavBar from "./view/components/NavBar/NavBar";
+import Login from "./view/components/Login/Login";
+import ProfileContainer from "./view/components/Profile/PtofileContainer";
+import DialogContainer from "./view/components/Dialogs/DialogContainer";
+import UsersContainer from "./view/components/Users/UsersContainer";
+import News from "./view/components/News/News";
+import Music from "./view/components/Music/Music";
+import Setting from "./view/components/Setting/Setting";
 
 class App extends React.Component {
     componentDidMount() {

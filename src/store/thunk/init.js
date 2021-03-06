@@ -1,11 +1,10 @@
-import {InitializeSuccess} from "../reducers_selectors/app/appReducer";
+import {InitializeSuccess} from "../reducers/app/appReducer";
 import {checkAuthThunkCreator} from "./auth";
 
 export const InitializeApp = () => (dispatch) => {
-    const promiseAuth = dispatch(checkAuthThunkCreator())
+    let promiseAuth = dispatch(checkAuthThunkCreator())
 
-    Promise.all([promiseAuth])
-        .then(() => {
-            dispatch(InitializeSuccess())
-        })
+    promiseAuth.then(() => {
+        dispatch(InitializeSuccess())
+    })
 }

@@ -1,7 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a29d8341-0448-4915-b5b1-bb9499c54fc1" name="Default Changelist" comment="" />
+    <list default="true" id="a29d8341-0448-4915-b5b1-bb9499c54fc1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/store/actions/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Dialogs/Dialog.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Dialogs/Dialog.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Dialogs/DialogContainer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Dialogs/DialogForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Dialogs/DialogItem/DialogItem.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Dialogs/MessageItem/MessageItem.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/HeaderContainer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Login/Login.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Login/Login.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Music/Music.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Music/Music.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NavBar/NavBar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NavBar/NavBar.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/News/News.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/News/News.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/MyPosts/MyPosts.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/MyPosts/MyPosts.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/MyPosts/MyPostsContainer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/MyPosts/PostForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/MyPosts/Posts/Post.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/MyPosts/Posts/Post.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/Profile.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/ProfileInfo.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/ProfileStatus.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/PtofileInfo.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/StatusForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/Ptofile.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/PtofileContainer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Setting/Setting.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Setting/Setting.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Sidebar/SidebarContainer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Sidebar/SidebarItem/sidebarFriends.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Users/Users.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Users/Users/UserItem/UserItem.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Users/Users/UserItem/Users.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Users/Users/Users.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Users/UsersContainer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/common/input/input.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/common/input/input.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/common/preloader/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/common/preloader/spinner.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/common/textarea/textarea.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HOC/authRedirect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/logo/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/action.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/local-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/local-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers_selectors/app/appReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/app/appReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers_selectors/auth/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/auth/authReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers_selectors/dialogs/dialogsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/dialogs/dialogsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers_selectors/profile/profileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/profile/profileReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers_selectors/profile/profileSelectors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers_selectors/sidebar/sidebarReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/sidebar/sidebarReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers_selectors/users/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/users/usersReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers_selectors/users/usersSelectors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunk/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunk/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunk/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunk/init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunk/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunk/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunk/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunk/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/profileReducer.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/profileReducer.test.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +94,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1a90JvXTbeGR28vrMc6ZO8qoLAl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,31 +104,31 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components/Profile/ProfileInfo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/store/selectors" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/store/selectors" />
+      <recent name="$PROJECT_DIR$/src/utils/redirect" />
+      <recent name="$PROJECT_DIR$/src/view/components" />
       <recent name="$PROJECT_DIR$/src/Components/Profile/ProfileInfo" />
       <recent name="$PROJECT_DIR$/src/store/reducers_selectors/profile" />
-      <recent name="$PROJECT_DIR$/src/Components/common/Input" />
-      <recent name="$PROJECT_DIR$/src/Components/Login" />
-      <recent name="$PROJECT_DIR$/src/Components/Header" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/store(BLL)/reducers" />
-      <recent name="$PROJECT_DIR$/src/Components/Users/Users/UserItem" />
-      <recent name="$PROJECT_DIR$/src/store/actions" />
-      <recent name="$PROJECT_DIR$/src/store/api-users" />
-      <recent name="$PROJECT_DIR$/src/store/api-sidebar" />
+      <recent name="$PROJECT_DIR$/src/assets/logo" />
+      <recent name="$PROJECT_DIR$/src/assets" />
+      <recent name="$PROJECT_DIR$/src/view/components/Sidebar/SidebarLayout" />
+      <recent name="$PROJECT_DIR$/src/view/components/Profile/ProfileInfo" />
+      <recent name="$PROJECT_DIR$/src/view/components/Profile/ProfileInfo/ProfileStatus/StatusForm" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.Length not should be decrement, if id not correct">
@@ -112,7 +181,7 @@
       <test-file value="$PROJECT_DIR$/src/test/profileReducer.test.js" />
       <method v="2" />
     </configuration>
-    <configuration name="profileReducer.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/store/reducers_selectors/profile/profileReducer.js" working-dir="$PROJECT_DIR$/src/store/reducers_selectors/profile">
+    <configuration name="profileReducer.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/store/reducers/profile/profileReducer.js" working-dir="$PROJECT_DIR$/src/store/reducers/profile">
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -184,6 +253,7 @@
       <workItem from="1614854516936" duration="736000" />
       <workItem from="1614855441954" duration="47000" />
       <workItem from="1614855509596" duration="5098000" />
+      <workItem from="1615020341139" duration="5309000" />
     </task>
     <servers />
   </component>
@@ -193,11 +263,41 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/Users/maksimakubov/react_redux_SPA_study/src" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
           </value>
         </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
