@@ -1,10 +1,11 @@
 import './App.css';
 import React from 'react';
-import {Route, withRouter} from "react-router-dom";
-import {connect} from "react-redux";
+import {BrowserRouter, Route, withRouter} from "react-router-dom";
+import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 
 import {InitializeApp} from "./store/thunk/app/initThunk";
+import store from "./store/store";
 
 import {Preloader} from "./components/common/preloader";
 import HeaderContainer from "./components/Header/HeaderContainer";
@@ -59,10 +60,23 @@ const mapStateToProps = (state) => ({
     init: state.app.initialized
 })
 
-export default compose(
+//Делаем контейнерную компоненту для App, чтобы можно было протестировать ее отрисовку через test
+const SocialAppContainer = compose(
     connect(mapStateToProps, {InitializeApp}),
     //Мы обернули компоненту дополнительно withRoute,
     // так как при использовании Route с классовыми компонентами,
     // Route может работать не корректно
     withRouter
 )(App);
+
+const SocialApp = () => {
+    return (
+        <BrowserRouter>
+            <Provider store={store}>
+                <SocialAppContainer/>
+            </Provider>
+        </BrowserRouter>
+    )
+}
+
+export default SocialApp
