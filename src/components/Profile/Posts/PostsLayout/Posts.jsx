@@ -3,6 +3,7 @@ import classes from '../Posts.module.css';
 import PostReduxForm from "../PostsForm/PostForm";
 import Post from "../PostsItem/Post";
 
+//Мы используем memo, чтобы не происходило лишних отрисовок если пропсы не поменялись
 const Posts = React.memo((props) => {
 
     // Мы используем reverse к копии массива постов, так как этот метод мутирующего типа

@@ -4,7 +4,7 @@ import ReactPaginate from "react-paginate";
 
 import UsersItem from "../UserItem/UserItem";
 import {Preloader} from "../../common/preloader";
-// import Paginator from "../../common/paginator/paginator";
+import Paginator from "../../common/paginator/paginator";
 
 const Users = (props) => {
 
@@ -24,13 +24,6 @@ const Users = (props) => {
             <h2>Users</h2>
             <div className={classes.usersField}>
                 <div className={classes.usersItems}>
-                    {/*<Paginator*/}
-                    {/*    totalCount={props.totalCount}*/}
-                    {/*    pageSize={props.pageSize}*/}
-                    {/*    currentPage={props.currentPage}*/}
-                    {/*    isLoading={props.isLoading}*/}
-                    {/*    selectPage={props.selectPage}*/}
-                    {/*/>*/}
                     <ReactPaginate
                         previousLabel={"<"}
                         nextLabel={">"}
@@ -43,6 +36,14 @@ const Users = (props) => {
                         activeClassName={classes.reactPaginationBtn}
                     />
                     {props.isLoading ? <Preloader/> : <div>{userItem}</div>}
+                    {/*<Paginator*/}
+                    {/*    totalItemsCount={props.totalCount}*/}
+                    {/*    pageSize={props.pageSize}*/}
+                    {/*    currentPage={props.currentPage}*/}
+                    {/*    isLoading={props.isLoading}*/}
+                    {/*    selectPage={props.selectPage}*/}
+                    {/*    portionSize={10}*/}
+                    {/*/>*/}
                 </div>
             </div>
         </div>
