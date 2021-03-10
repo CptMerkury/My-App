@@ -1,12 +1,69 @@
-.loginContainer{
+.loginContainer {
     min-height: 100%;
     background: ghostwhite;
     padding: 20px 50px;
 }
 
-.error_msg_summary{
-    border: 2px solid crimson;
+.loginFormContainer {
+    background: #fff;
+    margin: 10% auto;
+    width: 50%;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.loginFormContainer h2 {
+    padding: 15px 20px;
+    width: 100%;
+    margin: 0 auto 30px;
+    border-radius: 20px 20px 0 0;
+    background: rgba(75, 80, 240, .9);
+    color: #fff;
+}
+
+.login input{
+    text-align: center;
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(75, 80, 240, .9);
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.password input{
+    text-align: center;
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(75, 80, 240, .9);
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.checkbox {
+
+}
+
+.btnBlock {
+    width: 100%;
+    padding: 30px 0;
+}
+
+.submitBtn {
+
+}
+
+.cancelBtn {
+
+}
+
+.error_msg_summary {
+    margin: 20px 0 0;
+    width: 100%;
+    border: 1px solid crimson;
+    border-radius: 0 0 20px 20px;
     color: crimson;
-    padding: 2px 5px;
+    padding: 10px 15px;
     background: rgba(255, 0, 0, .1);
 }

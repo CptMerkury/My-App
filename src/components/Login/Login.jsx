@@ -12,26 +12,32 @@ const LoginForm = (props) => {
     const {handleSubmit, pristine, submitting, reset, error} = props
     return (
         <form onSubmit={handleSubmit}>
-            <div>
+            <div className={classes.login}>
                 <Field component={LoginInput}
                        name={'email'}
                        validate={[required]}
+
                 />
             </div>
-            <div>
+            <div className={classes.password}>
                 <Field component={PasswordInput}
                        name={'password'}
                        validate={[required]}/>
             </div>
-            <div>
+            <div className={classes.checkbox}>
                 <Field component={'input'}
                        name={'rememberMe'}
                        type="checkbox"/>Remember me
             </div>
-            {error ? <div className={classes.error_msg_summary}>{error}</div> : null}
-            <div>
-                <button type="submit" disabled={submitting}>Submit</button>
-                <button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
+            <div className={classes.btnBlock}>
+                <button type="submit"
+                        disabled={submitting}
+                        className={classes.submitBtn}>Submit</button>
+                <button type="button"
+                        disabled={pristine || submitting} onClick={reset}
+                        className={classes.cancelBtn}>Clear Values
+                </button>
+                {error ? <div className={classes.error_msg_summary}>{error}</div> : null}
             </div>
         </form>
     )
@@ -53,8 +59,10 @@ const Login = (props) => {
 
     return (
         <div className={classes.loginContainer}>
-            <h2>Login</h2>
-            <LoginReduxForm onSubmit={onSubmit}/>
+            <div className={classes.loginFormContainer}>
+                <h2>Login</h2>
+                <LoginReduxForm onSubmit={onSubmit}/>
+            </div>
         </div>
     )
 }

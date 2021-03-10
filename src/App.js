@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, {Suspense} from 'react';
 import {BrowserRouter, Route, withRouter} from "react-router-dom";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
@@ -7,16 +7,19 @@ import {compose} from "redux";
 import {InitializeApp} from "./store/thunk/app/initThunk";
 import store from "./store/store";
 
+import UsersContainer from "./components/Users/UsersContainer";
+import ProfileContainer from "./components/Profile/PtofileContainer";
 import {Preloader} from "./components/common/preloader";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import NavBar from "./components/NavBar/NavBar";
-import Login from "./components/Login/Login";
-import ProfileContainer from "./components/Profile/PtofileContainer";
-import DialogContainer from "./components/Dialogs/DialogContainer";
-import UsersContainer from "./components/Users/UsersContainer";
-import News from "./components/News/News";
-import Music from "./components/Music/Music";
-import Setting from "./components/Setting/Setting";
+import withSuspense from "./utils/hoc/lazyComponent";
+
+//Add lazy loading for not base component
+const Login = React.lazy(() => import('./components/Login/Login'));
+const DialogContainer = React.lazy(() => import('./components/Dialogs/DialogContainer'));
+const News = React.lazy(() => import('./components/News/News'));
+const Music = React.lazy(() => import('./components/Music/Music'));
+const Setting = React.lazy(() => import('./components/Setting/Setting'));
 
 class App extends React.Component {
     componentDidMount() {
@@ -32,24 +35,23 @@ class App extends React.Component {
                 <HeaderContainer/>
                 <NavBar/>
                 <div className='app-wrapper-content'>
-                    <Route path='/login'
-                           render={() => <Login/>}/>
                     <Route
                         // Указываем не обязательный параметр :userId?
                         // чтобы если не '/profile', передать в state данные о uri строке
                         path='/profile/:userId?'
                         render={() => <ProfileContainer/>}/>
-                    <Route
-                        path='/dialogs'
-                        render={() => <DialogContainer/>}/>
                     <Route path='/users'
                            render={() => <UsersContainer/>}/>
+                    <Route path='/login'
+                           render={withSuspense(Login)}/>
+                    <Route path='/dialogs'
+                           render={withSuspense(DialogContainer)}/>
                     <Route path='/news'
-                           render={() => <News/>}/>
+                           render={withSuspense(News)}/>
                     <Route path='/music'
-                           render={() => <Music/>}/>
+                           render={withSuspense(Music)}/>
                     <Route path='/setting'
-                           render={() => <Setting/>}/>
+                           render={withSuspense(Setting)}/>
                 </div>
             </div>
         )
