@@ -16,7 +16,6 @@ const LoginForm = (props) => {
                 <Field component={LoginInput}
                        name={'email'}
                        validate={[required]}
-
                 />
             </div>
             <div className={classes.password}>
@@ -32,7 +31,8 @@ const LoginForm = (props) => {
             <div className={classes.btnBlock}>
                 <button type="submit"
                         disabled={submitting}
-                        className={classes.submitBtn}>Submit</button>
+                        className={classes.submitBtn}>Submit
+                </button>
                 <button type="button"
                         disabled={pristine || submitting} onClick={reset}
                         className={classes.cancelBtn}>Clear Values
