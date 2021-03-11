@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/components/Setting/Setting.module.css"],"names":[],"mappings":"AAAA,iCACI,eAAgB,CAChB,kBACJ","file":"7.d6e5e018.chunk.css","sourcesContent":[".settingContainer{\n    min-height: 100%;\n    background: ghostwhite;\n}"]}
