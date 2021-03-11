@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import {BrowserRouter, Route, withRouter} from "react-router-dom";
+import {BrowserRouter, HashRouter, Route, withRouter} from "react-router-dom";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 
@@ -73,6 +73,7 @@ const SocialAppContainer = compose(
 
 const SocialApp = () => {
     return (
+        //Change BrouserRouter on HashRouter for gh-pages
         <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Provider store={store}>
                 <SocialAppContainer/>
