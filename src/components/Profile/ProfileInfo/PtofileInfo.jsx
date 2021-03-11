@@ -31,13 +31,20 @@ const ProfileInfo = (props) => {
                             <p>{!props.profile.aboutMe ? 'Not indicated' : props.profile.aboutMe}</p>
                         </div>
                         <div className={classes.linkBlock}>
-                            <a href={!props.contacts ? '#' : props.contacts.facebook} target='_blank'>Facebook</a>
-                            <a href={!props.contacts ? '#' : props.contacts.website} target='_blank'>Website</a>
-                            <a href={!props.contacts ? '#' : props.contacts.vk} target='_blank'>VK</a>
-                            <a href={!props.contacts ? '#' : props.contacts.twitter} target='_blank'>Twitter</a>
-                            <a href={!props.contacts ? '#' : props.contacts.instagram} target='_blank'>Instagram</a>
-                            <a href={!props.contacts ? '#' : props.contacts.github} target='_blank'>Github</a>
-                            <a href={!props.contacts ? '#' : props.contacts.mainLink} target='_blank'>mainLink</a>
+                            <a rel="noreferrer" href={!props.contacts ? '#' : props.contacts.facebook}
+                               target='_blank'>Facebook</a>
+                            <a rel="noreferrer" href={!props.contacts ? '#' : props.contacts.website}
+                               target='_blank'>Website</a>
+                            <a rel="noreferrer" href={!props.contacts ? '#' : props.contacts.vk}
+                               target='_blank'>VK</a>
+                            <a rel="noreferrer" href={!props.contacts ? '#' : props.contacts.twitter}
+                               target='_blank'>Twitter</a>
+                            <a rel="noreferrer" href={!props.contacts ? '#' : props.contacts.instagram}
+                               target='_blank'>Instagram</a>
+                            <a rel="noreferrer" href={!props.contacts ? '#' : props.contacts.github}
+                               target='_blank'>Github</a>
+                            <a rel="noreferrer" href={!props.contacts ? '#' : props.contacts.mainLink}
+                               target='_blank'>mainLink</a>
                         </div>
                     </div>
                     <div className={classes.jobBlock}>

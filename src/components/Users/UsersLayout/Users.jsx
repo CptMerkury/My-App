@@ -4,7 +4,7 @@ import ReactPaginate from "react-paginate";
 
 import UsersItem from "../UserItem/UserItem";
 import {Preloader} from "../../common/preloader";
-import Paginator from "../../common/paginator/paginator";
+// import Paginator from "../../common/paginator/paginator";
 
 const Users = (props) => {
 
