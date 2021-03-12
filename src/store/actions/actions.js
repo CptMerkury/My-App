@@ -16,7 +16,9 @@ export const PROFILE_ACTIONS = {
     ADD_POST: 'my-app/profile/ADD_POST',
     DELETE_POST: 'my-app/profile/DELETE_POST',
     SET_PROFILE_DATA: 'my-app/profile/SET_PROFILE_DATA',
-    GET_STATUS: 'my-app/profile/GET_STATUS'
+    GET_STATUS: 'my-app/profile/GET_STATUS',
+    SET_PHOTO_SUCCESS: 'my-app/profile/SET_PHOTO_SUCCESS',
+    IS_FETCHING: 'my-app/profile/IS_FETCHING'
 }
 
 export const AUTH_ACTIONS = {

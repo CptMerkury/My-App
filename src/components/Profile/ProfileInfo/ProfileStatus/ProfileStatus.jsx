@@ -6,7 +6,7 @@ const ProfileStatus = (props) => {
     const [editMode, setEditMode] = useState(false)
     const [status, setStatus] = useState(props.status)
 
-    const onEditMode = () => setEditMode(true)
+    const onEditMode = () => setEditMode(props.isOwner)
     const offEditMode = () => setEditMode(false)
 
     const addStatus = () => {
@@ -17,7 +17,7 @@ const ProfileStatus = (props) => {
     const updateTextStatus = (e) => setStatus(e.target.value)
 
     useEffect(() => {
-            setStatus(props.status)
+        setStatus(props.status)
     }, [props.status])
 
     return (
@@ -29,7 +29,7 @@ const ProfileStatus = (props) => {
                 :
                 <div className={classes.statusDescr}>
                     <div>
-                        <input onChange={updateTextStatus} type='text' autoFocus='true' placeholder='Change status'
+                        <input onChange={updateTextStatus} type='text' autoFocus={true} placeholder='Change status'
                                value={status}/>
                     </div>
                     <div>

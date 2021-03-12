@@ -16,6 +16,10 @@ export const checkAuthSelector = (state) => {
     return state.auth.isAuth
 }
 
+export const checkLoadingSelector = (state) => {
+    return state.profilePage.isLoading
+}
+
 // future, create this selector, he must work with all simple selectors
 // and into switch/case return all and new value from state
 export const componentSelector = createSelector(
