@@ -25,19 +25,13 @@ class ProfileContainer extends React.Component {
         this.props.getProfileThunkCreator(userId)
     }
 
-    checkOwner(){
-        return (this.props.match.params.userId === this.props.authUserID) || this.props.match.params.userId === undefined;
-    }
-
     componentDidMount() {
         this.refreshProfile()
-        this.checkOwner()
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevProps.match.params.userId !== this.props.match.params.userId) {
             this.refreshProfile()
-            this.checkOwner()
         }
     }
 
@@ -45,7 +39,7 @@ class ProfileContainer extends React.Component {
         return (
             <div className={classes.profileContainer}>
                 <Profile {...this.props}
-                        isOwner={this.checkOwner()}
+                         isOwner={!this.props.match.params.userId}
                          contacts={this.props.profile.contacts}
                          updateStatus={this.props.setStatusThunkCreator}
                          saveNewPhoto={this.props.saveNewPhotoThunkCreator}
