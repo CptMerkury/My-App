@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+<hr/>
+
+<b><i>In Safari browser have problem with auth, other browser work normal.</i></b>
+<br/>
+
 ## Demo <br />
 https://cptmerkury.github.io/react_redux_SPA_study/ <br />
 #### Email: free@samuraijs.com
