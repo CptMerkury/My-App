@@ -1,3 +1,7 @@
+<b><i>In Safari browser have problem with auth, other browser work normaly.</i></b>
+
+<hr/>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Demo <br />
