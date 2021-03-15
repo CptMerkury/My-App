@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/Music/Music.module.css"],"names":[],"mappings":"AAAA,6BACI,eAAgB,CAChB,kBACJ","file":"6.b11992e5.chunk.css","sourcesContent":[".musicContainer{\n    min-height: 100%;\n    background: ghostwhite;\n}"]}

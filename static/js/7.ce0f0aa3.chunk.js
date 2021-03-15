@@ -1,2 +1,0 @@
-(this["webpackJsonpmy-app"]=this["webpackJsonpmy-app"]||[]).push([[7],{303:function(t,n,e){t.exports={settingContainer:"Setting_settingContainer__2jnFS"}},306:function(t,n,e){"use strict";e.r(n);e(1);var i=e(303),s=e.n(i),a=e(0);n.default=function(t){return Object(a.jsx)("div",{className:s.a.settingContainer,children:"Setting"})}}}]);
-//# sourceMappingURL=7.ce0f0aa3.chunk.js.map

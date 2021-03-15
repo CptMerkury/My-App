@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/components/News/News.module.css"],"names":[],"mappings":"AAAA,2BACI,eAAgB,CAChB,kBACJ","file":"6.802292c5.chunk.css","sourcesContent":[".newsContainer{\n    min-height: 100%;\n    background: ghostwhite;\n}"]}
