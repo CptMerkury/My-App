@@ -18,6 +18,7 @@ import {Preloader} from "./components/common/preloader";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import NavBar from "./components/NavBar/NavBar";
 import withSuspense from "./utils/hoc/lazyComponent";
+import StartPage from "./components/Start Component/StartPage";
 
 //Add lazy loading for not base component
 const Login = React.lazy(() => import('./components/Login/Login'));
@@ -40,6 +41,8 @@ class App extends React.Component {
                 <HeaderContainer/>
                 <NavBar/>
                 <div className='app-wrapper-content'>
+                    <Route exact path='/'
+                           render={() => <StartPage/>}/>
                     <Route
                         // Указываем не обязательный параметр :userId?
                         // чтобы если не '/profile', передать в state данные о uri строке
