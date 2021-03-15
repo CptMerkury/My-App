@@ -1,5 +1,5 @@
 import {authAPI} from "../../../api/api";
-import {setAuthData} from "../../reducers/auth/authReducer";
+import {getCaptcha, setAuthData} from "../../reducers/auth/authReducer";
 import {stopSubmit} from "redux-form";
 
 export const checkAuthThunkCreator = () => async (dispatch) => {
@@ -16,10 +16,13 @@ export const signOutThunkCreator = () => async (dispatch) => {
     }
 }
 
-export const signInThunkCreator = (email, password, rememberMe) => async (dispatch) => {
-    let response = await authAPI.signIn(email, password, rememberMe)
+export const signInThunkCreator = (email, password, rememberMe, captcha) => async (dispatch) => {
+    let response = await authAPI.signIn(email, password, rememberMe, captcha)
     if (response.resultCode === 0) {
         dispatch(checkAuthThunkCreator())
+    } else if (response.resultCode === 10) {
+        let data = await authAPI.getCaptcha()
+        dispatch(getCaptcha(data.url))
     } else {
         dispatch(stopSubmit('login', {_error: response.messages}))
     }

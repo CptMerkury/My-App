@@ -2,6 +2,7 @@ import React from "react";
 import classes from './ProfileInfo.module.css';
 import {Preloader} from "../../common/preloader";
 import ProfileStatus from "./ProfileStatus/ProfileStatus";
+import ProfileData from "./ProfileData/ProfileData";
 
 
 const ProfileInfo = ({saveNewPhoto, profile, status, updateStatus, isOwner, contacts, isLoading}) => {
@@ -39,28 +40,7 @@ const ProfileInfo = ({saveNewPhoto, profile, status, updateStatus, isOwner, cont
                             : null}
                         <h4 className={classes.user_nameBlock}>{profile.fullName}</h4>
                     </div>
-                    <div className={classes.userInfoBlock}>
-                        <div className={classes.aboutMe}>
-                            <p className={classes.aboutMeTitle}>About me:</p>
-                            <p>{profile.aboutMe || 'Not indicated'}</p>
-                        </div>
-                        <div className={classes.linkBlock}>
-                            <a rel="noreferrer" href={!contacts ? '#' : contacts.facebook}
-                               target='_blank'>Facebook</a>
-                            <a rel="noreferrer" href={!contacts ? '#' : contacts.website}
-                               target='_blank'>Website</a>
-                            <a rel="noreferrer" href={!contacts ? '#' : contacts.vk}
-                               target='_blank'>VK</a>
-                            <a rel="noreferrer" href={!contacts ? '#' : contacts.twitter}
-                               target='_blank'>Twitter</a>
-                            <a rel="noreferrer" href={!contacts ? '#' : contacts.instagram}
-                               target='_blank'>Instagram</a>
-                            <a rel="noreferrer" href={!contacts ? '#' : contacts.github}
-                               target='_blank'>Github</a>
-                            <a rel="noreferrer" href={!contacts ? '#' : contacts.mainLink}
-                               target='_blank'>mainLink</a>
-                        </div>
-                    </div>
+                    <ProfileData profile={profile} contacts={contacts} isOwner={isOwner}/>
                     <div className={classes.jobBlock}>
                         {!profile.lookingForAJob
                             ? <div/>

@@ -63,7 +63,7 @@ export const profileAPI = {
                     'Content-Type': 'multipart/form-data'
                 }
             })
-            .then(response =>{
+            .then(response => {
                 return response.data
             })
     }
@@ -80,9 +80,14 @@ export const authAPI = {
             .delete('/auth/login')
             .then(response => response.data)
     },
-    signIn(email, password, rememberMe = false) {
+    signIn(email, password, rememberMe = false, captcha = false) {
         return instance
-            .post('/auth/login', {email, password, rememberMe})
+            .post('/auth/login', {email, password, rememberMe, captcha})
+            .then(response => response.data)
+    },
+    getCaptcha() {
+        return instance
+            .get('/security/get-captcha-url/')
             .then(response => response.data)
     }
 }

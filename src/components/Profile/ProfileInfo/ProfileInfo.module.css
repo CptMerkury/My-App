@@ -95,7 +95,6 @@
     color: rgba(255, 255, 255, .9);
     cursor: pointer;
     transition: all .3s ease;
-
 }
 
 .statusDescr .changeStatusBtn:hover {
