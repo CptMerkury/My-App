@@ -8,10 +8,11 @@ import {
 } from "../../reducers/profile/profileReducer";
 
 export const getProfileThunkCreator = (id) => async (dispatch) => {
-    dispatch(toggleFetchStatus(true))
     let dataProfile = await profileAPI.getProfile(id)
     dispatch(setProfileData(dataProfile))
 
+
+    dispatch(toggleFetchStatus(true))
     let dataStatus = await profileAPI.getStatusProfile(id)
     dispatch(getStatus(dataStatus))
     dispatch(toggleFetchStatus(false))
@@ -31,6 +32,15 @@ export const saveNewPhotoThunkCreator = (file) => async (dispatch) => {
 
     if (response.resultCode === 0) {
         dispatch(setPhotoSuccess(response.data.photos))
+        dispatch(toggleFetch(false))
+    }
+}
+
+export const saveProfileThunkCreator = (data) => async (dispatch) => {
+    dispatch(toggleFetch(true))
+    let response = await profileAPI.saveProfile(data)
+    console.log(response)
+    if (response.resultCode === 0) {
         dispatch(toggleFetch(false))
     }
 }

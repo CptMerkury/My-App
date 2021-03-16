@@ -66,6 +66,13 @@ export const profileAPI = {
             .then(response => {
                 return response.data
             })
+    },
+    saveProfile(data) {
+        return instance
+            .put('/profile', data)
+            .then(response => {
+                return response.data
+            })
     }
 }
 

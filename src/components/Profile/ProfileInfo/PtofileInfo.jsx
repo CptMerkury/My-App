@@ -3,6 +3,7 @@ import classes from './ProfileInfo.module.css';
 import {Preloader} from "../../common/preloader/spinner";
 import ProfileStatus from "./ProfileStatus/ProfileStatus";
 import ProfileData from "./ProfileData/ProfileData";
+import ProfileJob from "./ProfileJob/ProfileJobData";
 
 
 const ProfileInfo = ({saveNewPhoto, profile, status, updateStatus, isOwner, contacts, isLoading,isFetchingStatus}) => {
@@ -36,24 +37,11 @@ const ProfileInfo = ({saveNewPhoto, profile, status, updateStatus, isOwner, cont
                                 <input type={'file'} onChange={onPhotoSelected}/>
                                 Change Photos
                             </label>
-
                             : null}
                         <h4 className={classes.user_nameBlock}>{profile.fullName}</h4>
                     </div>
                     <ProfileData profile={profile} contacts={contacts} isOwner={isOwner}/>
-                    <div className={classes.jobBlock}>
-                        {!profile.lookingForAJob
-                            ? <div/>
-                            : <div className={classes.jobDescr}>
-                                <div>{profile.lookingForAJobDescription}</div>
-                            </div>}
-                        <div className={classes.openJobStatus}>
-                            <p>Open for job :<span>&nbsp;&nbsp;</span></p>
-                            {profile.lookingForAJob
-                                ? <div className={classes.circleIndicatorActive}/>
-                                : <div className={classes.circleIndicatorNot}/>}
-                        </div>
-                    </div>
+                    <ProfileJob profile={profile}/>
                 </div>
             </div>
         </div>

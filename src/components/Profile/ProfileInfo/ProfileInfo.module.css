@@ -227,6 +227,10 @@
     display:none;
 }
 
+.linkBlock {
+    margin-bottom: 10px;
+}
+
 .linkBlock a {
     padding: 0 10px;
     outline: none;
@@ -238,5 +242,20 @@
     font-weight: bold;
     padding: 0 20px;
     outline: none;
+    transition: all .3s ease;
+}
+
+.editInfoBtn{
+    border: 1px solid rgba(255, 255, 255, .9);
+    border-radius: 10px;
+    background-color: rgba(75, 80, 240, .3);
+    padding: 2px 20px;
+    color: rgba(255, 255, 255, .9);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.editInfoBtn:hover{
+    background-color: rgba(75, 80, 240, .7);
     transition: all .3s ease;
 }

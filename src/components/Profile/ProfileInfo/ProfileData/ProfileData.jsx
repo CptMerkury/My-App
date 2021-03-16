@@ -2,10 +2,6 @@ import React from 'react';
 import classes from "../ProfileInfo.module.css";
 import {NavLink} from "react-router-dom";
 
-const Contact = ({title, value}) => {
-    return <a href={value} target='_blank' rel="noreferrer">{title}</a>
-}
-
 const ProfileData = ({profile, contacts, isOwner}) => {
 
     return (
@@ -21,11 +17,15 @@ const ProfileData = ({profile, contacts, isOwner}) => {
             </div>
             {isOwner
                 ? <NavLink to={'/setting'}>
-                    <button>Edit info</button>
+                    <button className={classes.editInfoBtn}>Edit info</button>
                 </NavLink>
                 : null}
         </div>
     )
+}
+
+const Contact = ({title, value}) => {
+    return <a href={value} target='_blank' rel="noreferrer">{title}</a>
 }
 
 export default ProfileData
