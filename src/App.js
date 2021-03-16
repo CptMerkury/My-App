@@ -20,7 +20,7 @@ import NavBar from "./components/NavBar/NavBar";
 import withSuspense from "./utils/hoc/lazyComponent";
 import StartPage from "./components/Start Component/StartPage";
 
-//Add lazy loading for not base component
+/* Add lazy loading for not base component */
 const Login = React.lazy(() => import('./components/Login/Login'));
 const DialogContainer = React.lazy(() => import('./components/Dialogs/DialogContainer'));
 const News = React.lazy(() => import('./components/News/News'));
@@ -44,8 +44,10 @@ class App extends React.Component {
                     <Route exact path='/'
                            render={() => <StartPage/>}/>
                     <Route
-                        // Указываем не обязательный параметр :userId?
-                        // чтобы если не '/profile', передать в state данные о uri строке
+                        /*
+                        * Указываем не обязательный параметр :userId?
+                        * чтобы если не '/profile', передать в state данные о uri строке
+                        */
                         path='/profile/:userId?'
                         render={() => <ProfileContainer/>}/>
                     <Route path='/users'
@@ -70,18 +72,20 @@ const mapStateToProps = (state) => ({
     init: state.app.initialized
 })
 
-//Делаем контейнерную компоненту для App, чтобы можно было протестировать ее отрисовку через test
+/*  Делаем контейнерную компоненту для App, чтобы можно было протестировать ее отрисовку через test */
 const SocialAppContainer = compose(
     connect(mapStateToProps, {InitializeApp}),
-    //Мы обернули компоненту дополнительно withRoute,
-    // так как при использовании Route с классовыми компонентами,
-    // Route может работать не корректно
+    /*
+    * Мы обернули компоненту дополнительно withRoute,
+    * так как при использовании Route с классовыми компонентами,
+    * Route может работать не корректно
+    */
     withRouter
 )(App);
 
 const SocialApp = () => {
     return (
-        //Change BrouserRouter on HashRouter for gh-pages
+        /* Change BrouserRouter on HashRouter and commented 'basename' for gh-pages */
         <HashRouter /*basename={process.env.PUBLIC_URL}*/>
             <Provider store={store}>
                 <SocialAppContainer/>

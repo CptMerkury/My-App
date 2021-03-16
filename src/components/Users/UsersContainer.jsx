@@ -19,7 +19,7 @@ class UsersContainer extends React.Component {
     }
 
     setFollowHandler = (id) => {
-        //Мы перенесли всю логику в thunkCreator
+        /* Мы перенесли всю логику в thunkCreator */
         this.props.setFollowThunkCreator(id)
     }
     setUnfollowHandler = (id) => {
@@ -67,46 +67,47 @@ export default compose(
     })
 )(UsersContainer)
 
-//Вместо mapDispatchToProps мы передаем в connect объект action/thunk creators
-//чтобы сократить код до современного синтаксиса,
-//функция connect сама обернет dispatch в callback's
-
-// тоже самое :
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         setFollow: (userID) => {
-//             dispatch(followAC(userID))
-//         },
-//         setUnfollow: (userID) => {
-//             dispatch(unfollowAC(userID))
-//         },
-//         setUsers: (users) => {
-//             dispatch(setUsersAC(users))
-//         },
-//         setPage: (num) => {
-//             dispatch(setPageAC(num))
-//         },
-//         setTotalCount: (num) => {
-//             dispatch(setTotalCountAC(num))
-//         },
-//         toggleFetch: (bool) => {
-//             dispatch(toggleFetchAC(bool))
-//         }
-//     }
-// }
-
-// setFollowHandler = (id) => {
-//     //Мы перенесли всю логику в thunkCreator
-//     this.props.setFollowThunkCreator(id)
-//     this.props.toggleDisabledBtn(true, id)
-//     //Мы сделали инкапсуляцию axios метода в файл api
-//     usersAPI.setFollow(id).then(data => {
-//         if (data.resultCode === 0) {
-//             this.props.follow(id)
-//             console.log('Follow', data)
-//             this.props.toggleDisabledBtn(false, id)
-//         } else {
-//             console.log('Error AXIOS', data)
-//         }
-//     })
-// }
+/* Вместо mapDispatchToProps мы передаем в connect объект action/thunk creators
+ * чтобы сократить код до современного синтаксиса,
+ * функция connect сама обернет dispatch в callback's
+ *
+ * // тоже самое :
+ * const mapDispatchToProps = (dispatch) => {
+ *     return {
+ *         setFollow: (userID) => {
+ *             dispatch(followAC(userID))
+ *         },
+ *         setUnfollow: (userID) => {
+ *             dispatch(unfollowAC(userID))
+ *         },
+ *         setUsers: (users) => {
+ *             dispatch(setUsersAC(users))
+ *         },
+ *         setPage: (num) => {
+ *             dispatch(setPageAC(num))
+ *         },
+ *         setTotalCount: (num) => {
+ *             dispatch(setTotalCountAC(num))
+ *         },
+ *         toggleFetch: (bool) => {
+ *             dispatch(toggleFetchAC(bool))
+ *         }
+ *     }
+ * }
+ *
+ * setFollowHandler = (id) => {
+ *     //Мы перенесли всю логику в thunkCreator
+ *     this.props.setFollowThunkCreator(id)
+ *     this.props.toggleDisabledBtn(true, id)
+ *     //Мы сделали инкапсуляцию axios метода в файл api
+ *     usersAPI.setFollow(id).then(data => {
+ *         if (data.resultCode === 0) {
+ *             this.props.follow(id)
+ *             console.log('Follow', data)
+ *             this.props.toggleDisabledBtn(false, id)
+ *         } else {
+ *             console.log('Error AXIOS', data)
+ *         }
+ *     })
+ * }
+ */

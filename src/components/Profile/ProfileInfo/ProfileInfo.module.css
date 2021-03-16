@@ -218,13 +218,33 @@
     padding: 6px 0;
     transition: all .15s ease
 }
-.changePhotos:hover{
+
+.changePhotos:hover {
     background-color: rgba(221, 20, 61, .8);
     transition: all .15s ease
 }
 
+.changePhotosDis {
+    background-color: rgba(90, 90, 90, .8);
+    text-align: center;
+    margin-right: 10px;
+    margin-left: -60px;
+    display: inline-block;
+    cursor: pointer;
+    min-height: 40px;
+    border-radius: 10px;
+    font-size: 11px;
+    outline: none;
+    padding: 6px 0;
+    transition: all .15s ease
+}
+
+.changePhotosDis input[type='file'] {
+    display: none;
+}
+
 .changePhotos input[type='file'] {
-    display:none;
+    display: none;
 }
 
 .linkBlock {
@@ -245,7 +265,7 @@
     transition: all .3s ease;
 }
 
-.editInfoBtn{
+.editInfoBtn {
     border: 1px solid rgba(255, 255, 255, .9);
     border-radius: 10px;
     background-color: rgba(75, 80, 240, .3);
@@ -255,7 +275,7 @@
     transition: all .3s ease;
 }
 
-.editInfoBtn:hover{
+.editInfoBtn:hover {
     background-color: rgba(75, 80, 240, .7);
     transition: all .3s ease;
 }

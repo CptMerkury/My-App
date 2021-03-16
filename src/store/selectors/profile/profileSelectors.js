@@ -1,4 +1,4 @@
-import { createSelector } from 'reselect'
+// import { createSelector } from 'reselect'
 
 export const getProfileSelector = (state) => {
     return state.profilePage.profile
@@ -24,12 +24,14 @@ export const checkFetchingStatusSelector = (state) => {
     return state.profilePage.isFetchingStatus
 }
 
-// future, create this selector, he must work with all simple selectors
-// and into switch/case return all and new value from state
-export const componentSelector = createSelector(
-    [],() => {
-
-})
+/*
+* future, create this selector, he must work with all simple selectors
+* and into switch/case return all and new value from state
+ */
+// export const componentSelector = createSelector(
+//     [],() => {
+//
+// })
 
 
 

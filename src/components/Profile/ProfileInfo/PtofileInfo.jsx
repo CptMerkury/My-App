@@ -6,7 +6,7 @@ import ProfileData from "./ProfileData/ProfileData";
 import ProfileJob from "./ProfileJob/ProfileJobData";
 
 
-const ProfileInfo = ({saveNewPhoto, profile, status, updateStatus, isOwner, contacts, isLoading,isFetchingStatus}) => {
+const ProfileInfo = ({saveNewPhoto, profile, status, updateStatus, isOwner, contacts, isLoading, isFetchingStatus}) => {
 
     const onPhotoSelected = (e) => {
         if (e.target.files.length) {
@@ -27,14 +27,15 @@ const ProfileInfo = ({saveNewPhoto, profile, status, updateStatus, isOwner, cont
                                 src={profile.photos.large || 'https://img2-placeit-net.s3-accelerate.amazonaws.com/uploads/stage/stage_image/40597/optimized_large_thumb_stage.jpg'}
                                 alt="ava"/>}
                     </div>
-                    <ProfileStatus status={status} updateStatus={updateStatus} isOwner={isOwner} loading={isFetchingStatus}/>
+                    <ProfileStatus status={status} updateStatus={updateStatus}
+                                   isOwner={isOwner} loading={isFetchingStatus}/>
                 </div>
 
                 <div className={classes.infoBlock}>
                     <div className={classes.nameBlock}>
                         {isOwner
-                            ? <label className={classes.changePhotos}>
-                                <input type={'file'} onChange={onPhotoSelected}/>
+                            ? <label className={isLoading ? classes.changePhotosDis : classes.changePhotos}>
+                                <input type={'file'} onChange={onPhotoSelected} disabled={isLoading}/>
                                 Change Photos
                             </label>
                             : null}

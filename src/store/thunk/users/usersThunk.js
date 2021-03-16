@@ -12,7 +12,7 @@ import {
 
 export const getUsersThunkCreator = (currentPage, pageSize) => async (dispatch) => {
     dispatch(toggleFetch(true))
-    //Мы сделали инкапсуляцию axios метода в файл api
+    /* Мы сделали инкапсуляцию axios метода в файл api */
     let data = await usersAPI.getUsers(currentPage, pageSize)
     dispatch(setUsers(data.items))
     dispatch(setTotalCount(data.totalCount))
@@ -22,7 +22,7 @@ export const getUsersThunkCreator = (currentPage, pageSize) => async (dispatch) 
 export const getPageThunkCreator = (num, pageSize) => async (dispatch) => {
     dispatch(setPage(num))
     dispatch(toggleFetch(true))
-    //Мы сделали инкапсуляцию axios метода в файл api
+    /* Мы сделали инкапсуляцию axios метода в файл api */
     let data = await usersAPI.getPage(num, pageSize)
     dispatch(setUsers(data.items))
     dispatch(toggleFetch(false))

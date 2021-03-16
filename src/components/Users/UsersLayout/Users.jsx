@@ -36,6 +36,7 @@ const Users = (props) => {
                         activeClassName={classes.reactPaginationBtn}
                     />
                     {props.isLoading ? <Preloader/> : <div>{userItem}</div>}
+                    {/*If we want use custom pagination, use template below*/}
                     {/*<Paginator*/}
                     {/*    totalItemsCount={props.totalCount}*/}
                     {/*    pageSize={props.pageSize}*/}

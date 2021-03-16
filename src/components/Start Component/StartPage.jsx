@@ -73,10 +73,10 @@ const StartPage = () => {
                             Change you status - on page other user in function blocked.
                         </li>
                         <li className={classes.opportunitiesItemCan}>
-                            Change information for you profile - redirect on settings page (in process).
+                            Change information for you profile - redirect on settings page (without styles).
                         </li>
                         <li className={classes.opportunitiesItemCan}>
-                            Add information if you open for job (in process).
+                            Add information if you open for job (without styles).
                         </li>
                         <li className={classes.opportunitiesItemCan}>
                             Write new post - without server, only local.

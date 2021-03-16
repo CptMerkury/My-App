@@ -15,7 +15,7 @@ class HeaderContainer extends React.Component {
     }
 }
 
-//Функция которая из state передает props внутрь компоненты
+/* Функция которая из state передает props внутрь компоненты */
 const mapStateToProps = (state) => ({
     login: state.auth.login,
     isAuth: state.auth.isAuth,

@@ -25,7 +25,7 @@ const ProfileData = ({profile, contacts, isOwner}) => {
 }
 
 const Contact = ({title, value}) => {
-    return <a href={value} target='_blank' rel="noreferrer">{title}</a>
+    return value ? <a href={value} target='_blank' rel="noreferrer">{title}</a> : null
 }
 
 export default ProfileData

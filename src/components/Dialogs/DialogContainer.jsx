@@ -24,11 +24,10 @@ export default compose(
     connect(mapStateToProps, mapDispatchToProps),
 )(Dialog)
 
-// Вызов всех эти обработчиков ниже мы заменили на одну функцию compose выше
-//
-// //Redirect use in HOC function
-// const withAuth = withAuthRedirect(Dialog)
-//
-// const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(withAuth)
-//
-// export default DialogsContainer
+/*  Вызов всех эти обработчиков ниже мы заменили на одну функцию compose выше
+ * //Redirect use in HOC function
+ * const withAuth = withAuthRedirect(Dialog)
+ * const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(withAuth)
+ *
+ * export default DialogsContainer
+ */

@@ -1,4 +1,4 @@
-import { createSelector } from 'reselect'
+// import { createSelector } from 'reselect'
 
 export const getUsersSelector = (state) => {
     return state.userPage.users
@@ -24,12 +24,14 @@ export const isUnUseBtnSelector = (state) => {
     return state.userPage.isDisabledBtn
 }
 
-// future, create this selector, he must work with all simple selectors
-// and into switch/case return all and new value from state (maybe useSelector)
-export const componentSelector = createSelector(
-    [],() => {
-
-})
+/*
+ * future, create this selector, he must work with all simple selectors
+ * and into switch/case return all and new value from state (maybe useSelector)
+*/
+// export const componentSelector = createSelector(
+//     [],() => {
+//
+// })
 
 
 

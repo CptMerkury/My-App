@@ -9,8 +9,10 @@ export const usersAPI = {
             })
     },
     setFollow(id) {
-        //Для POST запросов объект withCredentials нужно передавать 3-м параметром как и в PUT методе,
-        // но так как мы создали instance, мы его уже не передаем
+        /*
+         * Для POST запросов объект withCredentials нужно передавать 3-м параметром как и в PUT методе,
+         *  но так как мы создали instance, мы его уже не передаем
+         */
         return instance
             .post(`/follow/${id}`, null)
             .then(response => {
@@ -18,8 +20,10 @@ export const usersAPI = {
             })
     },
     setUnfollow(id) {
-        //Для DELETE запросов объект withCredentials нужно передавать 2-м параметром как и в GET методе,
-        // но так как мы создали instance, мы его уже не передаем
+        /*
+         * Для DELETE запросов объект withCredentials нужно передавать 2-м параметром как и в GET методе,
+         * но так как мы создали instance, мы его уже не передаем
+         */
         return instance
             .delete(`/follow/${id}`)
             .then(response => {

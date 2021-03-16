@@ -47,7 +47,7 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 isDisabledBtn: action.payload
                     ? [...state.isDisabledBtn, action.userId]
-                    //метод filter вернет нам новый массив, в котором удалит тот id, который мы передали
+                    /* метод filter вернет нам новый массив, в котором удалит тот id, который мы передали */
                     : state.isDisabledBtn.filter(id => id !== action.userId)
             };
         default:
@@ -55,7 +55,7 @@ const usersReducer = (state = initialState, action) => {
     }
 }
 export const follow = (userID) => ({
-    //required параметр type
+    /* required параметр type */
     type: USER_ACTIONS.FOLLOW,
     payload: userID
 })

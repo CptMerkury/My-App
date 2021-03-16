@@ -7,7 +7,7 @@ import {compose} from "redux";
 import Profile from "./ProfileLayout/Ptofile";
 import withAuthRedirect from "../../utils/hoc/authRedirect";
 import {
-    getProfileThunkCreator, saveNewPhotoThunkCreator,
+    getProfileThunkCreator, getStatusThunkCreator, saveNewPhotoThunkCreator,
     setStatusThunkCreator
 } from "../../store/thunk/profile/profileThunk";
 import {
@@ -23,6 +23,7 @@ class ProfileContainer extends React.Component {
             userId = this.props.authUserID
         }
         this.props.getProfileThunkCreator(userId)
+        this.props.getStatusThunkCreator(userId)
     }
 
     componentDidMount() {
@@ -59,20 +60,23 @@ const mapStateToProps = (state) => ({
 })
 
 export default compose(
-    connect(mapStateToProps, {getProfileThunkCreator, setStatusThunkCreator, saveNewPhotoThunkCreator}),
+    connect(mapStateToProps, {
+        getProfileThunkCreator, setStatusThunkCreator,
+        getStatusThunkCreator, saveNewPhotoThunkCreator
+    }),
     withAuthRedirect,
     withRouter,
 )(ProfileContainer)
 
-// Вызов всех эти обработчиков ниже мы заменили на одну функцию compose выше
-
-// const withAuth = withAuthRedirect(ProfileContainer)
-//
-// // Используем withRouter чтобы обернуть контейнерную компоненту
-// // в другую контейнерную компоненту и передать в нее данные состояния uri
-// const ProfileWithUrlData = withRouter(withAuth)
-//
-// export default connect(mapStateToProps, {
-//     getProfileThunkCreator,
-//     getStatusThunkCreator,
-// })(ProfileWithUrlData)
+/* Вызов всех эти обработчиков ниже мы заменили на одну функцию compose выше
+*
+* const withAuth = withAuthRedirect(ProfileContainer)
+* // Используем withRouter чтобы обернуть контейнерную компоненту
+* // в другую контейнерную компоненту и передать в нее данные состояния uri
+* const ProfileWithUrlData = withRouter(withAuth)
+*
+* export default connect(mapStateToProps, {
+*     getProfileThunkCreator,
+*     getStatusThunkCreator,
+* })(ProfileWithUrlData)
+*/

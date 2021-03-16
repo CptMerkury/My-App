@@ -29,65 +29,6 @@ const ProfileDataForm = (props) => {
                        placeholder={'Full name'}
                        validate={[required, maxLength50, minValue1]}
                 />
-                {/*<div>*/}
-                {/*    <h4>Contacts:</h4>*/}
-                {/*    <p>Facebook:</p>*/}
-                {/*    <Field component={InputBase}*/}
-                {/*           name={'facebook'}*/}
-                {/*           type='text'*/}
-                {/*           placeholder={'https://'}*/}
-                {/*           validate={[required, maxLength50, minValue1]}*/}
-                {/*    />*/}
-                {/*    <p>Website:</p>*/}
-                {/*    <Field component={InputBase}*/}
-                {/*           name={'website'}*/}
-                {/*           type='text'*/}
-                {/*           placeholder={'https://'}*/}
-                {/*           validate={[required, maxLength50, minValue1]}*/}
-                {/*    />*/}
-                {/*    <p>VK:</p>*/}
-                {/*    <Field component={InputBase}*/}
-                {/*           name={'vk'}*/}
-                {/*           type='text'*/}
-                {/*           placeholder={'https://'}*/}
-                {/*           validate={[required, maxLength50, minValue1]}*/}
-                {/*    />*/}
-                {/*    <p>Twitter:</p>*/}
-                {/*    <Field component={InputBase}*/}
-                {/*           name={'twitter'}*/}
-                {/*           type='text'*/}
-                {/*           placeholder={'https://'}*/}
-                {/*           validate={[required, maxLength50, minValue1]}*/}
-                {/*    />*/}
-                {/*    <p>Instagram:</p>*/}
-                {/*    <Field component={InputBase}*/}
-                {/*           name={'instagram'}*/}
-                {/*           type='text'*/}
-                {/*           placeholder={'https://'}*/}
-                {/*           validate={[required, maxLength50, minValue1]}*/}
-                {/*    />*/}
-                {/*    <p>YouTube:</p>*/}
-                {/*    <Field component={InputBase}*/}
-                {/*           name={'youtube'}*/}
-                {/*           type='text'*/}
-                {/*           placeholder={'https://'}*/}
-                {/*           validate={[required, maxLength50, minValue1]}*/}
-                {/*    />*/}
-                {/*    <p>GitHub:</p>*/}
-                {/*    <Field component={InputBase}*/}
-                {/*           name={'github'}*/}
-                {/*           type='text'*/}
-                {/*           placeholder={'https://'}*/}
-                {/*           validate={[required, maxLength50, minValue1]}*/}
-                {/*    />*/}
-                {/*    <p>MainLink:</p>*/}
-                {/*    <Field component={InputBase}*/}
-                {/*           name={'mainLink'}*/}
-                {/*           type='text'*/}
-                {/*           placeholder={'https://'}*/}
-                {/*           validate={[required, maxLength50, minValue1]}*/}
-                {/*    />*/}
-                {/*</div>*/}
                 <div>
                     <h4>Job information:</h4>
                     <span>Open for job&nbsp;</span>
@@ -100,6 +41,65 @@ const ProfileDataForm = (props) => {
                            type='text'
                            placeholder={'Description for job'}
                            validate={[required, maxLength50, minValue1]}
+                    />
+                </div>
+                <div>
+                    <h4>Contacts:</h4>
+                    <p>Facebook:</p>
+                    <Field component={InputBase}
+                           name={'contacts.facebook'}
+                           type='text'
+                           placeholder={'https://'}
+                           validate={[maxLength50, minValue1]}
+                    />
+                    <p>Website:</p>
+                    <Field component={InputBase}
+                           name={'contacts.website'}
+                           type='text'
+                           placeholder={'https://'}
+                           validate={[maxLength50, minValue1]}
+                    />
+                    <p>VK:</p>
+                    <Field component={InputBase}
+                           name={'contacts.vk'}
+                           type='text'
+                           placeholder={'https://'}
+                           validate={[maxLength50, minValue1]}
+                    />
+                    <p>Twitter:</p>
+                    <Field component={InputBase}
+                           name={'contacts.twitter'}
+                           type='text'
+                           placeholder={'https://'}
+                           validate={[maxLength50, minValue1]}
+                    />
+                    <p>Instagram:</p>
+                    <Field component={InputBase}
+                           name={'contacts.instagram'}
+                           type='text'
+                           placeholder={'https://'}
+                           validate={[maxLength50, minValue1]}
+                    />
+                    <p>YouTube:</p>
+                    <Field component={InputBase}
+                           name={'contacts.youtube'}
+                           type='text'
+                           placeholder={'https://'}
+                           validate={[maxLength50, minValue1]}
+                    />
+                    <p>GitHub:</p>
+                    <Field component={InputBase}
+                           name={'contacts.github'}
+                           type='text'
+                           placeholder={'https://'}
+                           validate={[maxLength50, minValue1]}
+                    />
+                    <p>MainLink:</p>
+                    <Field component={InputBase}
+                           name={'contacts.mainLink'}
+                           type='text'
+                           placeholder={'https://'}
+                           validate={[maxLength50, minValue1]}
                     />
                 </div>
             </div>
@@ -123,7 +123,10 @@ const ProfileDataReduxForm = reduxForm(
 )(ProfileDataForm)
 
 const ProfileDataEdit = ({saveProfile, profile, isLoading}) => {
-
+    /*
+    * Для полей contacts мы в качестве названия используем 'contacts.Name'
+    * Чтобы внутри formData, создался объект contacts. И value для этих полей отображался
+    */
     const onSubmit = (formData) => {
         saveProfile(formData)
     }
@@ -131,7 +134,8 @@ const ProfileDataEdit = ({saveProfile, profile, isLoading}) => {
     return (
         <div>
             <h3>Change your information:</h3>
-            <ProfileDataReduxForm onSubmit={onSubmit}/>
+            <ProfileDataReduxForm onSubmit={onSubmit} initialValues={profile} isLoading={isLoading}/>
+            {isLoading ? <Preloader/> : null}
         </div>
     )
 }
