@@ -50,6 +50,14 @@ const StartPage = () => {
                         </li>
                         <li className={classes.stackItem}>AXIOS (Promise and Async/Await)</li>
                     </ul>
+                    <li className={classes.stackItemTitle}>
+                        <h4>Testing</h4>
+                    </li>
+                    <ul>
+                        <li className={classes.stackItem}>
+                            Jestjs.io
+                        </li>
+                    </ul>
                 </ul>
                 <div className={classes.opportunities}>
                     <ul className={classes.opportunitiesList}>
