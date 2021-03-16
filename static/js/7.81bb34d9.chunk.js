@@ -1,0 +1,2 @@
+(this["webpackJsonpmy-app"]=this["webpackJsonpmy-app"]||[]).push([[7],{307:function(n,s,e){n.exports={newsContainer:"News_newsContainer__1hssa"}},311:function(n,s,e){"use strict";e.r(s);e(1);var t=e(307),a=e.n(t),i=e(0);s.default=function(n){return Object(i.jsx)("div",{className:a.a.newsContainer,children:"News"})}}}]);
+//# sourceMappingURL=7.81bb34d9.chunk.js.map
