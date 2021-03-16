@@ -12,7 +12,7 @@ const StartPage = () => {
             <div className={classes.disclaimer}>
                 <h3 className={classes.disclaimerTitle}>DISCLAIMER</h3>
                 <p className={classes.disclaimerDescr}>
-                    <b>In Safari now not working authorized use other browser, sorry.</b>
+                    <b>In Safari now not working authorized use other browser, sorry.</b><br/>
                     This is my template for SPA (Single Page Application). He has not complete functionality,
                     but give you opportunity to see how at work. On this application i use GitHub Pages.
                     For correct reloading page i use HashRouter. In order not to download full application i
