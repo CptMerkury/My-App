@@ -1,0 +1,99 @@
+.wrapper {
+    padding: 20px 50px;
+    background: ghostwhite;
+}
+
+.header {
+    padding: 15px 0;
+    text-align: center;
+    color: rgba(221, 20, 61, .8);
+}
+
+.header span {
+    color: #2d2d2d;
+}
+
+.headerGreeting {
+    font-size: 32px;
+    font-weight: 400;
+    color: rgba(75, 80, 240, .9);
+    margin-bottom: 10px;
+}
+
+.disclaimer {
+    padding: 15px 30px;
+    border: 1px solid rgba(70, 70, 70, .3);
+    border-radius: 10px;
+    text-align: center;
+    color: #2d2d2d;
+    word-break: break-word;
+}
+
+.disclaimerTitle {
+    font-size: 26px;
+    font-weight: 700;
+    color: rgba(221, 20, 61, .9);
+}
+
+.disclaimerDescr {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.stack {
+    padding: 20px 0;
+}
+
+.stackTitile {
+    color: rgba(75, 80, 240, .9);
+    text-align: center;
+}
+
+.stackList {
+    border: 1px solid rgba(70, 70, 70, .3);
+    border-radius: 10px;
+    padding: 15px 50px 30px;
+    list-style-type: square;
+}
+
+.stackItemTitle {
+    padding: 5px 0;
+    color: rgba(75, 80, 240, .7);
+}
+
+.stackItem {
+    padding: 2px 10px;
+    list-style-type: none;
+}
+
+.opportunities {
+    margin: 20px auto;
+    border: 1px solid rgba(70, 70, 70, .3);
+    border-radius: 10px;
+}
+
+.opportunitiesTitle {
+    color: rgba(75, 80, 240, .9);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.opportunitiesList {
+    text-align: left;
+    padding: 15px 50px 30px;
+}
+
+.opportunitiesItem {
+    margin: 2px 0;
+    border: 1px solid rgba(221, 20, 61, .5);
+    border-radius: 10px;
+    padding: 5px 10px;
+    list-style-type: circle;
+}
+.opportunitiesItemCan{
+    margin: 2px 0;
+    border: 1px solid rgba(75, 176, 80, .9);
+    border-radius: 10px;
+    padding: 5px 10px;
+    list-style-type: circle;
+}
