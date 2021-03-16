@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react_redux_SPA_study/static/css/main.210fa7c1.chunk.css",
+    "main.css": "/react_redux_SPA_study/static/css/main.adb4d6fa.chunk.css",
     "main.js": "/react_redux_SPA_study/static/js/main.7da3679d.chunk.js",
     "main.js.map": "/react_redux_SPA_study/static/js/main.7da3679d.chunk.js.map",
     "runtime-main.js": "/react_redux_SPA_study/static/js/runtime-main.ad3c90a7.js",
@@ -28,7 +28,7 @@
     "static/css/5.ed50480d.chunk.css.map": "/react_redux_SPA_study/static/css/5.ed50480d.chunk.css.map",
     "static/css/6.b11992e5.chunk.css.map": "/react_redux_SPA_study/static/css/6.b11992e5.chunk.css.map",
     "static/css/7.802292c5.chunk.css.map": "/react_redux_SPA_study/static/css/7.802292c5.chunk.css.map",
-    "static/css/main.210fa7c1.chunk.css.map": "/react_redux_SPA_study/static/css/main.210fa7c1.chunk.css.map",
+    "static/css/main.adb4d6fa.chunk.css.map": "/react_redux_SPA_study/static/css/main.adb4d6fa.chunk.css.map",
     "static/js/2.d71d5b36.chunk.js.LICENSE.txt": "/react_redux_SPA_study/static/js/2.d71d5b36.chunk.js.LICENSE.txt",
     "static/media/294.a1c83cdc.svg": "/react_redux_SPA_study/static/media/294.a1c83cdc.svg",
     "static/media/35.64407753.svg": "/react_redux_SPA_study/static/media/35.64407753.svg",
@@ -37,7 +37,7 @@
   "entrypoints": [
     "static/js/runtime-main.ad3c90a7.js",
     "static/js/2.d71d5b36.chunk.js",
-    "static/css/main.210fa7c1.chunk.css",
+    "static/css/main.adb4d6fa.chunk.css",
     "static/js/main.7da3679d.chunk.js"
   ]
 }
