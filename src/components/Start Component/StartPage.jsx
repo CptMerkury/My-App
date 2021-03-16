@@ -72,10 +72,10 @@ const StartPage = () => {
                         <li className={classes.opportunitiesItemCan}>
                             Change you status - on page other user in function blocked.
                         </li>
-                        <li className={classes.opportunitiesItem}>
+                        <li className={classes.opportunitiesItemCan}>
                             Change information for you profile - redirect on settings page (in process).
                         </li>
-                        <li className={classes.opportunitiesItem}>
+                        <li className={classes.opportunitiesItemCan}>
                             Add information if you open for job (in process).
                         </li>
                         <li className={classes.opportunitiesItemCan}>
