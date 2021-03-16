@@ -40,6 +40,10 @@
     width: 90%;
 }
 
+.disclaimerDescr b {
+    color: rgba(221, 20, 61, .9);
+}
+
 .stack {
     padding: 20px 0;
 }
@@ -90,7 +94,8 @@
     padding: 5px 10px;
     list-style-type: circle;
 }
-.opportunitiesItemCan{
+
+.opportunitiesItemCan {
     margin: 2px 0;
     border: 1px solid rgba(75, 176, 80, .9);
     border-radius: 10px;
