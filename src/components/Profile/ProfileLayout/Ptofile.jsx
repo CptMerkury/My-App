@@ -13,6 +13,7 @@ const Profile = (props) => {
                          isOwner={props.isOwner}
                          saveNewPhoto={props.saveNewPhoto}
                          isLoading={props.isLoading}
+                         isFetchingStatus={props.isFetchingStatus}
             />
             <PostsContainer/>
         </div>

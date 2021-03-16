@@ -14,7 +14,7 @@ import store from "./store/store";
 
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/PtofileContainer";
-import {Preloader} from "./components/common/preloader";
+import {Preloader} from "./components/common/preloader/spinner";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import NavBar from "./components/NavBar/NavBar";
 import withSuspense from "./utils/hoc/lazyComponent";

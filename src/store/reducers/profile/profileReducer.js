@@ -11,6 +11,7 @@ let initialState = {
         {id: 5, message: 'Hi', likeCount: 10},
     ],
     isLoading: false,
+    isFetchingStatus: false,
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -44,6 +45,11 @@ const profileReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: action.payload
+            };
+        case PROFILE_ACTIONS.IS_FETCHING_STATUS:
+            return {
+                ...state,
+                isFetchingStatus: action.payload
             };
         case PROFILE_ACTIONS.SET_PHOTO_SUCCESS:
             return {
@@ -79,6 +85,10 @@ export const setPhotoSuccess = (photos) => ({
 })
 export const toggleFetch = (bool) => ({
     type: PROFILE_ACTIONS.IS_FETCHING,
+    payload: bool
+})
+export const toggleFetchStatus = (bool) => ({
+    type: PROFILE_ACTIONS.IS_FETCHING_STATUS,
     payload: bool
 })
 

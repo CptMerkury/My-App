@@ -9,7 +9,5 @@
 }
 
 .spinner img {
-    min-height: 10%;
-    max-height: 80%;
-    padding: 20%;
+    padding: 25%;
 }

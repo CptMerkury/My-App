@@ -20,6 +20,10 @@ export const checkLoadingSelector = (state) => {
     return state.profilePage.isLoading
 }
 
+export const checkFetchingStatusSelector = (state) => {
+    return state.profilePage.isFetchingStatus
+}
+
 // future, create this selector, he must work with all simple selectors
 // and into switch/case return all and new value from state
 export const componentSelector = createSelector(

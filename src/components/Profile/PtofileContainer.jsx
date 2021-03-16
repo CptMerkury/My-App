@@ -11,7 +11,7 @@ import {
     setStatusThunkCreator
 } from "../../store/thunk/profile/profileThunk";
 import {
-    checkAuthSelector, checkLoadingSelector, getProfileSelector,
+    checkAuthSelector, checkFetchingStatusSelector, checkLoadingSelector, getProfileSelector,
     getStatusSelector, getUserIdSelector
 } from "../../store/selectors/profile/profileSelectors";
 
@@ -54,7 +54,8 @@ const mapStateToProps = (state) => ({
     status: getStatusSelector(state),
     authUserID: getUserIdSelector(state),
     isAuth: checkAuthSelector(state),
-    isLoading: checkLoadingSelector(state)
+    isLoading: checkLoadingSelector(state),
+    isFetchingStatus: checkFetchingStatusSelector(state)
 })
 
 export default compose(

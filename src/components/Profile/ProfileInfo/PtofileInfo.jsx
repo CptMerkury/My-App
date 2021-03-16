@@ -1,11 +1,11 @@
 import React from "react";
 import classes from './ProfileInfo.module.css';
-import {Preloader} from "../../common/preloader";
+import {Preloader} from "../../common/preloader/spinner";
 import ProfileStatus from "./ProfileStatus/ProfileStatus";
 import ProfileData from "./ProfileData/ProfileData";
 
 
-const ProfileInfo = ({saveNewPhoto, profile, status, updateStatus, isOwner, contacts, isLoading}) => {
+const ProfileInfo = ({saveNewPhoto, profile, status, updateStatus, isOwner, contacts, isLoading,isFetchingStatus}) => {
 
     const onPhotoSelected = (e) => {
         if (e.target.files.length) {
@@ -26,7 +26,7 @@ const ProfileInfo = ({saveNewPhoto, profile, status, updateStatus, isOwner, cont
                                 src={profile.photos.large || 'https://img2-placeit-net.s3-accelerate.amazonaws.com/uploads/stage/stage_image/40597/optimized_large_thumb_stage.jpg'}
                                 alt="ava"/>}
                     </div>
-                    <ProfileStatus status={status} updateStatus={updateStatus} isOwner={isOwner}/>
+                    <ProfileStatus status={status} updateStatus={updateStatus} isOwner={isOwner} loading={isFetchingStatus}/>
                 </div>
 
                 <div className={classes.infoBlock}>

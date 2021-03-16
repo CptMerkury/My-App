@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import classes from "../ProfileInfo.module.css";
+import {Loader} from "../../../common/preloader/loading";
 
 const ProfileStatus = (props) => {
 
@@ -24,7 +25,10 @@ const ProfileStatus = (props) => {
         <div className={classes.statusBlock}>
             {!editMode
                 ? <div className={classes.statusDescr} onClick={onEditMode}>
-                    <p>{props.status || 'Not indicated'}</p>
+                    {props.loading
+                        ? <Loader/>
+                        : <p>{props.status || 'Not indicated'}</p>
+                    }
                 </div>
                 :
                 <div className={classes.statusDescr}>
