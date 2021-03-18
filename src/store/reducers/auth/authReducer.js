@@ -14,7 +14,6 @@ const authReducer = (state = initialState, action) => {
         case AUTH_ACTIONS.SET_AUTH_DATA:
             return {
                 ...state,
-                captcha: null,
                 ...action.payload,
             };
         case AUTH_ACTIONS.GET_CAPTCHA:

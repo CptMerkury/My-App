@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import {
-    BrowserRouter,
+    // BrowserRouter,
     HashRouter,
     Route,
     withRouter
@@ -14,6 +14,7 @@ import store from "./store/store";
 
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/PtofileContainer";
+import Setting from "./components/Setting/Setting";
 import {Preloader} from "./components/common/preloader/spinner";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import NavBar from "./components/NavBar/NavBar";
@@ -25,7 +26,6 @@ const Login = React.lazy(() => import('./components/Login/Login'));
 const DialogContainer = React.lazy(() => import('./components/Dialogs/DialogContainer'));
 const News = React.lazy(() => import('./components/News/News'));
 const Music = React.lazy(() => import('./components/Music/Music'));
-const Setting = React.lazy(() => import('./components/Setting/Setting'));
 
 class App extends React.Component {
     componentDidMount() {
@@ -85,11 +85,13 @@ const SocialAppContainer = compose(
 
 const SocialApp = () => {
     return (
-        /* Change BrouserRouter on HashRouter and commented 'basename' for gh-pages */
-        <HashRouter /*basename={process.env.PUBLIC_URL}*/>
-            <Provider store={store}>
-                <SocialAppContainer/>
-            </Provider>
+        /* Use HashRouter for gh-pages */
+        <HashRouter>
+            {/*<BrowserRouter basename={process.env.PUBLIC_URL}>*/}
+                <Provider store={store}>
+                    <SocialAppContainer/>
+                </Provider>
+            {/*</BrowserRouter>*/}
         </HashRouter>
     )
 }

@@ -6,6 +6,7 @@ import {
     toggleFetch,
     toggleFetchStatus
 } from "../../reducers/profile/profileReducer";
+import {stopSubmit} from "redux-form";
 
 export const getProfileThunkCreator = (id) => async (dispatch) => {
     dispatch(toggleFetch(true))
@@ -28,6 +29,7 @@ export const setStatusThunkCreator = (status) => async (dispatch) => {
         dispatch(getStatus(status))
         dispatch(toggleFetchStatus(false))
     }
+
 }
 export const saveNewPhotoThunkCreator = (file) => async (dispatch) => {
     dispatch(toggleFetch(true))
@@ -40,11 +42,15 @@ export const saveNewPhotoThunkCreator = (file) => async (dispatch) => {
 }
 
 export const saveProfileThunkCreator = (data) => async (dispatch, getState) => {
-    const userId = getState().auth.userId
     dispatch(toggleFetch(true))
+    const userId = getState().auth.userId
     let response = await profileAPI.saveProfile(data)
+
     if (response.resultCode === 0) {
         dispatch(getProfileThunkCreator(userId))
         dispatch(toggleFetch(false))
+    } else {
+        dispatch(toggleFetch(false))
+        dispatch(stopSubmit('newProfileData', {_error: response.messages}))
     }
 }
