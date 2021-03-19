@@ -13,7 +13,11 @@ const Setting = ({...props}) => {
     return (
         <div className={classes.settingContainer}>
             <h2>Setting</h2>
-            <ProfileDataEdit profile={props.profile} isLoading={props.isLoading} saveProfile={saveProfile}/>
+            <ProfileDataEdit
+                profile={props.profile}
+                isLoading={props.isLoading}
+                saveProfile={saveProfile}
+            />
         </div>
     )
 };

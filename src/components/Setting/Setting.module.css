@@ -1,4 +1,183 @@
-.settingContainer{
+.settingContainer {
+    background-color: ghostwhite;
     min-height: 100%;
-    background: ghostwhite;
+    padding: 20px 50px;
+}
+
+.settingContainer h2 {
+    font-size: 32px;
+    font-weight: 100;
+    color: rgba(75, 80, 240, .9);
+    width: 160px;
+    margin-bottom: 20px;
+}
+
+.settingsWrapper {
+    text-align: center;
+}
+
+.settingsField {
+    padding: 20px 0;
+    border-top: 1px solid rgba(75, 80, 240, .4);
+}
+
+.form_wrapper {
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    grid-gap: 5px;
+}
+
+.aboutMe_block {
+    text-align: center;
+    margin: 15px 0;
+    padding: 15px 30px;
+    border: 1px solid rgba(75, 80, 240, .4);
+    border-radius: 10px;
+}
+
+.aboutMe_block h4 {
+    color: #2d2d2d;
+    padding: 10px 0;
+}
+
+.aboutMe_block input {
+    width: 100%;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 2px solid rgba(75, 80, 240, .9);
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    resize: none;
+}
+
+.aboutMe_block textarea {
+    height: 150px;
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px 10px;
+    border: 2px solid rgba(75, 80, 240, .9);
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    resize: none;
+}
+
+.aboutMe_block .btn_save {
+    position: relative;
+    top: 47px;
+}
+
+.job_block {
+    text-align: center;
+    margin: 15px 0;
+    padding: 15px 30px;
+    border: 1px solid rgba(75, 80, 240, .4);
+    border-radius: 10px;
+}
+
+.job_block h4 {
+    color: #2d2d2d;
+    padding: 10px 0;
+}
+
+.job_block input {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border: 2px solid rgba(75, 80, 240, .9);
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+
+.job_block textarea {
+    height: 150px;
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px 10px;
+    border: 2px solid rgba(75, 80, 240, .9);
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    resize: none;
+}
+
+.job_block .btn_save {
+    position: relative;
+    top: 45px;
+}
+
+.contacts_block {
+    text-align: center;
+    margin: 15px 0;
+    padding: 15px 30px;
+    border: 1px solid rgba(75, 80, 240, .4);
+    border-radius: 10px;
+}
+
+.contacts_block h4 {
+    color: #2d2d2d;
+    padding: 10px 0;
+}
+
+.contacts_fields {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    grid-gap: 5px;
+    padding: 5px 0;
+}
+
+.contacts_fields p {
+    padding-top: 5px;
+}
+
+.contacts_fields input {
+    padding: 5px 10px;
+    border: 2px solid rgba(75, 80, 240, .9);
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    resize: none;
+}
+
+.contacts_block .btn_save {
+    position: relative;
+    top: 5px;
+}
+
+.btn_save {
+    padding: 10px 0;
+}
+
+.btn_save button {
+    border: 1px solid rgba(255, 255, 255, .9);
+    border-radius: 5px;
+    background-color: rgba(75, 80, 240, .9);
+    padding: 7px 10px;
+    color: rgba(255, 255, 255, .9);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.btn_save button:hover {
+    background-color: rgba(75, 80, 240, .7);
+    transition: all .3s ease;
+
+}
+
+.btn_saveAll button {
+    background: rgba(75, 80, 240, .9);
+    width: 150px;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+    margin-top: 20px;
+    transition: all .15s linear;
+}
+
+.btn_saveAll button:hover {
+    background: rgba(75, 80, 240, .7);
+    transition: all .15s linear;
 }
