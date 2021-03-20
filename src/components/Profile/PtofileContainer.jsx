@@ -15,7 +15,7 @@ import {
     getStatusSelector, getUserIdSelector
 } from "../../store/selectors/profile/profileSelectors";
 
-class ProfileContainer extends React.Component {
+class ProfileContainer extends React.PureComponent {
 
     refreshProfile() {
         let userId = this.props.match.params.userId
@@ -30,7 +30,7 @@ class ProfileContainer extends React.Component {
         this.refreshProfile()
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
+    componentDidUpdate(prevProps) {
         if (prevProps.match.params.userId !== this.props.match.params.userId) {
             this.refreshProfile()
         }

@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
 import {
-    // BrowserRouter,
-    HashRouter,
+    BrowserRouter,
+    // HashRouter,
     Route,
     withRouter
 } from "react-router-dom";
@@ -86,13 +86,13 @@ const SocialAppContainer = compose(
 const SocialApp = () => {
     return (
         /* Use HashRouter for gh-pages */
-        <HashRouter>
-            {/*<BrowserRouter basename={process.env.PUBLIC_URL}>*/}
+        //<HashRouter>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
                 <Provider store={store}>
                     <SocialAppContainer/>
                 </Provider>
-            {/*</BrowserRouter>*/}
-        </HashRouter>
+            </BrowserRouter>
+        //</HashRouter>
     )
 }
 
