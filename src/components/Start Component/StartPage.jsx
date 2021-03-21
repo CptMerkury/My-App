@@ -28,7 +28,7 @@ const StartPage = () => {
                     </li>
                     <ul>
                         <li className={classes.stackItem}>
-                            React (Component and Function component, Life cycle methods, Hooks, HOC)
+                            React (Class component and Function component, Life cycle methods, Hooks, HOC)
                         </li>
                         <li className={classes.stackItem}>
                             CSS (CSS modules)
