@@ -23,13 +23,16 @@ export const getStatusThunkCreator = (id) => async (dispatch) => {
 }
 
 export const setStatusThunkCreator = (status) => async (dispatch) => {
-    dispatch(toggleFetchStatus(true))
-    let response = await profileAPI.setStatus(status)
-    if (response.data.resultCode === 0) {
-        dispatch(getStatus(status))
-        dispatch(toggleFetchStatus(false))
+    try {
+        dispatch(toggleFetchStatus(true))
+        let response = await profileAPI.setStatus(status)
+        if (response.data.resultCode === 0) {
+            dispatch(getStatus(status))
+            dispatch(toggleFetchStatus(false))
+        }
+    } catch(err){
+        alert(err)
     }
-
 }
 export const saveNewPhotoThunkCreator = (file) => async (dispatch) => {
     dispatch(toggleFetch(true))

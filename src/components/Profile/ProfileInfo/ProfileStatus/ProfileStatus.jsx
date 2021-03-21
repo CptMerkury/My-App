@@ -2,32 +2,32 @@ import React, {useState, useEffect} from 'react'
 import classes from "../ProfileInfo.module.css";
 import {Loader} from "../../../common/preloader/loading";
 
-const ProfileStatus = (props) => {
+const ProfileStatus = ({statusData, saveStatus, isOwner, loading}) => {
 
     const [editMode, setEditMode] = useState(false)
-    const [status, setStatus] = useState(props.status)
+    const [status, setStatus] = useState(statusData)
 
-    const onEditMode = () => setEditMode(props.isOwner)
+    const onEditMode = () => setEditMode(isOwner)
     const offEditMode = () => setEditMode(false)
 
     const addStatus = () => {
         setEditMode(false)
-        props.updateStatus(status)
+        saveStatus(status)
     }
 
     const updateTextStatus = (e) => setStatus(e.target.value)
 
     useEffect(() => {
-        setStatus(props.status)
-    }, [props.status])
+        setStatus(statusData)
+    }, [statusData])
 
     return (
         <div className={classes.statusBlock}>
             {!editMode
                 ? <div className={classes.statusDescr} onClick={onEditMode}>
-                    {props.loading
+                    {loading
                         ? <Loader/>
-                        : <p>{props.status || 'Not indicated'}</p>
+                        : <p>{statusData || 'Not indicated'}</p>
                     }
                 </div>
                 :
@@ -36,8 +36,16 @@ const ProfileStatus = (props) => {
                         <input onChange={updateTextStatus} type='text' autoFocus={true} placeholder='Change status'
                                value={status}/>
                     </div>
+                    <br/>
                     <div>
-                        <button type='submit' className={classes.changeStatusBtn} onClick={addStatus}>Change</button>
+                        {status.length > 100 ? <div>Status length must be less 100 letters</div> : null}
+                    </div>
+                    <div>
+                        <button type='submit'
+                                disabled={status.length > 100}
+                                className={classes.changeStatusBtn}
+                                onClick={addStatus}>Change
+                        </button>
                         <button type='button' className={classes.cancelStatusBtn} onClick={offEditMode}>Cancel</button>
                     </div>
                 </div>

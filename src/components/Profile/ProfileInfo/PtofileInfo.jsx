@@ -27,7 +27,7 @@ const ProfileInfo = ({saveNewPhoto, profile, status, updateStatus, isOwner, cont
                                 src={profile.photos.large || 'https://img2-placeit-net.s3-accelerate.amazonaws.com/uploads/stage/stage_image/40597/optimized_large_thumb_stage.jpg'}
                                 alt="ava"/>}
                     </div>
-                    <ProfileStatus status={status} updateStatus={updateStatus}
+                    <ProfileStatus statusData={status} saveStatus={updateStatus}
                                    isOwner={isOwner} loading={isFetchingStatus}/>
                 </div>
 
