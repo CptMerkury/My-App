@@ -15,7 +15,6 @@ let initialState: InitialStateType = {
 };
 
 const appReducer = (state = initialState, action: any) => {
-    console.log(action)
     switch (action.type) {
         case SET_INITIALIZED: {
             return {
