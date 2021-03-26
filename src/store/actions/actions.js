@@ -26,7 +26,3 @@ export const AUTH_ACTIONS = {
     SET_AUTH_DATA: 'my-app/auth/SET_AUTH_DATA',
     GET_CAPTCHA: 'my-app/auth/GET_CAPTCHA'
 }
-
-export const INIT_ACTIONS = {
-    SET_INITIALIZED: 'my-app/init/SET_INITIALIZED'
-}
