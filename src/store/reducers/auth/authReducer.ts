@@ -10,21 +10,6 @@ type InitAuthStateType = {
     captcha: string | null
 }
 
-type SetAuthActionType = {
-    type: typeof SET_AUTH_DATA
-    payload: {
-        userId: number
-        email: string
-        login: string
-        isAuth: boolean
-    }
-}
-
-type GetCaptchaActionType = {
-    type: typeof GET_CAPTCHA
-    payload: string
-}
-
 const initialState: InitAuthStateType = {
     userId: null,
     email: null,
@@ -34,7 +19,7 @@ const initialState: InitAuthStateType = {
     captcha: null
 };
 
-const authReducer = (state = initialState, action: any): InitAuthStateType => {
+const authReducer = (state = initialState, action: SetAuthActionType | GetCaptchaActionType): InitAuthStateType => {
     switch (action.type) {
         case SET_AUTH_DATA:
             return {
@@ -51,10 +36,26 @@ const authReducer = (state = initialState, action: any): InitAuthStateType => {
     }
 }
 
-export const setAuthData = (userId: number, email: string, login: string, isAuth: boolean): SetAuthActionType => ({
+type SetAuthActionType = {
+    type: typeof SET_AUTH_DATA
+    payload: {
+        userId: number | null
+        email: string | null
+        login: string | null
+        isAuth: boolean
+    }
+}
+
+export const setAuthData = (userId: number | null, email: string | null, login: string | null, isAuth: boolean): SetAuthActionType => ({
     type: SET_AUTH_DATA,
     payload: {userId, email, login, isAuth}
 })
+
+
+type GetCaptchaActionType = {
+    type: typeof GET_CAPTCHA
+    payload: string | null
+}
 
 export const getCaptcha = (url: string): GetCaptchaActionType => ({
     type: GET_CAPTCHA,
