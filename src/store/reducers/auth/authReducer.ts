@@ -1,25 +1,18 @@
-const SET_AUTH_DATA = 'my-app/auth/SET_AUTH_DATA';
-const GET_CAPTCHA = 'my-app/auth/GET_CAPTCHA';
+import {GET_CAPTCHA, SET_AUTH_DATA} from "../../actions/actions";
 
-type InitAuthStateType = {
-    userId: number | null
-    email: string | null
-    login: string | null
-    isAuth: boolean
-    isLoading: boolean
-    captcha: string | null
-}
-
-const initialState: InitAuthStateType = {
-    userId: null,
-    email: null,
-    login: null,
+const initialState = {
+    userId: null as number | null,
+    email: null as string | null,
+    login: null as string | null,
     isAuth: false,
     isLoading: false,
-    captcha: null
+    captcha: null as string | null
 };
 
-const authReducer = (state = initialState, action: SetAuthActionType | GetCaptchaActionType): InitAuthStateType => {
+export type AuthInitialStateType = typeof initialState;
+
+/* Need add typification for action */
+const authReducer = (state = initialState, action: any): AuthInitialStateType => {
     switch (action.type) {
         case SET_AUTH_DATA:
             return {

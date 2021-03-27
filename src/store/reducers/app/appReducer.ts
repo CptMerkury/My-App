@@ -1,18 +1,12 @@
-const SET_INITIALIZED = 'my-app/init/SET_INITIALIZED';
+import {SET_INITIALIZED} from "../../actions/actions";
 
-type InitializeSuccessActionType = {
-    type: typeof SET_INITIALIZED
-};
-
-type InitialStateType = {
-    initialized: boolean,
-}
-
-const initialState: InitialStateType = {
+const initialState = {
     initialized: false,
 };
 
-const appReducer = (state = initialState, action: InitializeSuccessActionType): InitialStateType => {
+export type InitialAppStateType = typeof initialState
+
+const appReducer = (state = initialState, action: any): InitialAppStateType => {
     switch (action.type) {
         case SET_INITIALIZED: {
             return {
@@ -23,6 +17,10 @@ const appReducer = (state = initialState, action: InitializeSuccessActionType): 
         default:
             return state;
     }
+};
+
+type InitializeSuccessActionType = {
+    type: typeof SET_INITIALIZED
 };
 
 export const InitializeSuccess = (): InitializeSuccessActionType => ({

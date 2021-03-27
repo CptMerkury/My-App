@@ -1,4 +1,3 @@
-// import { createSelector } from 'reselect'
 
 export const getProfileSelector = (state) => {
     return state.profilePage.profile

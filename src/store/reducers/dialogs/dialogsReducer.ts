@@ -1,13 +1,14 @@
-import {DIALOG_ACTIONS} from "../../actions/actions";
+import {SEND_MESSAGE} from "../../actions/actions";
+import {DialogType, MessageType} from "../../Types/@types";
 
-let initialState = {
+const initialState = {
     dialogs: [
         {id: 1, name: 'Ivan'},
-        {id: 2, name: 'Dima'},
+        {id: 2, name: 'Dmitri'},
         {id: 3, name: 'Max'},
-        {id: 4, name: 'Vova'},
+        {id: 4, name: 'Vladimir'},
         {id: 5, name: 'Andrew'},
-    ],
+    ] as Array<DialogType>,
     messages: [
         {id: 1, message: 'Hi'},
         {id: 2, message: 'What`s Up'},
@@ -19,12 +20,14 @@ let initialState = {
         {id: 8, message: 'How are you'},
         {id: 9, message: 'Hello'},
         {id: 10, message: 'Yo'},
-    ],
+    ] as Array<MessageType>,
 };
 
-const dialogsReducer = (state = initialState, action) => {
+export type DialogInitialStateType = typeof initialState;
+
+const dialogsReducer = (state = initialState, action: any): DialogInitialStateType => {
     switch (action.type) {
-        case DIALOG_ACTIONS.SEND_MESSAGE: {
+        case SEND_MESSAGE: {
             let newMessage = {
                 id: state.messages.length + 1,
                 message: action.payload
@@ -39,8 +42,13 @@ const dialogsReducer = (state = initialState, action) => {
     }
 }
 
-export const sendMessageCreator = (value) => ({
-    type: DIALOG_ACTIONS.SEND_MESSAGE,
+type SendMessageActionType = {
+    type: typeof SEND_MESSAGE
+    payload: string
+}
+
+export const sendMessageCreator = (value: string): SendMessageActionType => ({
+    type: SEND_MESSAGE,
     payload: value
 })
 
