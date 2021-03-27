@@ -7,7 +7,7 @@ import {
     SET_PHOTO_SUCCESS,
     SET_PROFILE_DATA
 } from "../../actions/actions";
-import {PhotosType, PostsType, ProfileType} from "../../Types/@types";
+import {PhotosType, PostsType, ProfileType} from "../../types/@types";
 
 const initialState = {
     profile: [] as Array<ProfileType> | null,

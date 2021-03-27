@@ -1,5 +1,5 @@
 import {SEND_MESSAGE} from "../../actions/actions";
-import {DialogType, MessageType} from "../../Types/@types";
+import {DialogType, MessageType} from "../../types/@types";
 
 const initialState = {
     dialogs: [

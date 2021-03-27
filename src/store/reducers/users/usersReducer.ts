@@ -8,7 +8,7 @@ import {
     SET_USERS,
     UNFOLLOW
 } from "../../actions/actions";
-import {UserType} from "../../Types/@types";
+import {UserType} from "../../types/@types";
 
 const initialState = {
     users: [] as Array<UserType> | null,

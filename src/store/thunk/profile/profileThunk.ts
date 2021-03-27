@@ -7,7 +7,7 @@ import {
     toggleFetchStatus
 } from "../../reducers/profile/profileReducer";
 import {stopSubmit} from "redux-form";
-import {ProfileType} from "../../Types/@types";
+import {ProfileType} from "../../types/@types";
 
 export const getProfileThunkCreator = (id: number) => async (dispatch: any) => {
     dispatch(toggleFetch(true))
