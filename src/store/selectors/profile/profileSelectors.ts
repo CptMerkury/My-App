@@ -1,25 +1,26 @@
+import {AppStateType} from "../../store";
 
-export const getProfileSelector = (state) => {
+export const getProfileSelector = (state: AppStateType) => {
     return state.profilePage.profile
 }
 
-export const getStatusSelector = (state) => {
+export const getStatusSelector = (state: AppStateType) => {
     return state.profilePage.status
 }
 
-export const getUserIdSelector = (state) => {
+export const getUserIdSelector = (state: AppStateType) => {
     return state.auth.userId
 }
 
-export const checkAuthSelector = (state) => {
+export const checkAuthSelector = (state: AppStateType) => {
     return state.auth.isAuth
 }
 
-export const checkLoadingSelector = (state) => {
+export const checkLoadingSelector = (state: AppStateType) => {
     return state.profilePage.isLoading
 }
 
-export const checkFetchingStatusSelector = (state) => {
+export const checkFetchingStatusSelector = (state: AppStateType) => {
     return state.profilePage.isFetchingStatus
 }
 

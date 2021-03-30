@@ -1,25 +1,26 @@
+import {AppStateType} from "../../store";
 
-export const getUsersSelector = (state) => {
+export const getUsersSelector = (state: AppStateType) => {
     return state.userPage.users
 }
 
-export const getPageSizeSelector = (state) => {
+export const getPageSizeSelector = (state: AppStateType) => {
     return state.userPage.pageSize
 }
 
-export const getUsersLengthSelector = (state) => {
+export const getUsersLengthSelector = (state: AppStateType) => {
     return state.userPage.totalCount
 }
 
-export const getCurrantPageSelector = (state) => {
+export const getCurrantPageSelector = (state: AppStateType) => {
     return state.userPage.currentPage
 }
 
-export const checkLoadingSelector = (state) => {
+export const checkLoadingSelector = (state: AppStateType) => {
     return state.userPage.isLoading
 }
 
-export const isUnUseBtnSelector = (state) => {
+export const isUnUseBtnSelector = (state: AppStateType) => {
     return state.userPage.isDisabledBtn
 }
 

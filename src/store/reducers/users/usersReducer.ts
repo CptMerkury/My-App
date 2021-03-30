@@ -11,7 +11,7 @@ import {
 import {UserType} from "../../types/@types";
 
 const initialState = {
-    users: [] as Array<UserType> | null,
+    users: [] as Array<UserType>,
     pageSize: 5,
     totalCount: 400,
     currentPage: 1,

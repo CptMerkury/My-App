@@ -11,21 +11,40 @@ import {
     checkLoadingSelector, getCurrantPageSelector, getPageSizeSelector,
     getUsersLengthSelector, getUsersSelector, isUnUseBtnSelector
 } from "../../store/selectors/users/usersSelectors";
+import {UserType} from "../../store/types/@types";
+import {AppStateType} from "../../store/store";
 
-class UsersContainer extends React.Component {
+type MapStateToPropsType = {
+    usersPage: Array<UserType>
+    totalCount: number
+    currentPage: number
+    pageSize: number
+    isLoading: boolean
+    isDisabledBtn: Array<number>
+}
+type MapDispatchToPropsType = {
+    getUsersThunkCreator: (currentPage: number, pageSize: number) => void
+    getPageThunkCreator: (num: number, pageSize: number) => void
+    setFollowThunkCreator: (id: number) => void
+    setUnfollowThunkCreator: (id: number) => void
+}
+
+type PropsType = MapStateToPropsType & MapDispatchToPropsType
+
+class UsersContainer extends React.Component<PropsType> {
     componentDidMount() {
         const {currentPage, pageSize} = this.props
         this.props.getUsersThunkCreator(currentPage, pageSize)
     }
 
-    setFollowHandler = (id) => {
+    setFollowHandler = (id: number) => {
         /* Мы перенесли всю логику в thunkCreator */
         this.props.setFollowThunkCreator(id)
     }
-    setUnfollowHandler = (id) => {
+    setUnfollowHandler = (id: number) => {
         this.props.setUnfollowThunkCreator(id)
     }
-    selectPage = (num) => {
+    selectPage = (num: number) => {
         const {pageSize} = this.props
         this.props.getPageThunkCreator(num, pageSize)
     }
@@ -46,10 +65,9 @@ class UsersContainer extends React.Component {
             />
         )
     }
-
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
     return {
         usersPage: getUsersSelector(state),
         pageSize: getPageSizeSelector(state),
@@ -61,7 +79,8 @@ const mapStateToProps = (state) => {
 }
 
 export default compose(
-    connect(mapStateToProps, {
+    //TStateProps = {}, TDispatchProps = {}, TOwnProps = {}, State = DefaultState это типы для generic type
+    connect<MapStateToPropsType, MapDispatchToPropsType, null, AppStateType>(mapStateToProps, {
         getUsersThunkCreator, getPageThunkCreator,
         setFollowThunkCreator, setUnfollowThunkCreator
     })

@@ -4,12 +4,12 @@ import dialogsReducer from "./reducers/dialogs/dialogsReducer";
 import sidebarReducer from "./reducers/sidebar/sidebarReducer";
 import usersReducer from "./reducers/users/usersReducer";
 import authReducer from "./reducers/auth/authReducer";
+import appReducer from "./reducers/app/appReducer";
 import thunkMiddleware from "redux-thunk";
 import { reducer as formReducer } from 'redux-form'
-import appReducer from "./reducers/app/appReducer";
 
 /* Передаем в store с помощью combineReducers все Reducer который объеденит их в один */
-let reducers = combineReducers({
+let RootReducer = combineReducers({
     app: appReducer,
     profilePage: profileReducer,
     dialogPage: dialogsReducer,
@@ -19,8 +19,13 @@ let reducers = combineReducers({
     form: formReducer,
 })
 
-/* Add redux_dev_tools */
+type RootReducerType = typeof RootReducer;
+/* Создаем глобальный тип для state */
+export type AppStateType = ReturnType<RootReducerType>
+
+//@ts-ignore
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-let store = createStore(reducers, composeEnhancers(applyMiddleware(thunkMiddleware)));
+
+let store = createStore(RootReducer, composeEnhancers(applyMiddleware(thunkMiddleware)));
 
 export default store
