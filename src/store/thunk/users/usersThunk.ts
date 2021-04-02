@@ -6,33 +6,39 @@ import {
     setUsers,
     toggleDisabledBtn,
     toggleFetch,
-    unfollow
+    unfollow, UserActionsTypes
 } from "../../reducers/users/usersReducer";
+import {ThunkAction} from "redux-thunk";
+import {AppStateType} from "../../store";
+import {Dispatch} from "redux";
 
 
-export const getUsersThunkCreator = (currentPage: number, pageSize: number) => async (dispatch: any) => {
-    dispatch(toggleFetch(true))
-    /* Мы сделали инкапсуляцию axios метода в файл api */
-    let data = await usersAPI.getUsers(currentPage, pageSize)
-    dispatch(setUsers(data.items))
-    dispatch(setTotalCount(data.totalCount))
-    dispatch(toggleFetch(false))
-}
+type ThunkAction_UserTypes = ThunkAction<Promise<void>, AppStateType, unknown, UserActionsTypes>
 
-export const getPageThunkCreator = (num: number, pageSize: number) => async (dispatch: any) => {
-    dispatch(setPage(num))
-    dispatch(toggleFetch(true))
-    /* Мы сделали инкапсуляцию axios метода в файл api */
-    let data = await usersAPI.getPage(num, pageSize)
-    dispatch(setUsers(data.items))
-    dispatch(toggleFetch(false))
-}
+export const getUsersThunkCreator = (currentPage: number, pageSize: number): ThunkAction_UserTypes =>
+    async (dispatch) => {
+        dispatch(toggleFetch(true))
+        /* Мы сделали инкапсуляцию axios метода в файл api */
+        let data = await usersAPI.getUsers(currentPage, pageSize)
+        dispatch(setUsers(data.items))
+        dispatch(setTotalCount(data.totalCount))
+        dispatch(toggleFetch(false))
+    }
 
-const follow_unfollow_Flow = async (dispatch: any, userId: number, apiMethod: any, actionCreator: any) => {
+export const getPageThunkCreator = (num: number, pageSize: number): ThunkAction_UserTypes =>
+    async (dispatch) => {
+        dispatch(setPage(num))
+        dispatch(toggleFetch(true))
+        /* Мы сделали инкапсуляцию axios метода в файл api */
+        let data = await usersAPI.getPage(num, pageSize)
+        dispatch(setUsers(data.items))
+        dispatch(toggleFetch(false))
+    }
+
+const _follow_unfollow_flow = async (dispatch: Dispatch<UserActionsTypes>, userId: number,
+                                     apiMethod: any, actionCreator: (userId: number) => UserActionsTypes) => {
     dispatch(toggleDisabledBtn(true, userId))
-
     const response = await apiMethod(userId)
-
     if (response.resultCode === 0) {
         dispatch(actionCreator(userId))
         dispatch(toggleDisabledBtn(false, userId))
@@ -41,10 +47,12 @@ const follow_unfollow_Flow = async (dispatch: any, userId: number, apiMethod: an
     }
 }
 
-export const setFollowThunkCreator = (id: number) => async (dispatch: any) => {
-    await follow_unfollow_Flow(dispatch, id, usersAPI.setFollow, follow)
-}
+export const setFollowThunkCreator = (id: number): ThunkAction_UserTypes =>
+    async (dispatch) => {
+        await _follow_unfollow_flow(dispatch, id, usersAPI.setFollow, follow)
+    }
 
-export const setUnfollowThunkCreator = (id: number) => async (dispatch: any) => {
-    await follow_unfollow_Flow(dispatch, id, usersAPI.setUnfollow, unfollow)
-}
+export const setUnfollowThunkCreator = (id: number): ThunkAction_UserTypes =>
+    async (dispatch) => {
+        await _follow_unfollow_flow(dispatch, id, usersAPI.setUnfollow, unfollow)
+    }

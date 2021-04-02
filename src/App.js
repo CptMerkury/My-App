@@ -36,11 +36,11 @@ class App extends React.Component {
 
     componentDidMount() {
         this.props.InitializeApp()
-        window.addEventListener('unhandledrejection', this.catchAllUnhandledError)
+        window.addEventListener('Unhandled rejection', this.catchAllUnhandledError)
     }
 
     componentWillUnmount() {
-        window.removeEventListener('unhandledrejection', this.catchAllUnhandledError)
+        window.removeEventListener('Unhandled rejection', this.catchAllUnhandledError)
     }
 
     render() {

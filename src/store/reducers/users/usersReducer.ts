@@ -20,8 +20,7 @@ const initialState = {
 };
 
 export type UserInitialStateType = typeof initialState
-
-type ActionsTypes = FollowActionType |
+export type UserActionsTypes = FollowActionType |
     UnfollowActionType |
     SetUserActionType |
     SetPageActionType |
@@ -29,7 +28,7 @@ type ActionsTypes = FollowActionType |
     ToggleFetchActionType |
     ToggleDisableBtnActionType
 
-const usersReducer = (state = initialState, action: ActionsTypes): UserInitialStateType => {
+const usersReducer = (state = initialState, action: UserActionsTypes): UserInitialStateType => {
     switch (action.type) {
         case FOLLOW:
             return {

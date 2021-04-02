@@ -24,8 +24,7 @@ const initialState = {
 };
 
 export type ProfileInitialStateType = typeof initialState
-
-type ActionsTypes = AddPostActionType |
+export type ProfileActionsTypes = AddPostActionType |
     DeletePostActionType |
     SetProfileDataActionType |
     GetStatusActionType |
@@ -33,7 +32,7 @@ type ActionsTypes = AddPostActionType |
     ToggleActionType |
     ToggleStatusActionType
 
-const profileReducer = (state = initialState, action: ActionsTypes): ProfileInitialStateType => {
+const profileReducer = (state = initialState, action: ProfileActionsTypes): ProfileInitialStateType => {
     switch (action.type) {
         case ADD_POST:
             let newPost = {
