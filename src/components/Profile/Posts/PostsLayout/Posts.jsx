@@ -7,8 +7,8 @@ import Post from "../PostsItem/Post";
 const Posts = React.memo((props) => {
     /* Мы используем reverse к копии массива постов, так как этот метод мутирующего типа */
     const postsElement = [...props.posts].reverse().map(pData => <Post message={pData.message}
-                                                                        likeCount={pData.likeCount}
-                                                                        key={pData.id}/>)
+                                                                       likeCount={pData.likeCount}
+                                                                       key={pData.id}/>)
 
     const addPost = (value) => {
         props.createPost(value.body)

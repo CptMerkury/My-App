@@ -14,7 +14,7 @@ const Paginator: FC<PropsType> = ({totalItemsCount, pageSize, selectPage, isLoad
 
     const pagesCount = Math.ceil(totalItemsCount / pageSize)
     const pagesArray = new Array(pagesCount).fill(1)
-    const btnArray: Array<number>  = []
+    const btnArray: Array<number> = []
 
     pagesArray.map((btn, idx) => {
         return btnArray.push(idx + 1)
@@ -27,13 +27,13 @@ const Paginator: FC<PropsType> = ({totalItemsCount, pageSize, selectPage, isLoad
 
     const pagesBtn = btnArray.filter(btn => btn >= leftPortionSize && btn <= rightPortionSize).map((btn) => {
         return (
-                <button
-                    className={currentPage === btn ? classesItem.myPaginationBtnActive : classesItem.myPaginationBtn}
-                    onClick={() => selectPage(btn)}
-                    disabled={isLoading}
-                    key={btn}
-                >{btn}
-                </button>
+            <button
+                className={currentPage === btn ? classesItem.myPaginationBtnActive : classesItem.myPaginationBtn}
+                onClick={() => selectPage(btn)}
+                disabled={isLoading}
+                key={btn}
+            >{btn}
+            </button>
         )
     })
     return (

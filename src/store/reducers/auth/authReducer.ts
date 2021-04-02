@@ -11,8 +11,11 @@ const initialState = {
 
 export type AuthInitialStateType = typeof initialState;
 
+type ActionsTypes = SetAuthActionType |
+    GetCaptchaActionType
+
 /* Need add typification for action */
-const authReducer = (state = initialState, action: any): AuthInitialStateType => {
+const authReducer = (state = initialState, action: ActionsTypes): AuthInitialStateType => {
     switch (action.type) {
         case SET_AUTH_DATA:
             return {

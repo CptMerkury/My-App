@@ -6,7 +6,9 @@ const initialState = {
 
 export type InitialAppStateType = typeof initialState
 
-const appReducer = (state = initialState, action: any): InitialAppStateType => {
+type ActionsTypes = InitializeSuccessActionType
+
+const appReducer = (state = initialState, action: ActionsTypes): InitialAppStateType => {
     switch (action.type) {
         case SET_INITIALIZED: {
             return {

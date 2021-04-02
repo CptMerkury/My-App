@@ -80,7 +80,7 @@ const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
 
 export default compose(
     //TStateProps = {}, TDispatchProps = {}, TOwnProps = {}, State = DefaultState это типы для generic type
-    connect<MapStateToPropsType, MapDispatchToPropsType, null, AppStateType>(mapStateToProps, {
+    connect<MapStateToPropsType, MapDispatchToPropsType, any, AppStateType>(mapStateToProps, {
         getUsersThunkCreator, getPageThunkCreator,
         setFollowThunkCreator, setUnfollowThunkCreator
     })

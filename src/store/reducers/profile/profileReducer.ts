@@ -25,7 +25,15 @@ const initialState = {
 
 export type ProfileInitialStateType = typeof initialState
 
-const profileReducer = (state = initialState, action: any): ProfileInitialStateType => {
+type ActionsTypes = AddPostActionType |
+    DeletePostActionType |
+    SetProfileDataActionType |
+    GetStatusActionType |
+    SetPhotosActionType |
+    ToggleActionType |
+    ToggleStatusActionType
+
+const profileReducer = (state = initialState, action: ActionsTypes): ProfileInitialStateType => {
     switch (action.type) {
         case ADD_POST:
             let newPost = {
@@ -35,7 +43,7 @@ const profileReducer = (state = initialState, action: any): ProfileInitialStateT
             };
             return {
                 ...state,
-                posts: [...state.posts, newPost]
+                posts: [...state.posts, newPost] as Array<PostsType>
             };
         case DELETE_POST:
             return {
@@ -93,9 +101,9 @@ export const deletePostCreator = (id: number): DeletePostActionType => ({
 
 type SetProfileDataActionType = {
     type: typeof SET_PROFILE_DATA
-    payload: ProfileType
+    payload: Array<ProfileType>
 }
-export const setProfileData = (data: ProfileType): SetProfileDataActionType => ({
+export const setProfileData = (data: Array<ProfileType>): SetProfileDataActionType => ({
     type: SET_PROFILE_DATA,
     payload: data
 })
