@@ -1,4 +1,4 @@
-import * as axios from "axios";
+import axios from "axios";
 
 /* Мы создаем instance axios.create, чтобы один раз прописать в него параметры и не дублировать их в каждом запросе */
 export const instance = axios.create({

@@ -7,7 +7,7 @@ import {
     toggleFetchStatus
 } from "../../reducers/profile/profileReducer";
 import {stopSubmit} from "redux-form";
-import {ProfileType} from "../../types/@types";
+import {ProfileType, ResultCodesEnum} from "../../types/@types";
 import {AppStateType} from "../../store";
 import {ThunkAction} from "redux-thunk";
 
@@ -34,7 +34,7 @@ export const setStatusThunkCreator = (status: string): ThunkAction_ProfileTypes 
         try {
             dispatch(toggleFetchStatus(true))
             let response = await profileAPI.setStatus(status)
-            if (response.data.resultCode === 0) {
+            if (response.data.resultCode === ResultCodesEnum.SUCCESS) {
                 dispatch(getStatus(status))
                 dispatch(toggleFetchStatus(false))
             }
@@ -42,12 +42,12 @@ export const setStatusThunkCreator = (status: string): ThunkAction_ProfileTypes 
             alert(err)
         }
     }
-export const saveNewPhotoThunkCreator = (file: any): ThunkAction_ProfileTypes =>
+export const saveNewPhotoThunkCreator = (file: Blob): ThunkAction_ProfileTypes =>
     async (dispatch) => {
         dispatch(toggleFetch(true))
         let response = await profileAPI.savePhoto(file)
 
-        if (response.resultCode === 0) {
+        if (response.resultCode === ResultCodesEnum.SUCCESS) {
             dispatch(setPhotoSuccess(response.data.photos))
             dispatch(toggleFetch(false))
         }
@@ -59,7 +59,7 @@ export const saveProfileThunkCreator = (data: ProfileType): ThunkAction_ProfileT
         const userId = getState().auth.userId as number
         let response = await profileAPI.saveProfile(data)
 
-        if (response.resultCode === 0) {
+        if (response.resultCode === ResultCodesEnum.SUCCESS) {
             await dispatch(getProfileThunkCreator(userId))
             dispatch(toggleFetch(false))
         } else {

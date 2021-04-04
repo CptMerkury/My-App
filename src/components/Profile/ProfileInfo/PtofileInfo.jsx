@@ -9,6 +9,7 @@ import ProfileJob from "./ProfileJob/ProfileJobData";
 const ProfileInfo = ({saveNewPhoto, profile, status, updateStatus, isOwner, contacts, isLoading, isFetchingStatus}) => {
 
     const onPhotoSelected = (e) => {
+        console.log(e)
         if (e.target.files.length) {
             saveNewPhoto(e.target.files[0])
         }

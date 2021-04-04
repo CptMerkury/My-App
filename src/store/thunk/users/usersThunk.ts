@@ -11,11 +11,12 @@ import {
 import {ThunkAction} from "redux-thunk";
 import {AppStateType} from "../../store";
 import {Dispatch} from "redux";
+import {ResultCodesEnum} from "../../types/@types";
 
 
 type ThunkAction_UserTypes = ThunkAction<Promise<void>, AppStateType, unknown, UserActionsTypes>
 
-export const getUsersThunkCreator = (currentPage: number, pageSize: number): ThunkAction_UserTypes =>
+export const getUsersThunkCreator = (currentPage: number = 1, pageSize: number): ThunkAction_UserTypes =>
     async (dispatch) => {
         dispatch(toggleFetch(true))
         /* Мы сделали инкапсуляцию axios метода в файл api */
@@ -30,7 +31,7 @@ export const getPageThunkCreator = (num: number, pageSize: number): ThunkAction_
         dispatch(setPage(num))
         dispatch(toggleFetch(true))
         /* Мы сделали инкапсуляцию axios метода в файл api */
-        let data = await usersAPI.getPage(num, pageSize)
+        let data = await usersAPI.getUsers(num, pageSize)
         dispatch(setUsers(data.items))
         dispatch(toggleFetch(false))
     }
@@ -39,7 +40,7 @@ const _follow_unfollow_flow = async (dispatch: Dispatch<UserActionsTypes>, userI
                                      apiMethod: any, actionCreator: (userId: number) => UserActionsTypes) => {
     dispatch(toggleDisabledBtn(true, userId))
     const response = await apiMethod(userId)
-    if (response.resultCode === 0) {
+    if (response.resultCode === ResultCodesEnum.SUCCESS) {
         dispatch(actionCreator(userId))
         dispatch(toggleDisabledBtn(false, userId))
     } else {

@@ -20,6 +20,7 @@ const authReducer = (state = initialState, action: AuthActionsTypes): AuthInitia
             return {
                 ...state,
                 ...action.payload,
+                isAuth: !state.isAuth
             };
         case GET_CAPTCHA:
             return {
@@ -37,19 +38,18 @@ type SetAuthActionType = {
         userId: number | null
         email: string | null
         login: string | null
-        isAuth: boolean
     }
 }
 
-export const setAuthData = (userId: number | null, email: string | null, login: string | null, isAuth: boolean): SetAuthActionType => ({
+export const setAuthData = (userId: number | null, email: string | null, login: string | null): SetAuthActionType => ({
     type: SET_AUTH_DATA,
-    payload: {userId, email, login, isAuth}
+    payload: {userId, email, login}
 })
 
 
 type GetCaptchaActionType = {
     type: typeof GET_CAPTCHA
-    payload: string | null
+    payload: string
 }
 
 export const getCaptcha = (url: string): GetCaptchaActionType => ({

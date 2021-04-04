@@ -33,8 +33,7 @@ type PropsType = MapStateToPropsType & MapDispatchToPropsType
 
 class UsersContainer extends React.Component<PropsType> {
     componentDidMount() {
-        const {currentPage, pageSize} = this.props
-        this.props.getUsersThunkCreator(currentPage, pageSize)
+        this.props.getUsersThunkCreator(1, this.props.pageSize)
     }
 
     setFollowHandler = (id: number) => {
