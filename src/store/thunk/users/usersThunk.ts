@@ -1,4 +1,4 @@
-import {usersAPI} from "../../../api/api";
+import {ResultCodesEnum, usersAPI} from "../../../api/api";
 import {
     follow,
     setPage,
@@ -11,7 +11,6 @@ import {
 import {ThunkAction} from "redux-thunk";
 import {AppStateType} from "../../store";
 import {Dispatch} from "redux";
-import {ResultCodesEnum} from "../../types/@types";
 
 
 type ThunkAction_UserTypes = ThunkAction<Promise<void>, AppStateType, unknown, UserActionsTypes>

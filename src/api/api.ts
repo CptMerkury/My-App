@@ -1,11 +1,26 @@
 import {instance} from "./instance";
-import {
-    CaptchaAPIType, CheckAuthAPIType, FollowUnfollowApiType,
-    GetProfileAPIType, GetUserAPIType, ProfileType,
-    SetPhotoAPIType, SetProfileAPIType, SetStatusAPIType,
-    SignInAPIType, SignOutAPIType,
-} from "../store/types/@types";
+import {PhotosType, ProfileType, UserType,} from "../store/types/@types";
 
+//Enum Result Codes
+export enum ResultCodesEnum {
+    SUCCESS = 0,
+    ERROR = 1,
+}
+
+export enum ResultCodeForCaptchaCEnum {
+    ANTI_BOT = 10,
+}
+
+type GetUserAPIType = {
+    items: Array<UserType>,
+    totalCount: number,
+    error: null | string
+}
+type FollowUnfollowApiType = {
+    resultCode: ResultCodesEnum
+    messages: Array<string>,
+    data: null
+}
 export const usersAPI = {
     getUsers(currentPage: number, pageSize: number) {
         return instance
@@ -38,6 +53,24 @@ export const usersAPI = {
     }
 }
 
+type GetProfileAPIType = Array<ProfileType>
+type SetStatusAPIType = {
+    resultCode: ResultCodesEnum
+    messages: Array<string>,
+    data: null
+}
+type SetPhotoAPIType = {
+    resultCode: ResultCodesEnum
+    messages: Array<string>,
+    data: {
+        photos: PhotosType
+    }
+}
+type SetProfileAPIType = {
+    resultCode: ResultCodesEnum
+    messages: Array<string>,
+    data: ProfileType
+}
 export const profileAPI = {
     getProfile(id: number) {
         return instance
@@ -79,6 +112,30 @@ export const profileAPI = {
     }
 }
 
+type CheckAuthAPIType = {
+    resultCode: ResultCodesEnum
+    messages: Array<string>,
+    data: {
+        id: number,
+        email: string,
+        login: string,
+    }
+}
+type SignInAPIType = {
+    resultCode: ResultCodesEnum | ResultCodeForCaptchaCEnum
+    messages: Array<string>,
+    data: {
+        userId: number,
+    }
+}
+type SignOutAPIType = {
+    resultCode: ResultCodesEnum
+    messages: Array<string>,
+    data: null
+}
+type CaptchaAPIType = {
+    url: string
+}
 export const authAPI = {
     checkAuth() {
         return instance

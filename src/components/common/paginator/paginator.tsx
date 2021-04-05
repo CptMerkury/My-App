@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, { useState} from 'react';
 import classesItem from './paginator.module.css'
 
 type PropsType = {
@@ -10,7 +10,7 @@ type PropsType = {
     portionSize?: number
 }
 
-const Paginator: FC<PropsType> = ({totalItemsCount, pageSize, selectPage, isLoading, currentPage, portionSize = 5}) => {
+const Paginator: React.FC<PropsType> = ({totalItemsCount, pageSize, selectPage, isLoading, currentPage, portionSize = 5}) => {
 
     const pagesCount = Math.ceil(totalItemsCount / pageSize)
     const pagesArray = new Array(pagesCount).fill(1)

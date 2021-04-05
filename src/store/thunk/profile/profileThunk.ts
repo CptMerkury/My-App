@@ -1,4 +1,4 @@
-import {profileAPI} from "../../../api/api";
+import {profileAPI, ResultCodesEnum} from "../../../api/api";
 import {
     getStatus, ProfileActionsTypes,
     setPhotoSuccess,
@@ -7,7 +7,7 @@ import {
     toggleFetchStatus
 } from "../../reducers/profile/profileReducer";
 import {stopSubmit} from "redux-form";
-import {ProfileType, ResultCodesEnum} from "../../types/@types";
+import {ProfileType} from "../../types/@types";
 import {AppStateType} from "../../store";
 import {ThunkAction} from "redux-thunk";
 

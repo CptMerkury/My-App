@@ -1,9 +1,8 @@
-import {authAPI} from "../../../api/api";
+import {authAPI, ResultCodeForCaptchaCEnum, ResultCodesEnum} from "../../../api/api";
 import {AuthActionsTypes, getCaptcha, setAuthData} from "../../reducers/auth/authReducer";
 import {stopSubmit} from "redux-form";
 import {ThunkAction} from "redux-thunk";
 import {AppStateType} from "../../store";
-import {ResultCodeForCaptchaCEnum, ResultCodesEnum} from "../../types/@types";
 
 type ThunkAction_AuthType = ThunkAction<void, AppStateType, unknown, AuthActionsTypes>
 

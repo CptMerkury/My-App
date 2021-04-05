@@ -1,36 +1,3 @@
-//Enum Result Codes
-export enum ResultCodesEnum {
-    SUCCESS = 0,
-    ERROR = 1,
-}
-export enum ResultCodeForCaptchaCEnum {
-    ANTI_BOT = 10,
-}
-// Auth
-export type CheckAuthAPIType = {
-    resultCode: ResultCodesEnum
-    messages: Array<string>,
-    data: {
-        id: number,
-        email: string,
-        login: string,
-    }
-}
-export type SignInAPIType = {
-    resultCode: ResultCodesEnum | ResultCodeForCaptchaCEnum
-    messages: Array<string>,
-    data: {
-        userId: number,
-    }
-}
-export type SignOutAPIType = {
-    resultCode: ResultCodesEnum
-    messages: Array<string>,
-    data: null
-}
-export type CaptchaAPIType = {
-    url: string
-}
 //ProfileTypes
 export type PostsType = {
     id: number
@@ -60,25 +27,6 @@ export type ProfileType = {
     contacts: ContactsType | null
     photos: PhotosType | null
 }
-
-export type GetProfileAPIType = Array<ProfileType>
-export type SetStatusAPIType = {
-    resultCode: ResultCodesEnum
-    messages: Array<string>,
-    data: null
-}
-export type SetPhotoAPIType = {
-    resultCode: ResultCodesEnum
-    messages: Array<string>,
-    data: {
-        photos: PhotosType
-    }
-}
-export type SetProfileAPIType = {
-    resultCode: ResultCodesEnum
-    messages: Array<string>,
-    data: ProfileType
-}
 //DialogsTypes
 export type DialogType = {
     id: number
@@ -97,13 +45,3 @@ export type UserType = {
     followed: boolean
 }
 
-export type GetUserAPIType = {
-    items: Array<UserType>,
-    totalCount: number,
-    error: null | string
-}
-export type FollowUnfollowApiType = {
-    resultCode: ResultCodesEnum
-    messages: Array<string>,
-    data: null
-}

@@ -1,15 +1,32 @@
 import classes from "./Login.module.css"
 import React from 'react'
-import {Field, reduxForm} from "redux-form";
+import {Field, InjectedFormProps, reduxForm} from "redux-form";
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
 
 import {InputBase, LoginInput, PasswordInput} from "../common/input/input";
 import {required} from "../../utils/validators/validator";
 import {signInThunkCreator} from "../../store/thunk/auth/authThunk";
+import {AppStateType} from "../../store/store";
 
-const LoginForm = (props) => {
+type LoginFormOwnProps = {
+    captchaImg: string | null
+}
+type MapStatePropsType = {
+    isAuth: boolean
+    captcha: string | null
+}
+type MapDispatchPropsType = {
+    signInThunkCreator: (email: string, password: string, rememberMe: boolean, captcha: boolean) => void
+}
+type LoginFormType = {
+    email: string
+    password: string
+    rememberMe: boolean
+    captcha: boolean
+}
 
+const LoginForm: React.FC<InjectedFormProps<LoginFormType, LoginFormOwnProps> & LoginFormOwnProps> = (props) => {
     const {handleSubmit, pristine, submitting, reset, error} = props
     return (
         <form onSubmit={handleSubmit}>
@@ -54,15 +71,10 @@ const LoginForm = (props) => {
     )
 }
 
-const LoginReduxForm = reduxForm(
-    {
-        form: 'login',
-    }
-)(LoginForm)
+const LoginReduxForm = reduxForm<LoginFormType, LoginFormOwnProps>({form: 'login'})(LoginForm)
 
-const Login = (props) => {
-
-    const onSubmit = (formData) => {
+const Login: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
+    const onSubmit = (formData: LoginFormType) => {
         props.signInThunkCreator(formData.email, formData.password, formData.rememberMe, formData.captcha)
     }
 
@@ -80,7 +92,7 @@ const Login = (props) => {
     )
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: AppStateType): MapStatePropsType => ({
     isAuth: state.auth.isAuth,
     captcha: state.auth.captcha
 })
