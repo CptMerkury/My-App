@@ -1,8 +1,16 @@
 import React from 'react'
 import classesItem from "./Users.module.css";
 import {NavLink} from "react-router-dom";
+import {UserType} from "../../../store/types/@types";
 
-const UsersItem = ({user, ...props}) => {
+type PropsType = {
+    user: UserType
+    setUnfollowHandler: (id: number) => void
+    setFollowHandler : (id: number) => void
+    isDisabled: Array<number>
+}
+
+const UsersItem: React.FC<PropsType> = ({user, setUnfollowHandler, setFollowHandler, isDisabled}) => {
     return (
         <div className={classesItem.userInfoWrapper}>
             <div>
@@ -17,16 +25,16 @@ const UsersItem = ({user, ...props}) => {
                     {user.followed ?
                         <button
                             className={`${classesItem.unFollowBtn} ${classesItem.userSubscribeBtn}`}
-                            onClick={() => props.setUnfollowHandler(user.id)}
+                            onClick={() => setUnfollowHandler(user.id)}
                             /* метод some вернет на true если id находится в массиве */
-                            disabled={props.isDisabled.some(id => id === user.id)}
+                            disabled={isDisabled.some(id => id === user.id)}
                         >Unfollow</button>
                         :
                         <button
                             className={`${classesItem.followBtn} ${classesItem.userSubscribeBtn}`}
                             /* метод some вернет на true если id находится в массиве */
-                            onClick={() => props.setFollowHandler(user.id)}
-                            disabled={props.isDisabled.some(id => id === user.id)}
+                            onClick={() => setFollowHandler(user.id)}
+                            disabled={isDisabled.some(id => id === user.id)}
                         >Follow</button>}
                 </div>
             </div>

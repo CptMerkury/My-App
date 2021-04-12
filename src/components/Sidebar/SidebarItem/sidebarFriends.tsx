@@ -1,13 +1,17 @@
 import React from "react";
 import classes from '../Sidebar.module.css';
 
-const SidebarFriends = (props) => {
+type PropsType = {
+    name: string
+}
+
+const SidebarFriends: React.FC<PropsType> = ({name}) => {
     return (
         <div className={classes.item}>
             <img
                 src='https://about.canva.com/wp-content/uploads/sites/3/2018/03/Purple-and-Pink-Cute-Man-Face-Laptop-Sticker.jpg'
                 alt="avatar" />
-            <p>{props.name}</p>
+            <p>{name}</p>
         </div>
     )
 }

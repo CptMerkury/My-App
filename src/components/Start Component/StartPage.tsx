@@ -1,7 +1,7 @@
 import React from "react";
 import classes from './StartPage.module.css'
 
-const StartPage = () => {
+const StartPage: React.FC = () => {
     return (
         <div className={classes.wrapper}>
             <div className={classes.header}>

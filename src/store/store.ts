@@ -8,7 +8,7 @@ import appReducer from "./reducers/app/appReducer";
 import thunkMiddleware from "redux-thunk";
 import {reducer as formReducer} from 'redux-form'
 
-/* Передаем в store с помощью combineReducers все Reducer который объеденит их в один */
+/* Передаем в store с помощью combineReducers все Reducer который объединит их в один */
 let RootReducer = combineReducers({
     app: appReducer,
     profilePage: profileReducer,
