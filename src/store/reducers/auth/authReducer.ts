@@ -37,6 +37,7 @@ export const authActions = {
         type: SET_AUTH_DATA,
         payload: {userId, email, login}
     } as const),
+
     getCaptcha: (url: string) => ({
         type: GET_CAPTCHA,
         payload: url

@@ -1,3 +1,5 @@
+import {PhotosType, PostsType, ProfileType} from "../../types/@types";
+import {InferActionsType} from "../../store";
 import {
     ADD_POST,
     DELETE_POST,
@@ -7,8 +9,6 @@ import {
     SET_PHOTO_SUCCESS,
     SET_PROFILE_DATA
 } from "../../actions/actions";
-import {PhotosType, PostsType, ProfileType} from "../../types/@types";
-import {InferActionsType} from "../../store";
 
 const initialState = {
     profile: [] as Array<ProfileType> | null,
@@ -80,26 +80,32 @@ export const profileActions = {
         type: ADD_POST,
         payload: value
     } as const),
+
     deletePostCreator: (id: number) => ({
         type: DELETE_POST,
         payload: id
     } as const),
+
     setProfileData: (data: Array<ProfileType>) => ({
         type: SET_PROFILE_DATA,
         payload: data
     } as const),
+
     getStatus: (value: string) => ({
         type: GET_STATUS,
         payload: value
     } as const),
+
     setPhotoSuccess: (photos: PhotosType) => ({
         type: SET_PHOTO_SUCCESS,
         payload: photos
     } as const),
+
     toggleFetch: (bool: boolean) => ({
         type: IS_PROFILE_FETCHING,
         payload: bool
     } as const),
+
     toggleFetchStatus: (bool: boolean) => ({
         type: IS_STATUS_FETCHING,
         payload: bool

@@ -10,23 +10,14 @@ type GetUserAPIType = {
 export const usersAPI = {
     getUsers(currentPage: number, pageSize: number) {
         return instance
-            .get<GetUserAPIType>(`/users?page=${currentPage}&count=${pageSize}`)
-            .then(response => {
-                return response.data
-            })
+            .get<GetUserAPIType>(`/users?page=${currentPage}&count=${pageSize}`).then(res => res.data)
     },
     setFollow(id: number) {
         return instance
-            .post<ResponseType>(`/follow/${id}`, null)
-            .then(response => {
-                return response.data
-            })
+            .post<ResponseType>(`/follow/${id}`, null).then(res => res.data)
     },
     setUnfollow(id: number) {
         return instance
-            .delete<ResponseType>(`/follow/${id}`)
-            .then(response => {
-                return response.data
-            })
+            .delete<ResponseType>(`/follow/${id}`).then(res => res.data)
     }
 }

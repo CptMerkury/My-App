@@ -1,4 +1,6 @@
 import {UpdateObjectInArray} from "../../../utils/helpers/object-helpers";
+import {InferActionsType} from "../../store";
+import {UserType} from "../../types/@types";
 import {
     FOLLOW,
     IS_DISABLED_BTN,
@@ -8,7 +10,6 @@ import {
     SET_USERS,
     UNFOLLOW
 } from "../../actions/actions";
-import {UserType} from "../../types/@types";
 
 const initialState = {
     users: [] as Array<UserType>,
@@ -20,13 +21,7 @@ const initialState = {
 };
 
 export type UserInitialStateType = typeof initialState
-export type UserActionsTypes = FollowActionType |
-    UnfollowActionType |
-    SetUserActionType |
-    SetPageActionType |
-    SetTotalCountActionType |
-    ToggleFetchActionType |
-    ToggleDisableBtnActionType
+export type UserActionsTypes = InferActionsType<typeof usersActions>
 
 const usersReducer = (state = initialState, action: UserActionsTypes): UserInitialStateType => {
     switch (action.type) {
@@ -73,70 +68,43 @@ const usersReducer = (state = initialState, action: UserActionsTypes): UserIniti
     }
 }
 
-type FollowActionType = {
-    type: typeof FOLLOW
-    payload: number
-}
-export const follow = (userID: number): FollowActionType => ({
-    type: FOLLOW,
-    payload: userID
-})
+export const usersActions = {
+    follow: (userID: number) => ({
+        type: FOLLOW,
+        payload: userID
+    } as const),
 
-type UnfollowActionType = {
-    type: typeof UNFOLLOW
-    payload: number
-}
-export const unfollow = (userID: number): UnfollowActionType => ({
-    type: UNFOLLOW,
-    payload: userID
-})
+    unfollow: (userID: number) => ({
+        type: UNFOLLOW,
+        payload: userID
+    } as const),
 
-type SetUserActionType = {
-    type: typeof SET_USERS
-    payload: Array<UserType>
-}
-export const setUsers = (users: Array<UserType>): SetUserActionType => ({
-    type: SET_USERS,
-    payload: users
-})
+    setUsers: (users: Array<UserType>) => ({
+        type: SET_USERS,
+        payload: users
+    } as const),
 
-type SetPageActionType = {
-    type: typeof SET_PAGE
-    payload: number
-}
-export const setPage = (num: number): SetPageActionType => ({
-    type: SET_PAGE,
-    payload: num
-})
+    setPage: (num: number) => ({
+        type: SET_PAGE,
+        payload: num
+    } as const),
 
-type SetTotalCountActionType = {
-    type: typeof SET_TOTAL_COUNT
-    payload: number
-}
-export const setTotalCount = (num: number): SetTotalCountActionType => ({
-    type: SET_TOTAL_COUNT,
-    payload: num
-})
+    setTotalCount: (num: number) => ({
+        type: SET_TOTAL_COUNT,
+        payload: num
+    } as const),
 
-type ToggleFetchActionType = {
-    type: typeof IS_USER_FETCHING
-    payload: boolean
-}
-export const toggleFetch = (bool: boolean): ToggleFetchActionType => ({
-    type: IS_USER_FETCHING,
-    payload: bool
-})
+    toggleFetch: (bool: boolean) => ({
+        type: IS_USER_FETCHING,
+        payload: bool
+    } as const),
 
-type ToggleDisableBtnActionType = {
-    type: typeof IS_DISABLED_BTN
-    payload: boolean
-    userId: number
+    toggleDisabledBtn: (bool: boolean, id: number) => ({
+        type: IS_DISABLED_BTN,
+        payload: bool,
+        userId: id,
+    } as const)
 }
-export const toggleDisabledBtn = (bool: boolean, id: number): ToggleDisableBtnActionType => ({
-    type: IS_DISABLED_BTN,
-    payload: bool,
-    userId: id,
-})
 
 export default usersReducer
 

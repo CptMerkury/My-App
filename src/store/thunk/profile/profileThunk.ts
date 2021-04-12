@@ -1,38 +1,37 @@
-import {
-    profileActions,
-    ProfileActionsTypes,
-} from "../../reducers/profile/profileReducer";
-import {stopSubmit} from "redux-form";
-import {ProfileType} from "../../types/@types";
-import {AppStateType} from "../../store";
-import {ThunkAction} from "redux-thunk";
+import {profileActions, ProfileActionsTypes,} from "../../reducers/profile/profileReducer";
+import {FormAction, stopSubmit} from "redux-form";
+import {ProfileType, CommonThunkCreatorType} from "../../types/@types";
 import {profileAPI} from "../../../api/profile-api";
 import {ResultCodesEnum} from "../../../api/instance-api";
+import {isNull} from "util";
 
-type ThunkAction_ProfileTypes = ThunkAction<Promise<void>, AppStateType, unknown, ProfileActionsTypes>
-
-export const getProfileThunkCreator = (id: number): ThunkAction_ProfileTypes =>
+export const getProfileThunkCreator = (id: number): CommonThunkCreatorType<ProfileActionsTypes> =>
     async (dispatch) => {
         dispatch(profileActions.toggleFetch(true))
-        let dataProfile = await profileAPI.getProfile(id)
-        dispatch(profileActions.setProfileData(dataProfile))
+
+        let response = await profileAPI.getProfile(id)
+
+        dispatch(profileActions.setProfileData(response))
         dispatch(profileActions.toggleFetch(false))
     }
 
-export const getStatusThunkCreator = (id: number): ThunkAction_ProfileTypes =>
+export const getStatusThunkCreator = (id: number): CommonThunkCreatorType<ProfileActionsTypes> =>
     async (dispatch) => {
         dispatch(profileActions.toggleFetchStatus(true))
-        let dataStatus = await profileAPI.getStatusProfile(id)
-        dispatch(profileActions.getStatus(dataStatus))
+
+        let response = await profileAPI.getStatusProfile(id)
+
+        dispatch(profileActions.getStatus(response))
         dispatch(profileActions.toggleFetchStatus(false))
     }
 
-export const setStatusThunkCreator = (status: string): ThunkAction_ProfileTypes =>
+export const setStatusThunkCreator = (status: string): CommonThunkCreatorType<ProfileActionsTypes> =>
     async (dispatch) => {
         try {
             dispatch(profileActions.toggleFetchStatus(true))
             let response = await profileAPI.setStatus(status)
-            if (response.data.resultCode === ResultCodesEnum.SUCCESS) {
+
+            if (response.resultCode === ResultCodesEnum.SUCCESS) {
                 dispatch(profileActions.getStatus(status))
                 dispatch(profileActions.toggleFetchStatus(false))
             }
@@ -40,7 +39,7 @@ export const setStatusThunkCreator = (status: string): ThunkAction_ProfileTypes 
             alert(err)
         }
     }
-export const saveNewPhotoThunkCreator = (file: Blob): ThunkAction_ProfileTypes =>
+export const saveNewPhotoThunkCreator = (file: File): CommonThunkCreatorType<ProfileActionsTypes> =>
     async (dispatch) => {
         dispatch(profileActions.toggleFetch(true))
         let response = await profileAPI.savePhoto(file)
@@ -51,14 +50,21 @@ export const saveNewPhotoThunkCreator = (file: Blob): ThunkAction_ProfileTypes =
         }
     }
 
-export const saveProfileThunkCreator = (data: ProfileType): ThunkAction_ProfileTypes =>
+export const saveProfileThunkCreator = (data: ProfileType): CommonThunkCreatorType<ProfileActionsTypes | FormAction> =>
     async (dispatch, getState) => {
         dispatch(profileActions.toggleFetch(true))
-        const userId = getState().auth.userId as number
+
+        const userId = getState().auth.userId
         let response = await profileAPI.saveProfile(data)
 
         if (response.resultCode === ResultCodesEnum.SUCCESS) {
-            await dispatch(getProfileThunkCreator(userId))
+
+            if (!isNull(userId)) {
+                await dispatch(getProfileThunkCreator(userId))
+            } else {
+                throw new Error('User ID can\'t be null')
+            }
+
             dispatch(profileActions.toggleFetch(false))
         } else {
             dispatch(profileActions.toggleFetch(false))

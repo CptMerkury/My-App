@@ -1,18 +1,25 @@
-import profileReducer, {addPostCreator, deletePostCreator} from "../store/reducers/profile/profileReducer";
+import profileReducer, {profileActions} from "../store/reducers/profile/profileReducer";
+import {PostsType, ProfileType} from "../store/types/@types";
 
 let initState = {
+    profile: [] as Array<ProfileType> | null,
+    status: '',
     posts: [
         {id: 1, message: 'Hi, how are you', likeCount: 50},
         {id: 2, message: 'It`s my first post', likeCount: 40},
         {id: 3, message: 'Hi, how are you', likeCount: 30},
         {id: 4, message: 'How are you', likeCount: 20},
         {id: 5, message: 'Hi', likeCount: 10},
-    ],
+    ] as Array<PostsType>,
+    isLoading: false,
+    isFetchingStatus: false,
 };
+
+type InitStateType = typeof initState
 
 it('Length should be increment', () => {
     // 1. Test data
-    let action = addPostCreator('Test success!')
+    let action = profileActions.addPostCreator('Test success!')
     // 2. Action
     let newState = profileReducer(initState, action)
     // 3. Expectation
@@ -22,7 +29,7 @@ it('Length should be increment', () => {
 
 it('Message should be correct', () => {
     // 1. Test data
-    let action = addPostCreator('Test success!')
+    let action = profileActions.addPostCreator('Test success!')
     // 2. Action
     let newState = profileReducer(initState, action)
     // 3. Expectation
@@ -32,7 +39,7 @@ it('Message should be correct', () => {
 
 it('Likes count should be equals 0', () => {
     // 1. Test data
-    let action = addPostCreator('Test success!')
+    let action = profileActions.addPostCreator('Test success!')
     // 2. Action
     let newState = profileReducer(initState, action)
     // 3. Expectation
@@ -41,7 +48,7 @@ it('Likes count should be equals 0', () => {
 
 it('Length should be decrement', () => {
     // 1. Test data
-    let action = deletePostCreator(5)
+    let action = profileActions.deletePostCreator(5)
     // 2. Action
     let newState = profileReducer(initState, action)
     // 3. Expectation
@@ -50,7 +57,7 @@ it('Length should be decrement', () => {
 
 it('Length not should be decrement, if id not correct', () => {
     // 1. Test data
-    let action = deletePostCreator(1000)
+    let action = profileActions.deletePostCreator(1000)
     // 2. Action
     let newState = profileReducer(initState, action)
     // 3. Expectation

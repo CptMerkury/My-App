@@ -1,13 +1,19 @@
 import {ResultCodesEnum} from "../../api/instance-api";
+import {AppStateType} from "../store";
+import {ThunkAction} from "redux-thunk";
+import {Action} from "redux";
 
 //API Types
-export type ResponseType<D = {}, RC = ResultCodesEnum> = {
+export type CommonResponseType<D = {}, RC = ResultCodesEnum> = {
     data: D
     messages: Array<string>
     resultCode: RC
 }
 
-//ProfileTypes
+//ThunkCreator Types
+export type CommonThunkCreatorType<A extends Action, R = Promise<void>> = ThunkAction<R, AppStateType, unknown, A>
+
+//Profile Types
 export type PostsType = {
     id: number
     message: string
@@ -36,7 +42,7 @@ export type ProfileType = {
     contacts: ContactsType | null
     photos: PhotosType | null
 }
-//DialogsTypes
+//Dialogs Types
 export type DialogType = {
     id: number
     name: string
@@ -45,7 +51,7 @@ export type MessageType = {
     id: number
     message: string
 }
-//UsersTypes
+//Users Types
 export type UserType = {
     id: number
     name: string
