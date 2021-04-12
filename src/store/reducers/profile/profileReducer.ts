@@ -8,6 +8,7 @@ import {
     SET_PROFILE_DATA
 } from "../../actions/actions";
 import {PhotosType, PostsType, ProfileType} from "../../types/@types";
+import {InferActionsType} from "../../store";
 
 const initialState = {
     profile: [] as Array<ProfileType> | null,
@@ -24,13 +25,7 @@ const initialState = {
 };
 
 export type ProfileInitialStateType = typeof initialState
-export type ProfileActionsTypes = AddPostActionType |
-    DeletePostActionType |
-    SetProfileDataActionType |
-    GetStatusActionType |
-    SetPhotosActionType |
-    ToggleActionType |
-    ToggleStatusActionType
+export type ProfileActionsTypes = InferActionsType<typeof profileActions>
 
 const profileReducer = (state = initialState, action: ProfileActionsTypes): ProfileInitialStateType => {
     switch (action.type) {
@@ -42,7 +37,7 @@ const profileReducer = (state = initialState, action: ProfileActionsTypes): Prof
             };
             return {
                 ...state,
-                posts: [...state.posts, newPost] as Array<PostsType>
+                posts: [...state.posts, newPost]
             };
         case DELETE_POST:
             return {
@@ -80,67 +75,35 @@ const profileReducer = (state = initialState, action: ProfileActionsTypes): Prof
     }
 }
 
-type AddPostActionType = {
-    type: typeof ADD_POST
-    payload: PostsType
+export const profileActions = {
+    addPostCreator: (value: string) => ({
+        type: ADD_POST,
+        payload: value
+    } as const),
+    deletePostCreator: (id: number) => ({
+        type: DELETE_POST,
+        payload: id
+    } as const),
+    setProfileData: (data: Array<ProfileType>) => ({
+        type: SET_PROFILE_DATA,
+        payload: data
+    } as const),
+    getStatus: (value: string) => ({
+        type: GET_STATUS,
+        payload: value
+    } as const),
+    setPhotoSuccess: (photos: PhotosType) => ({
+        type: SET_PHOTO_SUCCESS,
+        payload: photos
+    } as const),
+    toggleFetch: (bool: boolean) => ({
+        type: IS_PROFILE_FETCHING,
+        payload: bool
+    } as const),
+    toggleFetchStatus: (bool: boolean) => ({
+        type: IS_STATUS_FETCHING,
+        payload: bool
+    } as const)
 }
-export const addPostCreator = (value: PostsType): AddPostActionType => ({
-    type: ADD_POST,
-    payload: value
-})
-
-type DeletePostActionType = {
-    type: typeof DELETE_POST
-    payload: number
-}
-export const deletePostCreator = (id: number): DeletePostActionType => ({
-    type: DELETE_POST,
-    payload: id
-})
-
-type SetProfileDataActionType = {
-    type: typeof SET_PROFILE_DATA
-    payload: Array<ProfileType>
-}
-export const setProfileData = (data: Array<ProfileType>): SetProfileDataActionType => ({
-    type: SET_PROFILE_DATA,
-    payload: data
-})
-
-type GetStatusActionType = {
-    type: typeof GET_STATUS
-    payload: string
-}
-export const getStatus = (value: string): GetStatusActionType => ({
-    type: GET_STATUS,
-    payload: value
-})
-
-type SetPhotosActionType = {
-    type: typeof SET_PHOTO_SUCCESS
-    payload: PhotosType
-}
-export const setPhotoSuccess = (photos: PhotosType): SetPhotosActionType => ({
-    type: SET_PHOTO_SUCCESS,
-    payload: photos
-})
-
-type ToggleActionType = {
-    type: typeof IS_PROFILE_FETCHING
-    payload: boolean
-}
-export const toggleFetch = (bool: boolean): ToggleActionType => ({
-    type: IS_PROFILE_FETCHING,
-    payload: bool
-})
-
-type ToggleStatusActionType = {
-    type: typeof IS_STATUS_FETCHING
-    payload: boolean
-}
-export const toggleFetchStatus = (bool: boolean): ToggleStatusActionType => ({
-    type: IS_STATUS_FETCHING,
-    payload: bool
-})
 
 export default profileReducer

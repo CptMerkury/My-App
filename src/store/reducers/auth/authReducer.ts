@@ -1,4 +1,5 @@
 import {GET_CAPTCHA, SET_AUTH_DATA} from "../../actions/actions";
+import {InferActionsType} from "../../store";
 
 const initialState = {
     userId: null as number | null,
@@ -10,8 +11,7 @@ const initialState = {
 };
 
 export type AuthInitialStateType = typeof initialState;
-export type AuthActionsTypes = SetAuthActionType |
-    GetCaptchaActionType
+export type AuthActionsTypes = InferActionsType<typeof authActions>
 
 /* Need add typification for action */
 const authReducer = (state = initialState, action: AuthActionsTypes): AuthInitialStateType => {
@@ -32,29 +32,16 @@ const authReducer = (state = initialState, action: AuthActionsTypes): AuthInitia
     }
 }
 
-type SetAuthActionType = {
-    type: typeof SET_AUTH_DATA
-    payload: {
-        userId: number | null
-        email: string | null
-        login: string | null
-    }
+export const authActions = {
+    setAuthData: (userId: number | null, email: string | null, login: string | null) => ({
+        type: SET_AUTH_DATA,
+        payload: {userId, email, login}
+    } as const),
+    getCaptcha: (url: string) => ({
+        type: GET_CAPTCHA,
+        payload: url
+    } as const)
+
 }
-
-export const setAuthData = (userId: number | null, email: string | null, login: string | null): SetAuthActionType => ({
-    type: SET_AUTH_DATA,
-    payload: {userId, email, login}
-})
-
-
-type GetCaptchaActionType = {
-    type: typeof GET_CAPTCHA
-    payload: string
-}
-
-export const getCaptcha = (url: string): GetCaptchaActionType => ({
-    type: GET_CAPTCHA,
-    payload: url
-})
 
 export default authReducer

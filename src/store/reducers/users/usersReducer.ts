@@ -93,9 +93,9 @@ export const unfollow = (userID: number): UnfollowActionType => ({
 
 type SetUserActionType = {
     type: typeof SET_USERS
-    payload: any
+    payload: Array<UserType>
 }
-export const setUsers = (users: any): SetUserActionType => ({
+export const setUsers = (users: Array<UserType>): SetUserActionType => ({
     type: SET_USERS,
     payload: users
 })

@@ -1,3 +1,12 @@
+import {ResultCodesEnum} from "../../api/instance-api";
+
+//API Types
+export type ResponseType<D = {}, RC = ResultCodesEnum> = {
+    data: D
+    messages: Array<string>
+    resultCode: RC
+}
+
 //ProfileTypes
 export type PostsType = {
     id: number

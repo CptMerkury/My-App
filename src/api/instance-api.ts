@@ -1,5 +1,14 @@
 import axios from "axios";
 
+//Enum Result Codes
+export enum ResultCodesEnum {
+    SUCCESS = 0,
+    ERROR = 1,
+}
+export enum ResultCodeForCaptchaCEnum {
+    ANTI_BOT = 10,
+}
+
 /* Мы создаем instance axios.create, чтобы один раз прописать в него параметры и не дублировать их в каждом запросе */
 export const instance = axios.create({
     baseURL: 'https://social-network.samuraijs.com/api/1.0',

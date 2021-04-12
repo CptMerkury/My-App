@@ -1,5 +1,6 @@
 import {SEND_MESSAGE} from "../../actions/actions";
 import {DialogType, MessageType} from "../../types/@types";
+import {InferActionsType} from "../../store";
 
 const initialState = {
     dialogs: [
@@ -24,7 +25,8 @@ const initialState = {
 };
 
 export type DialogInitialStateType = typeof initialState;
-export type DialogActionsTypes = SendMessageActionType
+
+export type DialogActionsTypes = InferActionsType<typeof dialogActions>
 
 const dialogsReducer = (state = initialState, action: DialogActionsTypes): DialogInitialStateType => {
     switch (action.type) {
@@ -42,15 +44,8 @@ const dialogsReducer = (state = initialState, action: DialogActionsTypes): Dialo
             return state;
     }
 }
-
-type SendMessageActionType = {
-    type: typeof SEND_MESSAGE
-    payload: string
+export const dialogActions = {
+    sendMessageCreator : (value: string) => ({type: SEND_MESSAGE, payload: value} as const),
 }
-
-export const sendMessageCreator = (value: string): SendMessageActionType => ({
-    type: SEND_MESSAGE,
-    payload: value
-})
 
 export default dialogsReducer
