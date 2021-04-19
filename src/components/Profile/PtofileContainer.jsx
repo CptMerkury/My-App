@@ -44,7 +44,7 @@ class ProfileContainer extends React.PureComponent {
             <div className={classes.profileContainer}>
                 <Profile {...this.props}
                          isOwner={!this.props.match.params.userId}
-                         contacts={this.props.profile.contacts}
+                         profile={this.props.profile}
                          updateStatus={this.props.setStatusThunkCreator}
                          saveNewPhoto={this.props.saveNewPhotoThunkCreator}
                 />

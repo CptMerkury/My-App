@@ -32,18 +32,18 @@ const LoginForm: React.FC<InjectedFormProps<LoginFormType, LoginFormOwnProps> & 
         <form onSubmit={handleSubmit}>
             <div className={classes.login}>
                 <Field component={LoginInput}
-                       name={'email'}
+                       name='email'
                        validate={[required]}
                 />
             </div>
             <div className={classes.password}>
                 <Field component={PasswordInput}
-                       name={'password'}
+                       name='password'
                        validate={[required]}/>
             </div>
             <div className={classes.checkbox}>
-                <Field component={'input'}
-                       name={'rememberMe'}
+                <Field component='input'
+                       name='rememberMe'
                        type="checkbox"/>Remember me
             </div>
             <div className={classes.btnBlock}>
@@ -60,7 +60,7 @@ const LoginForm: React.FC<InjectedFormProps<LoginFormType, LoginFormOwnProps> & 
                 ? <div className={classes.captcha}>
                     <img src={props.captchaImg} alt="captcha"/>
                     <Field component={InputBase}
-                           name={'captcha'}
+                           name='captcha'
                            validate={[required]}/>
                 </div>
                 :
@@ -71,7 +71,9 @@ const LoginForm: React.FC<InjectedFormProps<LoginFormType, LoginFormOwnProps> & 
     )
 }
 
-const LoginReduxForm = reduxForm<LoginFormType, LoginFormOwnProps>({form: 'login'})(LoginForm)
+const LoginReduxForm = reduxForm<LoginFormType, LoginFormOwnProps>({
+    form: 'login'
+})(LoginForm)
 
 const Login: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
     const onSubmit = (formData: LoginFormType) => {

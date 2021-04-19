@@ -33,6 +33,5 @@ export const signInThunkCreator = (
         dispatch(authActions.getCaptcha(data.url))
     } else {
         dispatch(stopSubmit('login', {_error: response.messages}))
-        dispatch({type: 'sfwegwer'})
     }
 }

@@ -23,8 +23,7 @@ type RootReducerType = typeof RootReducer;
 /* Создаем глобальный тип для state */
 export type AppStateType = ReturnType<RootReducerType>
 
-type PropertiesType<T> = T extends { [key: string]: infer U } ? U : never
-export type InferActionsType<T extends { [key: string]: (...args: any[]) => any }> = ReturnType<PropertiesType<T>>
+export type InferActionsType<T> = T extends { [key: string]: (...args: any[]) => infer U } ? U : never
 
 //@ts-ignore
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

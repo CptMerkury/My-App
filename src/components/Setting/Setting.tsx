@@ -7,9 +7,10 @@ import {saveProfileThunkCreator} from "../../store/thunk/profile/profileThunk";
 import {checkLoadingSelector, getProfileSelector} from "../../store/selectors/profile/profileSelectors";
 import {AppStateType} from "../../store/store";
 import {ProfileType} from "../../store/types/@types";
+import withAuthRedirect from "../../utils/hoc/authRedirect";
 
 type MapStateToPropsType = {
-    profile: Array<ProfileType> | null
+    profile: ProfileType | null
     isLoading: boolean
 }
 type MapDispatchToPropsType = {
@@ -41,4 +42,7 @@ const mapStateToProps = (state: AppStateType): MapStateToPropsType => ({
 })
 
 
-export default compose(connect<MapStateToPropsType, MapDispatchToPropsType, any, AppStateType>(mapStateToProps, {saveProfileThunkCreator}))(Setting)
+export default compose(
+    connect<MapStateToPropsType, MapDispatchToPropsType, any, AppStateType>(mapStateToProps, {saveProfileThunkCreator}),
+    withAuthRedirect,
+)(Setting)

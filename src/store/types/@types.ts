@@ -9,10 +9,8 @@ export type CommonResponseType<D = {}, RC = ResultCodesEnum> = {
     messages: Array<string>
     resultCode: RC
 }
-
 //ThunkCreator Types
 export type CommonThunkCreatorType<A extends Action, R = Promise<void>> = ThunkAction<R, AppStateType, unknown, A>
-
 //Profile Types
 export type PostsType = {
     id: number

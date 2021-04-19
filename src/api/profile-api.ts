@@ -8,7 +8,7 @@ type PhotosResponseDataType = {
 export const profileAPI = {
     getProfile(id: number) {
         return instance
-            .get<Array<ProfileType>>(`/profile/${id}`).then(res => res.data)
+            .get<ProfileType>(`/profile/${id}`).then(res => res.data)
     },
     getStatusProfile(id: number) {
         return instance

@@ -2,7 +2,7 @@ import profileReducer, {profileActions} from "../store/reducers/profile/profileR
 import {PostsType, ProfileType} from "../store/types/@types";
 
 let initState = {
-    profile: [] as Array<ProfileType> | null,
+    profile: null as ProfileType | null,
     status: '',
     posts: [
         {id: 1, message: 'Hi, how are you', likeCount: 50},

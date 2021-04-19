@@ -21,16 +21,16 @@ const ProfileDataForm = (props) => {
                 <div className={classes.aboutMe_block}>
                     <h4>About me:</h4>
                     <Field component={Textarea}
-                           name={'aboutMe'}
+                           name='aboutMe'
                            type='text'
-                           placeholder={'Write about your'}
+                           placeholder='Write about your'
                            validate={[maxLength300, minValue1]}
                     />
                     <h4>Full Name</h4>
                     <Field component={InputBase}
-                           name={'fullName'}
+                           name='fullName'
                            type='text'
-                           placeholder={'Full name'}
+                           placeholder='Full name'
                            validate={[maxLength20, minValue1]}
                     />
                     <div className={classes.btn_save}>
@@ -42,14 +42,14 @@ const ProfileDataForm = (props) => {
                 <div className={classes.job_block}>
                     <h4>Job information:</h4>
                     <Field component={Textarea}
-                           name={'lookingForAJobDescription'}
+                           name='lookingForAJobDescription'
                            type='text'
-                           placeholder={'Description for job'}
+                           placeholder='Description for job'
                            validate={[maxLength50, minValue1]}
                     />
                     <span>Open for job&nbsp;</span>
-                    <Field component={'input'}
-                           name={'lookingForAJob'}
+                    <Field component='input'
+                           name='lookingForAJob'
                            type="checkbox"/>
                     <div className={classes.btn_save}>
                         <button type="submit"
@@ -62,58 +62,58 @@ const ProfileDataForm = (props) => {
                     <div className={classes.contacts_fields}>
                         <p>Facebook:</p>
                         <Field component={InputBase}
-                               name={'contacts.facebook'}
+                               name='contacts.facebook'
                                type='text'
-                               placeholder={'https://'}
+                               placeholder='https://'
                                validate={[maxLength50, minValue1]}
                         />
                         <p>Website:</p>
                         <Field component={InputBase}
-                               name={'contacts.website'}
+                               name='contacts.website'
                                type='text'
-                               placeholder={'https://'}
+                               placeholder='https://'
                                validate={[maxLength50, minValue1]}
                         />
                         <p>VK:</p>
                         <Field component={InputBase}
-                               name={'contacts.vk'}
+                               name='contacts.vk'
                                type='text'
-                               placeholder={'https://'}
+                               placeholder='https://'
                                validate={[maxLength50, minValue1]}
                         />
                         <p>Twitter:</p>
                         <Field component={InputBase}
-                               name={'contacts.twitter'}
+                               name='contacts.twitter'
                                type='text'
-                               placeholder={'https://'}
+                               placeholder='https://'
                                validate={[maxLength50, minValue1]}
                         />
                         <p>Instagram:</p>
                         <Field component={InputBase}
-                               name={'contacts.instagram'}
+                               name='contacts.instagram'
                                type='text'
-                               placeholder={'https://'}
+                               placeholder='https://'
                                validate={[maxLength50, minValue1]}
                         />
                         <p>YouTube:</p>
                         <Field component={InputBase}
-                               name={'contacts.youtube'}
+                               name='contacts.youtube'
                                type='text'
-                               placeholder={'https://'}
+                               placeholder='https://'
                                validate={[maxLength50, minValue1]}
                         />
                         <p>GitHub:</p>
                         <Field component={InputBase}
-                               name={'contacts.github'}
+                               name='contacts.github'
                                type='text'
-                               placeholder={'https://'}
+                               placeholder='https://'
                                validate={[maxLength50, minValue1]}
                         />
                         <p>MainLink:</p>
                         <Field component={InputBase}
-                               name={'contacts.mainLink'}
+                               name='contacts.mainLink'
                                type='text'
-                               placeholder={'https://'}
+                               placeholder='https://'
                                validate={[maxLength50, minValue1]}
                         />
                     </div>
@@ -149,19 +149,23 @@ const ProfileDataEdit = ({saveProfile, profile, isLoading}) => {
         saveProfile(formData)
     }
 
+
     return (
-        <div className={classes.settingsField}>
-            <ProfileDataReduxForm
-                onSubmit={onSubmit}
-                initialValues={profile}
-                isLoading={isLoading}
-            />
+        <>
             {isLoading
-                ? <div>
+                ? <div className={classes.isLoading}>
                     <Preloader/>
                 </div>
                 : null}
-        </div>
+            <div className={(!isLoading) ? classes.settingsField : classes.settingsFieldDis}>
+                <ProfileDataReduxForm
+                    onSubmit={onSubmit}
+                    initialValues={profile}
+                    isLoading={isLoading}
+                />
+
+            </div>
+        </>
     )
 }
 

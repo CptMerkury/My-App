@@ -11,7 +11,7 @@ import {
 } from "../../actions/actions";
 
 const initialState = {
-    profile: [] as Array<ProfileType> | null,
+    profile: null as ProfileType | null,
     status: '',
     posts: [
         {id: 1, message: 'Hi, how are you', likeCount: 50},
@@ -67,7 +67,7 @@ const profileReducer = (state = initialState, action: ProfileActionsTypes): Prof
         case SET_PHOTO_SUCCESS:
             return {
                 ...state,
-                profile: {...state.profile, photos: action.payload} as Array<ProfileType>
+                profile: {...state.profile, photos: action.payload} as ProfileType
                 /* Refactoring later action type for this case */
             };
         default:
@@ -86,7 +86,7 @@ export const profileActions = {
         payload: id
     } as const),
 
-    setProfileData: (data: Array<ProfileType>) => ({
+    setProfileData: (data: ProfileType) => ({
         type: SET_PROFILE_DATA,
         payload: data
     } as const),
