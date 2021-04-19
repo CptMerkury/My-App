@@ -3,7 +3,13 @@ import classes from '../Header.module.css';
 import logo from "../../../assets/logo/logo.svg"
 import {NavLink} from "react-router-dom";
 
-const Header = (props) => {
+type PropsType = {
+    login: string | null
+    isAuth: boolean
+    signOut: () => void
+}
+
+const Header: React.FC<PropsType> = (props) => {
     return (
         <div className={classes.headerWrapper}>
             <header className={classes.mediaBlock}>
