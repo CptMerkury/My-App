@@ -9,7 +9,7 @@ type PropsType = {
     signOut: () => void
 }
 
-const Header: React.FC<PropsType> = (props) => {
+const Header: React.FC<PropsType> = ({isAuth, login,signOut}) => {
     return (
         <div className={classes.headerWrapper}>
             <header className={classes.mediaBlock}>
@@ -18,10 +18,10 @@ const Header: React.FC<PropsType> = (props) => {
             </header>
             <div className={classes.loginBlock}>
                 <NavLink to={'/profile'}>
-                    {props.isAuth ? <div className={classes.userName}>{props.login}</div> : null}
+                    {isAuth ? <div className={classes.userName}>{login}</div> : null}
                 </NavLink>
-                {props.isAuth
-                    ? <button className={classes.authBtn} onClick={props.signOut}>LOGOUT</button>
+                {isAuth
+                    ? <button className={classes.authBtn} onClick={signOut}>LOGOUT</button>
                     : <NavLink to={'/login'}>
                         <button className={classes.authBtn}>LOGIN</button>
                     </NavLink>
