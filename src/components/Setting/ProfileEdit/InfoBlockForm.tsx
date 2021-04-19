@@ -1,18 +1,22 @@
 import React from 'react'
 import {maxLength, minValue} from "../../../utils/validators/validator";
-import {Field, reduxForm} from "redux-form";
+import {Field, InjectedFormProps, reduxForm} from "redux-form";
 import {Textarea} from "../../common/textarea/textarea";
 import {InputBase} from "../../common/input/input";
 import {Preloader} from "../../common/preloader/spinner";
 import classes from "../Setting.module.css";
-
+import {ProfileType} from "../../../store/types/@types";
 
 const maxLength300 = maxLength(300)
 const maxLength50 = maxLength(50)
 const maxLength20 = maxLength(20)
 const minValue1 = minValue(1)
 
-const ProfileDataForm = (props) => {
+type ProfileFormType = {
+    initialValues: ProfileType
+}
+
+const ProfileDataForm: React.FC<InjectedFormProps<ProfileType, ProfileFormType> & ProfileFormType> = (props) => {
 
     const {handleSubmit, submitting, error} = props
     return (
@@ -134,18 +138,25 @@ const ProfileDataForm = (props) => {
     )
 }
 
-const ProfileDataReduxForm = reduxForm(
+const ProfileDataReduxForm = reduxForm<ProfileType, ProfileFormType>(
     {
         form: 'newProfileData',
     }
 )(ProfileDataForm)
 
-const ProfileDataEdit = ({saveProfile, profile, isLoading}) => {
+type PropsType = {
+    saveProfile: (data: ProfileType) => void
+    profile: ProfileType | null
+    isLoading: boolean
+    initialValues: ProfileType
+}
+
+const ProfileDataEdit:React.FC<PropsType> = ({saveProfile, profile, isLoading, initialValues}) => {
     /*
     * Для полей contacts мы в качестве названия используем 'contacts.Name'
     * Чтобы внутри formData, создался объект contacts. И value для этих полей отображался
     */
-    const onSubmit = (formData) => {
+    const onSubmit = (formData: ProfileType) => {
         saveProfile(formData)
     }
 
@@ -160,8 +171,7 @@ const ProfileDataEdit = ({saveProfile, profile, isLoading}) => {
             <div className={(!isLoading) ? classes.settingsField : classes.settingsFieldDis}>
                 <ProfileDataReduxForm
                     onSubmit={onSubmit}
-                    initialValues={profile}
-                    isLoading={isLoading}
+                    initialValues={initialValues}
                 />
 
             </div>

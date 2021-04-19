@@ -29,6 +29,7 @@ const Setting: React.FC<PropsType> = ({profile, isLoading,...props}) => {
             <h2>Setting</h2>
             <ProfileDataEdit
                 profile={profile}
+                initialValues={profile as ProfileType}
                 isLoading={isLoading}
                 saveProfile={saveProfile}
             />
