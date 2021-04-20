@@ -17,13 +17,14 @@ import Setting from "./components/Setting/Setting";
 import {Preloader} from "./components/common/preloader/spinner";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import NavBar from "./components/NavBar/NavBar";
-import withSuspense from "./utils/hoc/lazyComponent";
 import StartPage from "./components/Start Component/StartPage";
 import {Switch} from "react-router";
+import withSuspense from "./utils/hoc/lazyComponent";
 
 /* Add lazy loading for not base component */
 const Login = React.lazy(() => import('./components/Login/Login'));
 const DialogContainer = React.lazy(() => import('./components/Dialogs/DialogContainer'));
+const SuspenseMessagesPage = withSuspense(DialogContainer);
 const News = React.lazy(() => import('./components/News/News'));
 const Music = React.lazy(() => import('./components/Music/Music'));
 
@@ -31,6 +32,7 @@ type PropsType = ReturnType<typeof mapStateToProps>
 type MapDispatchToPropsType = {
     InitializeApp: () => void
 }
+
 class App extends React.Component<PropsType & MapDispatchToPropsType> {
     catchAllUnhandledError: () => void = () => {
         alert('Some error occurred')
@@ -67,7 +69,7 @@ class App extends React.Component<PropsType & MapDispatchToPropsType> {
                         <Route path='/login'
                                render={withSuspense(Login)}/>
                         <Route path='/dialogs'
-                               render={withSuspense(DialogContainer)}/>
+                               render={() => <SuspenseMessagesPage/>}/>
                         <Route path='/news'
                                render={withSuspense(News)}/>
                         <Route path='/music'

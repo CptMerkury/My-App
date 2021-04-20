@@ -43,7 +43,7 @@ const mapStateToProps = (state: AppStateType): MapStateToPropsType => ({
 })
 
 
-export default compose(
+export default compose<React.ComponentType>(
     connect<MapStateToPropsType, MapDispatchToPropsType, any, AppStateType>(mapStateToProps, {saveProfileThunkCreator}),
     withAuthRedirect,
 )(Setting)
