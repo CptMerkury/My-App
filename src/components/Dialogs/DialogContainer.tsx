@@ -5,6 +5,7 @@ import Dialog from "./DIalogLayout/Dialog";
 import withAuthRedirect from "../../utils/hoc/authRedirect";
 import {dialogActions} from "../../store/reducers/dialogs/dialogsReducer";
 import {AppStateType} from "../../store/store";
+import React from "react";
 
 const mapStateToProps = (state: AppStateType) => {
     return {
@@ -13,7 +14,7 @@ const mapStateToProps = (state: AppStateType) => {
     }
 }
 
-export default compose(
+export default compose<React.ComponentType>(
     withAuthRedirect,
     connect(mapStateToProps, {
         createMessage: dialogActions.sendMessageCreator
