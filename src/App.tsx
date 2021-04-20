@@ -1,7 +1,6 @@
 import './App.css';
 import React from 'react';
 import {
-    // BrowserRouter,
     HashRouter,
     Route,
     withRouter
@@ -10,7 +9,7 @@ import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 
 import {InitializeApp} from "./store/thunk/app/initThunk";
-import store from "./store/store";
+import store, {AppStateType} from "./store/store";
 
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/PtofileContainer";
@@ -28,10 +27,13 @@ const DialogContainer = React.lazy(() => import('./components/Dialogs/DialogCont
 const News = React.lazy(() => import('./components/News/News'));
 const Music = React.lazy(() => import('./components/Music/Music'));
 
-class App extends React.Component {
-    catchAllUnhandledError = (reason, promise) => {
+type PropsType = ReturnType<typeof mapStateToProps>
+type MapDispatchToPropsType = {
+    InitializeApp: () => void
+}
+class App extends React.Component<PropsType & MapDispatchToPropsType> {
+    catchAllUnhandledError: () => void = () => {
         alert('Some error occurred')
-        console.error(promise, reason)
     }
 
     componentDidMount() {
@@ -44,7 +46,7 @@ class App extends React.Component {
     }
 
     render() {
-        if (!this.props.init) {
+        if (!this.props.initialized) {
             return <Preloader/>
         }
         return (
@@ -83,30 +85,23 @@ class App extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    init: state.app.initialized
+const mapStateToProps = (state: AppStateType) => ({
+    initialized: state.app.initialized
 })
 
 /*  Делаем контейнерную компоненту для App, чтобы можно было протестировать ее отрисовку через test */
-const SocialAppContainer = compose(
+const SocialAppContainer = compose<React.ComponentType>(
     connect(mapStateToProps, {InitializeApp}),
-    /*
-    * Мы обернули компоненту дополнительно withRoute,
-    * так как при использовании Route с классовыми компонентами,
-    * Route может работать не корректно
-    */
     withRouter
 )(App);
 
-const SocialApp = () => {
+const SocialApp: React.FC = () => {
     return (
         /* Use HashRouter for gh-pages */
         <HashRouter>
-            {/*<BrowserRouter basename={process.env.PUBLIC_URL}>*/}
             <Provider store={store}>
                 <SocialAppContainer/>
             </Provider>
-            {/*</BrowserRouter>*/}
         </HashRouter>
     )
 }
