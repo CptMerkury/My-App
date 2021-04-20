@@ -1,17 +1,22 @@
 import React from "react";
 import classes from "../ProfileInfo.module.css";
+import {ProfileType} from "../../../../store/types/@types";
 
-const ProfileJob = ({profile}) => {
+type PropsType = {
+    profile: ProfileType | null
+}
+
+const ProfileJob: React.FC<PropsType> = ({profile}) => {
     return (
         <div className={classes.jobBlock}>
-            {!profile.lookingForAJob
-                ? <div/>
-                : <div className={classes.jobDescr}>
+            {profile && profile.lookingForAJob
+                ? <div className={classes.jobDescr}>
                     <div>{profile.lookingForAJobDescription}</div>
-                </div>}
+                </div>
+                : <div/>}
             <div className={classes.openJobStatus}>
                 <p>Open for job<span>&nbsp;</span></p>
-                {profile.lookingForAJob
+                {profile && profile.lookingForAJob
                     ? <div className={classes.circleIndicatorActive}/>
                     : <div className={classes.circleIndicatorNot}/>}
             </div>

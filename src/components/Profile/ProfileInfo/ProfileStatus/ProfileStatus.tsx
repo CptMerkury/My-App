@@ -1,8 +1,15 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, ChangeEvent} from 'react'
 import classes from "../ProfileInfo.module.css";
 import {Loader} from "../../../common/preloader/loading";
 
-const ProfileStatus = ({statusData, saveStatus, isOwner, loading}) => {
+type PropsType = {
+    statusData: string
+    saveStatus: (val: string) => void
+    isOwner: boolean
+    loading: boolean
+}
+
+const ProfileStatus: React.FC<PropsType> = ({statusData, saveStatus, isOwner, loading}) => {
 
     const [editMode, setEditMode] = useState(false)
     const [status, setStatus] = useState(statusData)
@@ -15,7 +22,7 @@ const ProfileStatus = ({statusData, saveStatus, isOwner, loading}) => {
         saveStatus(status)
     }
 
-    const updateTextStatus = (e) => setStatus(e.target.value)
+    const updateTextStatus = (e: ChangeEvent<HTMLInputElement>) => setStatus(e.target.value)
 
     useEffect(() => {
         setStatus(statusData)

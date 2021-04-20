@@ -1,16 +1,25 @@
-import React from "react";
+import React, {ChangeEvent} from "react";
 import classes from './ProfileInfo.module.css';
 import {Preloader} from "../../common/preloader/spinner";
 import ProfileStatus from "./ProfileStatus/ProfileStatus";
 import ProfileData from "./ProfileData/ProfileData";
 import ProfileJob from "./ProfileJob/ProfileJobData";
+import {ProfileType} from "../../../store/types/@types";
 
+type PropsType = {
+    saveNewPhoto: (file: File) => void
+    profile: ProfileType | null
+    status: string
+    updateStatus: (val: string) => void
+    isOwner: boolean
+    isLoading: boolean
+    isFetchingStatus: boolean
+}
 
-const ProfileInfo = ({saveNewPhoto, profile, status, updateStatus, isOwner, isLoading, isFetchingStatus}) => {
+const ProfileInfo: React.FC<PropsType> = ({saveNewPhoto, profile, status, updateStatus, isOwner, isLoading, isFetchingStatus}) => {
 
-    const onPhotoSelected = (e) => {
-        console.log(e)
-        if (e.target.files.length) {
+    const onPhotoSelected = (e: ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files.length) {
             saveNewPhoto(e.target.files[0])
         }
     }
@@ -44,9 +53,9 @@ const ProfileInfo = ({saveNewPhoto, profile, status, updateStatus, isOwner, isLo
                                         Change Photos
                                     </label>
                                     : null}
-                                <h4 className={classes.user_nameBlock}>{profile.fullName}</h4>
+                                <h4 className={classes.user_nameBlock}>{profile && profile.fullName}</h4>
                             </div>
-                            <ProfileData profile={profile} contacts={profile.contacts} isOwner={isOwner}/>
+                            <ProfileData profile={profile} contacts={profile && profile.contacts} isOwner={isOwner}/>
                             <ProfileJob profile={profile}/>
                         </div>
                     </div>

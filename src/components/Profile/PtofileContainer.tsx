@@ -1,7 +1,7 @@
 import classes from "./Profile.module.css"
 import React from "react";
 import {connect} from "react-redux";
-import {withRouter} from "react-router";
+import {RouteComponentProps, withRouter} from "react-router-dom";
 import {compose} from "redux";
 
 import Profile from "./ProfileLayout/Ptofile";
@@ -14,26 +14,43 @@ import {
     checkAuthSelector, checkFetchingStatusSelector, checkLoadingSelector, getProfileSelector,
     getStatusSelector, getUserIdSelector
 } from "../../store/selectors/profile/profileSelectors";
+import {AppStateType} from "../../store/store";
 
-class ProfileContainer extends React.PureComponent {
+type MapStateToProps = ReturnType<typeof mapStateToProps>
+type MapDispatchToProps = {
+    getProfileThunkCreator: (id: number) => void
+    setStatusThunkCreator: (val: string) => void
+    getStatusThunkCreator: (id: number) => void
+    saveNewPhotoThunkCreator: (file: File) => void
+}
+type PathParams = {
+    userId: string
+}
+type PropsType = MapStateToProps & MapDispatchToProps & RouteComponentProps<PathParams>
+
+class ProfileContainer extends React.PureComponent<PropsType> {
 
     refreshProfile() {
-        let userId = this.props.match.params.userId
+        let userId: number | null = +this.props.match.params.userId
         if (!userId) {
             userId = this.props.authUserID
-            if(!userId){
+            if (!userId) {
                 this.props.history.push('/login')
             }
         }
-        this.props.getProfileThunkCreator(userId)
-        this.props.getStatusThunkCreator(userId)
+        if (!userId) {
+            console.error("ID should exists in URI params or in state ('authorizedUserId')");
+        } else {
+            this.props.getProfileThunkCreator(userId)
+            this.props.getStatusThunkCreator(userId)
+        }
     }
 
     componentDidMount() {
         this.refreshProfile()
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps: PropsType, prevState: PropsType) {
         if (prevProps.match.params.userId !== this.props.match.params.userId) {
             this.refreshProfile()
         }
@@ -53,7 +70,7 @@ class ProfileContainer extends React.PureComponent {
     }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: AppStateType) => ({
     profile: getProfileSelector(state),
     status: getStatusSelector(state),
     authUserID: getUserIdSelector(state),
@@ -62,7 +79,7 @@ const mapStateToProps = (state) => ({
     isFetchingStatus: checkFetchingStatusSelector(state)
 })
 
-export default compose(
+export default compose<React.ComponentType>(
     connect(mapStateToProps, {
         getProfileThunkCreator, setStatusThunkCreator,
         getStatusThunkCreator, saveNewPhotoThunkCreator
@@ -70,16 +87,3 @@ export default compose(
     withAuthRedirect,
     withRouter,
 )(ProfileContainer)
-
-/* Вызов всех эти обработчиков ниже мы заменили на одну функцию compose выше
-*
-* const withAuth = withAuthRedirect(ProfileContainer)
-* // Используем withRouter чтобы обернуть контейнерную компоненту
-* // в другую контейнерную компоненту и передать в нее данные состояния uri
-* const ProfileWithUrlData = withRouter(withAuth)
-*
-* export default connect(mapStateToProps, {
-*     getProfileThunkCreator,
-*     getStatusThunkCreator,
-* })(ProfileWithUrlData)
-*/

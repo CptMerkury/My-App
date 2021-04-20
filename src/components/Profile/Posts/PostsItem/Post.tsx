@@ -1,7 +1,12 @@
 import classes from "./Post.module.css";
 import React from "react";
 
-const Post = (props) => {
+type PropsType = {
+    message: string
+    likeCount: number
+}
+
+const Post: React.FC<PropsType> = (props) => {
     return (
         <div className={classes.item}>
             <div className={classes.ava_wrapper}>
