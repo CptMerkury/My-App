@@ -1,4 +1,4 @@
-import {UserType} from "../store/types/@types";
+import {CommonResponseType, UserType} from "../store/types/@types";
 import {instance} from "./instance-api";
 
 type GetUserAPIType = {
@@ -14,10 +14,10 @@ export const usersAPI = {
     },
     setFollow(id: number) {
         return instance
-            .post<ResponseType>(`/follow/${id}`, null).then(res => res.data)
+            .post<CommonResponseType>(`/follow/${id}`, null).then(res => res.data)
     },
     setUnfollow(id: number) {
         return instance
-            .delete<ResponseType>(`/follow/${id}`).then(res => res.data)
+            .delete(`/follow/${id}`).then(res => res.data) as Promise<CommonResponseType>
     }
 }

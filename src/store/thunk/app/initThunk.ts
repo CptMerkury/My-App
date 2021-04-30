@@ -1,7 +1,8 @@
 import {checkAuthThunkCreator} from "../auth/authThunk";
-import {appActions} from "../../reducers/app/appReducer";
+import {appActions, InitActionsTypes} from "../../reducers/app/appReducer";
+import {CommonThunkCreatorType} from "../../types/@types";
 
-export const InitializeApp = () => (dispatch: any) => {
+export const InitializeApp = (): CommonThunkCreatorType<InitActionsTypes> => async (dispatch) => {
     let promiseAuth = dispatch(checkAuthThunkCreator())
 
     Promise.all([promiseAuth])

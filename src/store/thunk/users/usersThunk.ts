@@ -2,7 +2,7 @@ import {UserActionsTypes, usersActions} from "../../reducers/users/usersReducer"
 import {Dispatch} from "redux";
 import {usersAPI} from "../../../api/user-api";
 import {ResultCodesEnum} from "../../../api/instance-api";
-import {CommonThunkCreatorType} from "../../types/@types";
+import {CommonResponseType, CommonThunkCreatorType} from "../../types/@types";
 
 export const getUsersThunkCreator = (currentPage: number = 1, pageSize: number): CommonThunkCreatorType<UserActionsTypes> =>
     async (dispatch) => {
@@ -29,7 +29,7 @@ export const getPageThunkCreator = (num: number, pageSize: number): CommonThunkC
 const _follow_unfollow_flow = async (
     dispatch: Dispatch<UserActionsTypes>,
     userId: number,
-    apiMethod: any,
+    apiMethod: (userID: number) => Promise<CommonResponseType>,
     actionCreator: (userId: number) => UserActionsTypes) => {
 
     dispatch(usersActions.toggleDisabledBtn(true, userId))
