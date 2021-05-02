@@ -4,7 +4,8 @@ import {authAPI} from "../../../api/auth-api";
 import {ResultCodeForCaptchaCEnum, ResultCodesEnum} from "../../../api/instance-api";
 import {CommonThunkCreatorType} from "../../types/@types";
 
-export const checkAuthThunkCreator = (): CommonThunkCreatorType<AuthActionsTypes> => async (dispatch) => {
+export const checkAuthThunkCreator = (): CommonThunkCreatorType<AuthActionsTypes> =>
+    async (dispatch) => {
     let response = await authAPI.checkAuth()
 
     if (response.resultCode === ResultCodesEnum.SUCCESS) {
@@ -12,7 +13,8 @@ export const checkAuthThunkCreator = (): CommonThunkCreatorType<AuthActionsTypes
         dispatch(authActions.setAuthData(id, email, login))
     }
 }
-export const signOutThunkCreator = (): CommonThunkCreatorType<AuthActionsTypes> => async (dispatch) => {
+export const signOutThunkCreator = (): CommonThunkCreatorType<AuthActionsTypes> =>
+    async (dispatch) => {
     let response = await authAPI.signOut()
 
     if (response.resultCode === ResultCodesEnum.SUCCESS) {
@@ -21,13 +23,16 @@ export const signOutThunkCreator = (): CommonThunkCreatorType<AuthActionsTypes> 
 }
 
 export const signInThunkCreator = (
-    email: string, password: string,
-    rememberMe: boolean, captcha: boolean
-): CommonThunkCreatorType<AuthActionsTypes | FormAction> => async (dispatch) => {
+    email: string,
+    password: string,
+    rememberMe: boolean,
+    captcha: boolean
+): CommonThunkCreatorType<AuthActionsTypes | FormAction> =>
+    async (dispatch) => {
     let response = await authAPI.signIn(email, password, rememberMe, captcha)
 
     if (response.resultCode === ResultCodesEnum.SUCCESS) {
-        dispatch(checkAuthThunkCreator())
+        await dispatch(checkAuthThunkCreator())
     } else if (response.resultCode === ResultCodeForCaptchaCEnum.ANTI_BOT) {
         let data = await authAPI.getCaptcha()
         dispatch(authActions.getCaptcha(data.url))
