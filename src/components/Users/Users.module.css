@@ -4,12 +4,17 @@
     padding: 20px 50px;
 }
 
-.usersContainer h2 {
+.usersHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.usersHeader h2 {
     font-size: 32px;
     font-weight: 100;
     color: rgba(75, 80, 240, .9);
-    width: 160px;
-    margin-bottom: 20px;
 }
 
 .usersField {
@@ -62,6 +67,7 @@
     transition: all 0.3s ease;
 
 }
+
 .reactPaginate > li:hover > a, .reactPaginate > li:hover > span, .reactPaginate > li:focus > a, .reactPaginate > li:focus > span {
     background-color: rgba(75, 80, 240, .9);
     color: #fff;
@@ -69,6 +75,7 @@
     transition: all 0.3s ease;
 
 }
+
 .reactPaginate > li:active > a, .reactPaginate > li:active > span, .reactPaginate > li:focus > a, .reactPaginate > li:focus > span {
     background-color: rgba(75, 80, 240, .3);
     border: 1px solid rgba(75, 80, 240, .3);

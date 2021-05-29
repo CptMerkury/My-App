@@ -5,16 +5,17 @@
   "homepage": "https://cptmerkury.github.io/react_redux_SPA_study",
   "dependencies": {
     "@testing-library/jest-dom": "5.12.0",
-    "@testing-library/react": "11.2.6",
-    "@testing-library/user-event": "13.1.8",
+    "@testing-library/react": "11.2.7",
+    "@testing-library/user-event": "13.1.9",
     "@types/jest": "^26.0.23",
-    "@types/node": "15.0.1",
-    "@types/react": "^17.0.4",
-    "@types/react-dom": "^17.0.3",
+    "@types/node": "15.3.0",
+    "@types/react": "^17.0.5",
+    "@types/react-dom": "^17.0.5",
     "@types/react-paginate": "^7.1.0",
     "@types/react-redux": "^7.1.16",
     "@types/redux-form": "^8.3.1",
     "axios": "^0.21.1",
+    "formik": "^2.2.6",
     "react": "17.0.2",
     "react-dev-utils": "^11.0.4",
     "react-dom": "17.0.2",
@@ -58,6 +59,6 @@
   "devDependencies": {
     "@types/react-router-dom": "^5.1.7",
     "gh-pages": "^3.1.0",
-    "npm-check-updates": "11.5.9"
+    "npm-check-updates": "11.5.13"
   }
 }

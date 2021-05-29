@@ -5,6 +5,7 @@ import ReactPaginate from "react-paginate";
 import UsersItem from "../UserItem/UserItem";
 import {Preloader} from "../../common/preloader/spinner";
 import {UserType} from "../../../store/types/@types";
+import SearchForm from "./UserSearch";
 // import Paginator from "../../common/paginator/paginator";
 
 type PropsType = {
@@ -40,7 +41,10 @@ const Users: FC<PropsType> = (
 
     return (
         <div className={classes.usersContainer}>
-            <h2>Users</h2>
+            <div className={classes.usersHeader}>
+                <h2>Users</h2>
+                <SearchForm/>
+            </div>
             <div className={classes.usersField}>
                 <div className={classes.usersItems}>
                     <ReactPaginate
